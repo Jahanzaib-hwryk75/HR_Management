@@ -38,10 +38,10 @@
               </g>
             </g>
           </svg>
-          <h2 class="brand-text text-primary ms-1">HR</h2>
+          <h2 class="brand-text text-primary ms-1">Vuexy</h2>
         </a>
 
-        <h4 class="card-title mb-1">Welcome to HR! 👋</h4>
+        <h4 class="card-title mb-1">Welcome to Vuexy! 👋</h4>
         <p class="card-text mb-2">Please sign-in to your account</p>
 
         <form class="auth-login-form mt-2" action="/signin" method="post">

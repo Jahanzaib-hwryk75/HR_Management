@@ -47,7 +47,7 @@
               <th>Id</th>
               <th>Username</th>
               <th>Email</th>
-              <th>Roles</th>
+              <!-- <th>Roles</th> -->
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -58,11 +58,12 @@
               <td class="count"></td>
               <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
               <td>{{$data->email}}</td>
-              <td>{{$data->role}}</td>
+              <!-- <td>{{$data->role}}</td> -->
               <td>
                 <div class="d-flex flex-column">
                   <div class="form-check form-switch form-check-success">
-                    <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} />
+                   
+                    <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} /> -->
                   </div>
                 </div>
               </td>
