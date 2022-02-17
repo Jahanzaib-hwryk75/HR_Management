@@ -11,4 +11,7 @@ class EmployController extends Controller
         $user = User::all();
         return view('/leavemanagement/employestatus',compact('user'));
     }
+    public function leaveform(){
+        return view('leavemanagement.leaveform');
+    }
 }
