@@ -44,6 +44,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('roles/delete/{id}', [RolesController::class, 'rolesdlt'])->name('rolesadd');
     Route::post('/signout', [AuthenticationController::class, 'logout']);
     Route::get('/status', [AuthenticationController::class, 'status']);
+
+   
 });
 });
 

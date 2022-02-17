@@ -22,6 +22,12 @@
       "name": "Roles",
       "icon": "user",
       "slug": "roles"
+    },
+    {
+      "url": "admin/leave",
+      "name": "Apply for Leave",
+      "icon": "user",
+      "slug": "roles"
     }
   ]
 }
