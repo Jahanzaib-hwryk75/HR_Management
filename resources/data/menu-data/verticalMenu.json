@@ -28,6 +28,12 @@
       "name": "Apply for Leave",
       "icon": "user",
       "slug": "roles"
+    },
+    {
+      "url": "admin/hr",
+      "name": "HR",
+      "icon": "user",
+      "slug": "roles"
     }
   ]
 }
