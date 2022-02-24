@@ -37,8 +37,8 @@
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/requestleave'">
-            <span>Request Leave</span>
+          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
+            <span>Assign Project</span>
           </button>
         </div>
         <table class="table datatable">
@@ -46,43 +46,57 @@
             <tr>
               <th>Id</th>
               <th>Username</th>
-              <th>Rank</th>
-              <th>Date Start</th>
-              <th>Date End</th>
-              <th>Desc</th>
+              <th>Email</th>
+              <th>Roles</th>
+              <th>Status</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($user as $data)
+
             <tr>
               <td class="count"></td>
-             
-              <td>{{$data->name}}</td>
-              <td>{{$data->rank}}</td>
-              <td>{{$data->datestart}}</td>
-              <td>{{$data->dateend}}</td>
-              <td>{{$data->desc}}</td>
+<<<<<<< HEAD:resources/views/timeline/timer.blade.php
+              <td> <img class="rounded-circle" src="" alt="No image" height="30" width="30" style="margin-right:10px"></td>
+              <td></td>
+
               <td>
-                <!-- <div class="d-flex flex-column">
+                <div class="d-flex flex-column">
+                  <div class="form-check form-switch form-check-success">
+
+
+=======
+              <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
+              <td>{{$data->email}}</td>
+              <td>{{$data->role}}</td>
+              <td>
+                <div class="d-flex flex-column">
                   <div class="form-check form-switch form-check-success">
                     <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} />
+>>>>>>> 3a4706700ba91635f1554ff4f7bec9bb8850bfca:resources/views/projects/projectassign.blade.php
                   </div>
-                </div> -->
+                </div>
               </td>
-              <!-- <td class="d-flex">
+              <td class="d-flex">
                 <div>
-                  <a class="dropdown-item" href="/admin/edituser/{{$data->id}}">
-                    <i data-feather="edit-2" class="me-50"></i>
+                  
+                    
                   </a>
                 </div>
                 <div>
-                  <button class="btn btn-flat btn-sm remove-user" data-id="{{ $data->id }}" data-action="{{ url('/users/delete',$data->id) }}" onclick="deleteConfirmation({{$data->id}})">
-                    <i data-feather="trash" class="me-50"></i>
+                  <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="" onclick="">
+
                   </button>
+                  <button class="dt-button add-new btn btn-danger" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/clockout'">
+                    <span>clockout</span>
+                  </button>
+                  <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/clockin'">
+            <span>clockin</span>
+          </button>
                 </div>
-              </td> -->
+              </td>
             </tr>
-            @endforeach
+
           </tbody>
         </table>
       </div>
