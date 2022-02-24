@@ -5,10 +5,13 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\EmployController;
 use App\Http\Controllers\User\RolesController;
 use App\Http\Controllers\User\FrontController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\timelineController;
+use App\Http\Controllers\ProjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,8 @@ Route::post('/signin', [AuthenticationController::class, 'login']);
 Route::group(['middleware' => 'auth:web'], function () {
 ////////Admin Routes
 Route::group(['prefix' => 'admin'], function () {
+    
+    Route::get('timepicker', [FormsController::class, 'date_time_picker'])->name('date_time_picker');
     Route::get('dashboard', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     Route::get('user/list', [FrontController::class, 'user_list'])->name('app-user-list');
     Route::get('adduser', [FormsController::class, 'adduser'])->name('form-useradd');
@@ -47,6 +52,17 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/timeline', [timelineController::class, 'timeline']);
     Route::get('/clockin', [timelineController::class, 'clockin']);
     Route::get('/clockout', [timelineController::class, 'clockout']);
+
+    // Leave Mangement
+    Route::get('/leave',[EmployController::class,'leave']);
+    Route::get('/requestleave',[EmployController::class,'requestleave']);
+    Route::post('/requestsend',[EmployController::class,'requestsend']);
+
+    Route::get('/projectassign', [ProjectController::class, 'projectassign']);
+    Route::get('/assign', [ProjectController::class, 'assign']);
+    Route::post('/assign', [ProjectController::class, 'store']);
+
+    
 });
 });
 
@@ -54,3 +70,6 @@ Route::group(['prefix' => 'admin'], function () {
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 Route::get('convert-pdf-to-image', [ImageController::class, 'index'])->name('form');
+
+
+
