@@ -24,6 +24,12 @@
       "slug": "roles"
     },
     {
+      "url": "admin/projectassign",
+      "name": "Assign Project",
+      "icon": "user",
+      "slug": "roles"
+    },
+    {
       "url": "admin/leave",
       "name": "Apply for Leave",
       "icon": "user",
@@ -45,6 +51,7 @@
         }
       ]
     }
+    
  
   
   ]
