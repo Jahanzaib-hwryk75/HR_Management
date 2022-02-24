@@ -36,24 +36,15 @@
       "slug": "roles"
     },
     {
-      "url": "#",
-      "name": "Human Resource",
-      "icon": "fas fa-cog",
-      "slug": "#",
-      "role": "admin",
-      "submenu":[
-        {
-          "url": "admin/hr",
-          "name": "hr",
-          "icon": "user",
-          "slug": "",
-          "role": ""
-        }
-      ]
+      "url": "admin/hr",
+      "name": "HR",
+      "url": "admin/projectassign",
+      "name": "Assign Project",
+      "icon": "user",
+      "slug": "roles"
     }
     
  
   
   ]
-
 }
