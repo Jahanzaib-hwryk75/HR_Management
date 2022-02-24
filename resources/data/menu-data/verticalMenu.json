@@ -22,6 +22,19 @@
       "name": "Roles",
       "icon": "user",
       "slug": "roles"
+    },
+    {
+      "url": "admin/timeline",
+      "name": "Timeline",
+      "icon": "menu",
+      "slug": "roles"
+    },
+    {
+      "url": "admin/stopwatch",
+      "name": "stopwatch",
+      "icon": "menu",
+      "slug": "roles"
     }
+    
   ]
 }
