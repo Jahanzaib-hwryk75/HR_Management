@@ -53,34 +53,21 @@
               <th>type</th>
             </tr>
           </thead>
+          @foreach($user as $user)
           <tbody>
-            @foreach($user as $data)
             <tr>
-              <td class="count"></td>
-              <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
-              <td>{{$data->email}}</td>
-              <td>{{$data->role}}</td>
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} />
-                  </div>
-                </div>
-              </td>
-              <td class="d-flex">
-                <div>
-                  <a class="dropdown-item" href="/admin/edituser/{{$data->id}}">
-                    <i data-feather="edit-2" class="me-50"></i>
-                  </a>
-                </div>
-                <div>
-                  <button class="btn btn-flat btn-sm remove-user" data-id="{{ $data->id }}" data-action="{{ url('/users/delete',$data->id) }}" onclick="">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            @endforeach
+           <td>{{$user->id}}</td>
+           <td>{{$user->name}}</td>
+           <td>{{$user->rank}}</td>
+           <td>{{$user->datestart}}</td>
+           <td>{{$user->dateend}}</td>
+         
+           <td>{{Str::limit($user->desc, 10)}}
+             <p><a rel="{{$user->id}}" href="/description">Read More</a></p>
+           </td>
+           <td>{{$user->type}}</td>
+           </tr>
+           @endforeach
           </tbody>
         </table>
       </div>

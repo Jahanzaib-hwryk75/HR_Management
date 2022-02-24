@@ -56,6 +56,13 @@ Route::group(['prefix' => 'admin'], function () {
     // Leave Mangement
     Route::get('/leave',[EmployController::class,'leave']);
     Route::get('/requestleave',[EmployController::class,'requestleave']);
+    Route::post('/requestsend',[EmployController::class,'requestsend']);
+   
+
+
+
+
+
     Route::get('/projectassign', [ProjectController::class, 'projectassign']);
     Route::get('/assign', [ProjectController::class, 'assign']);
     Route::post('/assign', [ProjectController::class, 'store']);

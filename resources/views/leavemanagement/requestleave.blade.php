@@ -18,13 +18,13 @@
         </div>
         <div class="card-body">
 
-          <form class="form form-horizontal" action="{{ url('/requestleave')}}" method="post" enctype="multipart/form-data">
+          <form class="form form-horizontal" action="{{ url('/admin/requestsend')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col-12">
                 <div class="mb-1 row">
                   <div class="col-sm-8 offset-2">
-                    <input type="text" class="form-control" name="name" value="{{$users->fullname ?? ''}}" placeholder="Enter Fullname" required />
+                    <input type="text" class="form-control" name="name" value="{{$users->name ?? ''}}" placeholder="Enter Fullname" required />
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -36,7 +36,7 @@
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
-                    <select class="form-select" id="basicSelect" name="role">
+                    <select class="form-select" id="basicSelect" name="type">
                     <option></option>
                       <option>Sick Leave</option>
                       <option>Marriage Leave</option>
