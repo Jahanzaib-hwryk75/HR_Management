@@ -68,7 +68,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
 </section>
 <!-- Basic Horizontal form layout section end -->

@@ -24,21 +24,27 @@
       "slug": "roles"
     },
     {
+      "url": "admin/timeline",
+      "name": "timeline",
+      "icon": "user",
+      "slug": "roles"
+    },
+    {
       "url": "admin/leave",
       "name": "Apply for Leave",
-      "icon": "user",
+      "icon": "menu",
       "slug": "roles"
     },
     {
       "url": "#",
       "name": "Human Resource",
-      "icon": "fas fa-cog",
+      "icon": "menu",
       "slug": "#",
       "role": "admin",
       "submenu":[
         {
           "url": "admin/",
-          "name": "",
+          "name": "hr",
           "icon": "user",
           "slug": "",
           "role": ""
