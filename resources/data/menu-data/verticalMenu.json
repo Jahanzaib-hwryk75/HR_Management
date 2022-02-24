@@ -24,6 +24,7 @@
       "slug": "roles"
     },
     {
+<<<<<<< Updated upstream
       "url": "admin/leave",
       "name": "Apply for Leave",
       "icon": "user",
@@ -32,6 +33,10 @@
     {
       "url": "admin/hr",
       "name": "HR",
+=======
+      "url": "admin/projectassign",
+      "name": "Assign Project",
+>>>>>>> Stashed changes
       "icon": "user",
       "slug": "roles"
     }
