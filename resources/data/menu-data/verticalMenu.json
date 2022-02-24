@@ -37,7 +37,7 @@
       "role": "admin",
       "submenu":[
         {
-          "url": "admin/HR",
+          "url": "admin/",
           "name": "",
           "icon": "user",
           "slug": "",
