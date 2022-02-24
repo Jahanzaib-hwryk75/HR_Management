@@ -41,7 +41,7 @@
                       <option>Sick Leave</option>
                       <option>Marriage Leave</option>
                       <option>Earned Leave</option>
-                    </select>
+                    </select> 
                   </div>
 
                   <div class="col-sm-8 offset-2 mt-1">
