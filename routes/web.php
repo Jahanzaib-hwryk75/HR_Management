@@ -9,6 +9,7 @@ use App\Http\Controllers\EmployController;
 use App\Http\Controllers\User\RolesController;
 use App\Http\Controllers\User\FrontController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\timelineController;
 use App\Http\Controllers\ProjectController;
 
 
@@ -48,6 +49,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('roles/delete/{id}', [RolesController::class, 'rolesdlt'])->name('rolesadd');
     Route::post('/signout', [AuthenticationController::class, 'logout']);
     Route::get('/status', [AuthenticationController::class, 'status']);
+    Route::get('/timeline', [timelineController::class, 'timeline']);
+    Route::get('/clockin', [timelineController::class, 'clockin']);
+    Route::get('/clockout', [timelineController::class, 'clockout']);
 
     // Leave Mangement
     Route::get('/leave',[EmployController::class,'leave']);
