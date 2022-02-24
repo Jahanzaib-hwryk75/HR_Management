@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin'], function () {
     // Leave Mangement
     Route::get('/leave',[EmployController::class,'leave']);
     Route::get('/requestleave',[EmployController::class,'requestleave']);
+    Route::post('/requestsend',[EmployController::class,'requestsend']);
     
 });
 });
