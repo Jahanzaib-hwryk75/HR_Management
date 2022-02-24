@@ -74,7 +74,7 @@
                   </a>
                 </div>
                 <div>
-                  <button class="btn btn-flat btn-sm remove-user" data-id="{{ $data->id }}" data-action="{{ url('/users/delete',$data->id) }}" onclick="deleteConfirmation({{$data->id}})">
+                  <button class="btn btn-flat btn-sm remove-user" data-id="{{ $data->id }}" data-action="{{ url('/users/delete',$data->id) }}" onclick="">
                     <i data-feather="trash" class="me-50"></i>
                   </button>
                 </div>
