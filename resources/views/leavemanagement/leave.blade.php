@@ -50,6 +50,7 @@
               <th>Date Start</th>
               <th>Date End</th>
               <th>Desc</th>
+              <th>Type</th>
             </tr>
           </thead>
           <tbody>
@@ -62,6 +63,7 @@
               <td>{{$data->datestart}}</td>
               <td>{{$data->dateend}}</td>
               <td>{{$data->desc}}</td>
+              <td>{{$data->type}}</td>
               <td>
                 <!-- <div class="d-flex flex-column">
                   <div class="form-check form-switch form-check-success">
