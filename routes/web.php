@@ -48,12 +48,16 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('roles/delete/{id}', [RolesController::class, 'rolesdlt'])->name('rolesadd');
     Route::post('/signout', [AuthenticationController::class, 'logout']);
     Route::get('/status', [AuthenticationController::class, 'status']);
+
     // Leave Mangement
     Route::get('/leave',[EmployController::class,'leave']);
     Route::get('/requestleave',[EmployController::class,'requestleave']);
+    Route::post('/requestsend',[EmployController::class,'requestsend']);
+
     Route::get('/projectassign', [ProjectController::class, 'projectassign']);
     Route::get('/assign', [ProjectController::class, 'assign']);
     Route::post('/assign', [ProjectController::class, 'store']);
+
     
 });
 });
@@ -62,3 +66,6 @@ Route::group(['prefix' => 'admin'], function () {
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 Route::get('convert-pdf-to-image', [ImageController::class, 'index'])->name('form');
+
+
+

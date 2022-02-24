@@ -24,21 +24,29 @@
       "slug": "roles"
     },
     {
-<<<<<<< Updated upstream
       "url": "admin/leave",
       "name": "Apply for Leave",
       "icon": "user",
       "slug": "roles"
     },
     {
-      "url": "admin/hr",
-      "name": "HR",
-=======
-      "url": "admin/projectassign",
-      "name": "Assign Project",
->>>>>>> Stashed changes
-      "icon": "user",
-      "slug": "roles"
+      "url": "#",
+      "name": "Human Resource",
+      "icon": "fas fa-cog",
+      "slug": "#",
+      "role": "admin",
+      "submenu":[
+        {
+          "url": "admin/",
+          "name": "",
+          "icon": "user",
+          "slug": "",
+          "role": ""
+        }
+      ]
     }
+ 
+  
   ]
+
 }

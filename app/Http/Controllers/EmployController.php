@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\leave;
 
 class EmployController extends Controller
 {
@@ -17,7 +18,7 @@ class EmployController extends Controller
     // }
     public function leave()
     {
-        $user = User::all();
+        $user = leave::all();
         return view('/leavemanagement.leave', compact('user'));
     }
 
@@ -30,5 +31,24 @@ class EmployController extends Controller
         //     'breadcrumbs' => $breadcrumbs
         // ]);
         return view('/leavemanagement.requestleave');
+    }
+    public function requestsend(Request $request){
+      
+        $request->validate([
+            'name'=>'required',
+            'rank'=>'required',
+            'datestart'=>'required',
+            'dateend'=>'required',
+            'desc'=>'required'
+        ]);
+       
+        $requestleave=new leave();
+        $requestleave->name=$request->name;
+        $requestleave->rank=$request->rank;
+        $requestleave->datestart=$request->datestart;
+        $requestleave->dateend=$request->dateend;
+        $requestleave->desc=$request->desc;
+        $requestleave->save();
+        return redirect()->back()->with('message','Request Send');
     }
 }
