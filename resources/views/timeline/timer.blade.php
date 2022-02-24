@@ -56,7 +56,6 @@
 
             <tr>
               <td class="count"></td>
-<<<<<<< HEAD:resources/views/timeline/timer.blade.php
               <td> <img class="rounded-circle" src="" alt="No image" height="30" width="30" style="margin-right:10px"></td>
               <td></td>
 
@@ -65,15 +64,6 @@
                   <div class="form-check form-switch form-check-success">
 
 
-=======
-              <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
-              <td>{{$data->email}}</td>
-              <td>{{$data->role}}</td>
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} />
->>>>>>> 3a4706700ba91635f1554ff4f7bec9bb8850bfca:resources/views/projects/projectassign.blade.php
                   </div>
                 </div>
               </td>
