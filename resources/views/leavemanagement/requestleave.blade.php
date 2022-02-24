@@ -17,7 +17,8 @@
 
         </div>
         <div class="card-body">
-          <form class="form form-horizontal" action="{{ url('/admin/requestsend')}}" method="post" enctype="multipart/form-data">
+
+          <form class="form form-horizontal" action="{{ url('/requestleave')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col-12">
@@ -29,38 +30,45 @@
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
-                    <input type="text" class="form-control" name="rank" value="{{$users->username ?? ''}}" placeholder="Enter Your Rank" />
+                    <input type="text" class="form-control" name="rank" value="{{$users->username ?? ''}}" placeholder="Enter Your Rank" required />
                     @error('rank')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
-
-                    <div class="col-sm-8 offset-2 mt-1">
-                      <input type="date" class="form-control" name="datestart" value="" placeholder="Enter date" required />
-                     
-                    </div>
-                 
                   <div class="col-sm-8 offset-2 mt-1">
-                  <input type="date" class="form-control" name="dateend" value="" placeholder="Enter date" required />
+                    <select class="form-select" id="basicSelect" name="role">
+                    <option></option>
+                      <option>Sick Leave</option>
+                      <option>Marriage Leave</option>
+                      <option>Earned Leave</option>
+                    </select>
+                  </div>
+
+                  <div class="col-sm-8 offset-2 mt-1">
+                    <input type="date" class="form-control" name="datestart" value="" placeholder="Enter date" required />
+
+                  </div>
+
+                  <div class="col-sm-8 offset-2 mt-1">
+                    <input type="date" class="form-control" name="dateend" value="" placeholder="Enter date" required />
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
-                  <textarea id="textarea-default" placeholder="Textarea" name="desc" rows="5" wrap="soft" class="form-control" data-v-3bcd05f2=""></textarea>
+                    <textarea id="textarea-default" name="desc" placeholder="Textarea" rows="5" wrap="soft" class="form-control" data-v-3bcd05f2=""></textarea>
                     @error('desc')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
-               
-                
+
+
 
                 </div>
               </div>
               <div class="col-sm-8 offset-sm-5">
-             
                 <?php
                 if (isset($users->id) && $users->id != 0) { ?>
                   <button type="submit" class="btn btn-primary me-1">Update</button>
                 <?php  } else { ?>
-                  <button type="submit" class="btn btn-primary me-1" >Submit</button>
+                  <button type="submit" class="btn btn-primary me-1">Submit</button>
                 <?php }
                 ?>
               </div>
@@ -110,4 +118,3 @@
 <!-- Page js files -->
 <script src="{{ asset(mix('js/scripts/forms/form-file-uploader.js')) }}"></script>
 @endsection
-
