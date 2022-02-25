@@ -21,6 +21,7 @@ class CreateLeavesTable extends Migration
             $table->string('datestart')->nullable();
             $table->string('dateend')->nullable();
             $table->string('desc')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -58,6 +58,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/requestleave',[EmployController::class,'requestleave']);
     Route::post('/requestsend',[EmployController::class,'requestsend']);
     Route::get('/description/{id}',[EmployController::class,'description']);
+    Route::get('/leaveedit{id}',[EmployController::class,'leaveedit']);
+    Route::post('/leaveupdate{id}',[EmployController::class,'leaveupdate']);
+
    
 
 

@@ -52,6 +52,8 @@
               <th>Desc</th>
               <th>type</th>
               <th>Read More</th>
+              <th>Accept</th>
+              <th>Cancel</th>
             </tr>
           </thead>
           @foreach($user as $user)
@@ -67,7 +69,9 @@
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
            <td>{{$user->type}}</td>
-           <td> <button type="button" rel="{{url('admin/description', $user->id)}}" class="btn btn-primary me-1">Read More</button></td>
+           <td><a class="btn btn-success" style="height: 45px;" href="">Read More</a></td>
+           <td><a class="btn btn-success" style="height: 45px;" href="{{url('admin/leaveedit', $user->id)}}">Accept</a></td>
+           <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td>
            </tr>
            @endforeach
           </tbody>

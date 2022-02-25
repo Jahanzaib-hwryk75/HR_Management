@@ -48,7 +48,7 @@ class EmployController extends Controller
         $requestsend->type=$request->type;
         $requestsend->datestart=$request->datestart;
         $requestsend->dateend=$request->dateend;
-        $requestsend->desc=$request->desc;
+        $requestsend->status=$request->desc;
         $requestsend->save();
         return redirect()->back()->with('message','data save');
 
@@ -58,6 +58,15 @@ class EmployController extends Controller
         $data=leave::find($id);
         
         return view('leavemanagement.description',compact('data'));
+    }
+    public function leaveedit($id){
+        $leaveedit=leave::find($id);
+        // return view('',compact('leaveedit'));
+    }
+    public function leaveupdate(Request $request, $id){
+       $leavestatus=leave::find($id);
+       $leavestatus->status='Accept';
+       return redirect()->back();
     }
    
    
