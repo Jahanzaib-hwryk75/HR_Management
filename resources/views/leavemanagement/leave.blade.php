@@ -63,7 +63,7 @@
            <td>{{$user->dateend}}</td>
          
            <td>{{Str::limit($user->desc, 10)}}
-             <p><a rel="{{$user->id}}" href="/description">Read More</a></p>
+             <p><a href="{{url('description', $user->id)}}">Read More</a></p>
            </td>
            <td>{{$user->type}}</td>
            </tr>

@@ -53,5 +53,12 @@ class EmployController extends Controller
         return redirect()->back()->with('message','data save');
 
     }
+    public function description($id){
+        
+        $data=leave::find($id);
+        
+        return view('leavemanagement.description',compact('data'));
+    }
+   
    
 }
