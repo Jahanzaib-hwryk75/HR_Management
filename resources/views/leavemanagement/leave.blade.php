@@ -51,6 +51,7 @@
               <th>Date End</th>
               <th>Desc</th>
               <th>type</th>
+              <th>Read More</th>
             </tr>
           </thead>
           @foreach($user as $user)
@@ -63,9 +64,10 @@
            <td>{{$user->dateend}}</td>
          
            <td>{{Str::limit($user->desc, 10)}}
-             <p><a href="{{url('description', $user->id)}}">Read More</a></p>
+             <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
            <td>{{$user->type}}</td>
+           <td> <button type="button" rel="{{url('admin/description', $user->id)}}" class="btn btn-primary me-1">Read More</button></td>
            </tr>
            @endforeach
           </tbody>

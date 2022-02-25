@@ -36,28 +36,22 @@
         <h4 class="card-title">Users</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
+        <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/requestleave'">
             <span>Request Leave</span>
           </button>
-        </div>
+        </div> -->
         <table class="table datatable">
           <thead>
             <tr>
-             
-              <th>Desc</th>
-            
+              <th>{{$data->name}}</th>
+              <!-- <th>Desc</th> -->
             </tr>
           </thead>
-        
           <tbody>
             <tr>
-          
-         
            <td>{{$data->desc}}</td>
-          
            </tr>
-         
           </tbody>
         </table>
       </div>

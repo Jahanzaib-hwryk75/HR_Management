@@ -24,18 +24,21 @@
               <div class="col-12">
                 <div class="mb-1 row">
                   <div class="col-sm-8 offset-2">
+                    <label for="">Enter Full Name</label>
                     <input type="text" class="form-control" name="name" value="{{$users->name ?? ''}}" placeholder="Enter Fullname" required />
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Enter Your Rank</label>
                     <input type="text" class="form-control" name="rank" value="{{$users->username ?? ''}}" placeholder="Enter Your Rank" required />
                     @error('rank')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Select Leave Type</label>
                     <select class="form-select" id="basicSelect" name="type">
                     <option></option>
                       <option>Sick Leave</option>
@@ -45,14 +48,17 @@
                   </div>
 
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Select Date From</label>
                     <input type="date" class="form-control" name="datestart" value="" placeholder="Enter date" required />
 
                   </div>
 
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Select Date To</label>
                     <input type="date" class="form-control" name="dateend" value="" placeholder="Enter date" required />
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Please Type Leave Description</label>
                     <textarea id="textarea-default" name="desc" placeholder="Textarea" rows="5" wrap="soft" class="form-control" data-v-3bcd05f2=""></textarea>
                     @error('desc')
                     <div class="text-danger">{{ $message }}</div>
