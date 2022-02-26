@@ -51,7 +51,7 @@
               <th>Date End</th>
               <th>Desc</th>
               <th>type</th>
-              <th>Read More</th>
+              <!-- <th>Read More</th> -->
               <th>Accept</th>
               <th>Cancel</th>
             </tr>
@@ -69,7 +69,7 @@
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
            <td>{{$user->type}}</td>
-           <td><a class="btn btn-success" style="height: 45px;" href="">Read More</a></td>
+           <!-- <td><a class="btn btn-success" style="height: 45px;" href="">Read More</a></td> -->
            <td><a class="btn btn-success" style="height: 45px;" href="{{url('admin/leaveedit', $user->id)}}">Accept</a></td>
            <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td>
            </tr>
