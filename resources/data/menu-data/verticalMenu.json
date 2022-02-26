@@ -22,6 +22,45 @@
       "name": "Roles",
       "icon": "user",
       "slug": "roles"
+    },
+    {
+      "url": "admin/projectassign",
+      "name": "Assign Project",
+      "icon": "user",
+      "slug": "roles"
+    },
+    {
+      "url": "admin/leave",
+      "name": "Apply for Leave",
+      "icon": "user",
+      "slug": "roles"
+    },
+  
+    {
+      "url": "#",
+      "name": "Human Resource",
+      "icon": "fas fa-cog",
+      "slug": "#",
+      "role": "admin",
+      "submenu":[
+        {
+          "url": "rewr",
+          "name": "rewr",
+          "icon": "ewrewr",
+          "slug": "wer",
+          "role": "werwe"
+        },
+        {
+          "url": "rewr",
+          "name": "rewr",
+          "icon": "ewrewr",
+          "slug": "wer",
+          "role": "werwe"
+        }
+      ]
     }
+    
+ 
+  
   ]
 }

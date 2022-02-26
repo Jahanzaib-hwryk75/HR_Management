@@ -36,51 +36,22 @@
         <h4 class="card-title">Users</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/adduser'">
-            <span>Add New User</span>
+        <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
+          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/requestleave'">
+            <span>Request Leave</span>
           </button>
-        </div>
+        </div> -->
         <table class="table datatable">
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Username</th>
-              <th>Email</th>
-              <!-- <th>Roles</th> -->
-              <th>Status</th>
-              <th>Actions</th>
+              <th>{{$data->name}}</th>
+              <!-- <th>Desc</th> -->
             </tr>
           </thead>
           <tbody>
-            @foreach($user as $data)
             <tr>
-              <td class="count"></td>
-              <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
-              <td>{{$data->email}}</td>
-              <!-- <td>{{$data->role}}</td> -->
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                   
-                    <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} /> -->
-                  </div>
-                </div>
-              </td>
-              <td class="d-flex">
-                <div>
-                  <a class="dropdown-item" href="/admin/edituser/{{$data->id}}">
-                    <i data-feather="edit-2" class="me-50"></i>
-                  </a>
-                </div>
-                <div>
-                  <button class="btn btn-flat btn-sm remove-user" data-id="{{ $data->id }}" data-action="{{ url('/users/delete',$data->id) }}" onclick="deleteConfirmation({{$data->id}})">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            @endforeach
+           <td>{{$data->desc}}</td>
+           </tr>
           </tbody>
         </table>
       </div>
