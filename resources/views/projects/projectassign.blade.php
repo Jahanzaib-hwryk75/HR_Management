@@ -33,11 +33,11 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h1 class="card-title text-success">Assigned Projects</h1>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
+          <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
             <span>Assign Project</span>
           </button>
         </div>
@@ -46,57 +46,33 @@
             <tr>
               <th>Id</th>
               <th>Username</th>
-              <th>Email</th>
-              <th>Roles</th>
-              <th>Status</th>
+              <th>Project Name</th>
+              <th>Project Details</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-
+          @isset($data)
+          @foreach($data as $data)
             <tr>
-              <td class="count"></td>
-<<<<<<< HEAD:resources/views/timeline/timer.blade.php
-              <td> <img class="rounded-circle" src="" alt="No image" height="30" width="30" style="margin-right:10px"></td>
-              <td></td>
-
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-
-
-=======
-              <td> <img class="rounded-circle" src="{{ asset('profile/'.$data->photo) }}" alt="No image" height="30" width="30" style="margin-right:10px">{{$data->username}}</td>
-              <td>{{$data->email}}</td>
-              <td>{{$data->role}}</td>
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="{{$data->id}}" {{ $data->status ? 'checked' : '' }} />
->>>>>>> 3a4706700ba91635f1554ff4f7bec9bb8850bfca:resources/views/projects/projectassign.blade.php
-                  </div>
-                </div>
-              </td>
+            <td>{{$data->id}}</td>
+              <td>{{$data->username}}</td>
+              <td>{{$data->projectname}}</td>
+              <td>{{$data->projectdetails}}</td>
+              
               <td class="d-flex">
-                <div>
-                  
-                    
-                  </a>
-                </div>
-                <div>
-                  <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="" onclick="">
-
-                  </button>
+                <div>  
                   <button class="dt-button add-new btn btn-danger" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/clockout'">
                     <span>clockout</span>
                   </button>
                   <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/clockin'">
-            <span>clockin</span>
-          </button>
+                  <span>clockin</span>
+                  </button>
                 </div>
               </td>
             </tr>
-
+            @endforeach
+            @endisset
           </tbody>
         </table>
       </div>

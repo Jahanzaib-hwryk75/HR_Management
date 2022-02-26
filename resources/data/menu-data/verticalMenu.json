@@ -35,14 +35,7 @@
       "icon": "user",
       "slug": "roles"
     },
-    {
-      "url": "admin/hr",
-      "name": "HR",
-      "url": "admin/projectassign",
-      "name": "Assign Project",
-      "icon": "user",
-      "slug": "roles"
-    },
+  
     {
       "url": "#",
       "name": "Human Resource",

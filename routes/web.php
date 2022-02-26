@@ -67,7 +67,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-    Route::get('/projectassign', [ProjectController::class, 'projectassign']);
+    Route::get('/projectassign', [ProjectController::class, 'projectstable']);
     Route::get('/assign', [ProjectController::class, 'assign']);
     Route::post('/assign', [ProjectController::class, 'store']);
     

@@ -30,4 +30,8 @@ class ProjectController extends Controller
         $user->save();
         return redirect()->back()->with('message','Project Assigned Successfully');
     }
+    public function projectstable(){
+        $data = Project::orderBy('id' , 'desc')->get();
+        return view('projects.projectassign', compact('data'));
+    }
 }
