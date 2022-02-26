@@ -6,19 +6,20 @@
         <div class="col-md-12 col-12">
             <div class="card">
                 <div class="card-header">
-                @if(session()->has('message'))
-                   <div class="alert alert-success"> 
-                    {{ session()->get('message') }}
-                  </div>
-                  @endif
+               
                     <?php
                     if (isset($users->id) && $users->id != 0) { ?>
                         <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
 
                     <?php } else { ?>
-                        <h4 class="card-title">Add new user</h4>
+                        <h4 class="card-title">Assign Project</h4>
                     <?php }
                     ?>
+                     @if(session()->has('message'))
+                   <div class="alert alert-success"> 
+                    {{ session()->get('message') }}
+                  </div>
+                  @endif
 
                 </div>
                 <div class="card-body">

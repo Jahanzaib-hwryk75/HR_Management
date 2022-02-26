@@ -49,6 +49,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('roles/delete/{id}', [RolesController::class, 'rolesdlt'])->name('rolesadd');
     Route::post('/signout', [AuthenticationController::class, 'logout']);
     Route::get('/status', [AuthenticationController::class, 'status']);
+
+    Route::get('/leave',[EmployController::class,'leave']);
+    Route::get('/leaveform',[EmployController::class,'leaveform']);
     Route::get('/timeline', [timelineController::class, 'timeline']);
     Route::get('/clockin', [timelineController::class, 'clockin']);
     Route::get('/clockout', [timelineController::class, 'clockout']);
@@ -67,7 +70,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-    Route::get('/projectassign', [ProjectController::class, 'projectassign']);
+    Route::get('/projectassign', [ProjectController::class, 'projectstable']);
     Route::get('/assign', [ProjectController::class, 'assign']);
     Route::post('/assign', [ProjectController::class, 'store']);
     
