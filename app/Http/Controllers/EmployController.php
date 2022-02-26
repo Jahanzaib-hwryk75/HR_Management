@@ -48,7 +48,7 @@ class EmployController extends Controller
         $requestsend->type=$request->type;
         $requestsend->datestart=$request->datestart;
         $requestsend->dateend=$request->dateend;
-        $requestsend->status=$request->desc;
+        $requestsend->desc=$request->desc;
         $requestsend->save();
         return redirect()->back()->with('message','data save');
 
