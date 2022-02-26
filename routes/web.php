@@ -5,6 +5,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\EmployController;
 use App\Http\Controllers\User\RolesController;
 use App\Http\Controllers\User\FrontController;
 use App\Http\Controllers\ImageController;
@@ -44,9 +45,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('roles/delete/{id}', [RolesController::class, 'rolesdlt'])->name('rolesadd');
     Route::post('/signout', [AuthenticationController::class, 'logout']);
     Route::get('/status', [AuthenticationController::class, 'status']);
-});
-});
-
+///// Leave Routes
+    Route::get('/leave',[EmployController::class,'leave']);
+    Route::get('/leaveform',[EmployController::class,'leaveform']);
 
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
