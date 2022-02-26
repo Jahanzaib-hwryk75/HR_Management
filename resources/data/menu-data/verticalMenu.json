@@ -38,21 +38,35 @@
   
     {
       "url": "#",
-      "name": "Human Resource",
-      "icon": "fas fa-cog",
+      "name": "Attendce",
+      "icon": "user",
       "slug": "#",
       "role": "admin",
       "submenu":[
         {
           "url": "rewr",
-          "name": "rewr",
+          "name": "Attendce Form",
+          "icon": "user",
+          "slug": "wer",
+          "role": "werwe"
+        },
+        {
+          "url": "rewr",
+          "name": "Mnthly Attendce",
           "icon": "ewrewr",
           "slug": "wer",
           "role": "werwe"
         },
         {
           "url": "rewr",
-          "name": "rewr",
+          "name": "Mnthly Attendce",
+          "icon": "ewrewr",
+          "slug": "wer",
+          "role": "werwe"
+        },
+        {
+          "url": "rewr",
+          "name": "Mnthly Attendce",
           "icon": "ewrewr",
           "slug": "wer",
           "role": "werwe"
