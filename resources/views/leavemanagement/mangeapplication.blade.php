@@ -36,14 +36,14 @@
         <h4 class="card-title">Users</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
+        <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/requestleave'">
             <span>Leave Application</span>
           </button>
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/mangeapplication'">
+          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/requestleave'">
             <span>Mange Application</span>
           </button>
-        </div>
+        </div> -->
         <table class="table datatable">
           <thead>
             <tr>
@@ -57,8 +57,10 @@
               <th>Apply Day</th>
               <th>Approve Day</th>
               <th>Rank</th>
-              
               <th>Desc</th>
+              <th>Delete</th>
+              <th>Accept</th>
+              <th>Cancel</th>
             
               <!-- <th>Read More</th> -->
               <!-- <th>Accept</th>
@@ -85,9 +87,9 @@
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
           
-           <!-- <td><a class="btn btn-success" style="height: 45px;" href="">Read More</a></td> -->
-           <!-- <td><a class="btn btn-success" style="height: 45px;" href="{{url('admin/leaveedit', $user->id)}}">Accept</a></td>
-           <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td> -->
+           <td><a class="btn btn-success" style="height: 45px;" href="/admin/deleteapplication/{{$user->id}}">Delete</a></td>
+           <td><a class="btn btn-success" style="height: 45px;" href="">Accept</a></td>
+           <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td>
            </tr>
            @endforeach
           </tbody>
@@ -96,7 +98,7 @@
     </div>
   </div>
 </div>
-<!-- Basic Tables end -->
+<!-- Basic Tables end-->
 @endsection
 
 @section('vendor-script')

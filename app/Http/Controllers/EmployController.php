@@ -68,6 +68,16 @@ class EmployController extends Controller
        $leavestatus->status='Accept';
        return redirect()->back();
     }
+    public function mangeapplication(){
+        $user = leave::all();
+        return view('/leavemanagement.mangeapplication', compact('user'));
+    }
+    public function deleteapplication($id){
+       
+        $user=leave::find($id);
+        $user->delete();
+        return redirect()->back();
+    }
    
    
 }
