@@ -83,8 +83,13 @@ class EmployController extends Controller
         return view('/leavemanagement.editapplications',compact('user'));
     }
    public function updateapplications(Request $request, $id){
-    $user = leave::where('id', $id)->update($request->except('_token'));
-       return redirect('/leavemanagement.mangeapplication');
+    //    $user=leave::find($id);
+    //    $user->approvedstartdate=$request->approvedstartdate;
+    //    $user->approvedenddate=$request->approvedenddate;
+    //    $user->status=$request->status;
+    //    $user->update();
+        $user = leave::where('id', $id)->update($request->except('_token'));
+       return redirect()->back();
    }
    
 }
