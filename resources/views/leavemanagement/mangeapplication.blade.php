@@ -55,9 +55,10 @@
               <th>Approve Start Date</th>
               <th>Approve End Date</th>
               <th>Status</th>
-              <th>Delete</th>
               <th>Accept</th>
-              <th>Cancel</th>
+              <th>Delete</th>
+              
+             
             </tr>
           </thead>
           @foreach($user as $user)
@@ -80,10 +81,9 @@
            <td>{{Str::limit($user->desc, 10)}} -->
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
-          
-           <td><a class="btn btn-success" style="height: 45px;" href="/admin/deleteapplication/{{$user->id}}">Delete</a></td>
            <td><a class="btn btn-success" style="height: 45px;" href="/admin/editapplication/{{$user->id}}">Accept</a></td>
-           <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td>
+           <td><a class="btn btn-success" style="height: 45px;" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">Delete</a></td>
+          
            </tr>
            @endforeach
           </tbody>
@@ -143,15 +143,15 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
         $.ajax({
-          type: 'POST',
-          url: "{{url('admin/user/delete')}}/" + id,
+          type: 'GET',
+          url: "{{url('admin/deleteapplication')}}/" + id,
           data: {
             _token: CSRF_TOKEN
           },
           dataType: 'JSON',
           success: function(results) {
 
-            if (results.status === true) {
+        
               swal.fire({
                 title: "Done",
                 icon: 'success',
@@ -160,16 +160,8 @@
               }).then(function() {
                 location.reload();
               });
-            } else {
-              swal.fire({
-                title: "Ops...",
-                icon: 'error',
-                text: "Somthing Went Wrong",
-                type: "error"
-              }).then(function() {
-                location.reload();
-              });
-            }
+           
+            
           }
         });
 

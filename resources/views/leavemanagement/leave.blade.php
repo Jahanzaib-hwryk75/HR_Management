@@ -54,15 +54,9 @@
               <th>Date End</th>
               <th>Approve Start Date</th>
               <th>Approve End Date</th>
-              <th>Apply Day</th>
-              <th>Approve Day</th>
+              <th>Status</th>
               <th>Rank</th>
-              
               <th>Desc</th>
-            
-              <!-- <th>Read More</th> -->
-              <!-- <th>Accept</th>
-              <th>Cancel</th> -->
             </tr>
           </thead>
           @foreach($user as $user)
@@ -73,21 +67,12 @@
            <td>{{$user->type}}</td>
            <td>{{$user->datestart}}</td>
            <td>{{$user->dateend}}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-         
+           <td>{{$user->approvedstartdate}}</td>
+           <td>{{$user->approvedenddate}}</td>
+           <td>{{$user->status}}</td>
            <td>{{$user->rank}}</td>
-           
-         
            <td>{{Str::limit($user->desc, 10)}}
-             <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
-          
-           <!-- <td><a class="btn btn-success" style="height: 45px;" href="">Read More</a></td> -->
-           <!-- <td><a class="btn btn-success" style="height: 45px;" href="{{url('admin/leaveedit', $user->id)}}">Accept</a></td>
-           <td><a class="btn btn-success" style="height: 45px;" href="">Cancel</a></td> -->
            </tr>
            @endforeach
           </tbody>

@@ -18,7 +18,7 @@
         </div>
         <div class="card-body">
 
-          <form class="form form-horizontal" action="{{ url('/admin/updateapplications')}}" method="post" enctype="multipart/form-data">
+          <form class="form form-horizontal" action="{{ url('/admin/updateapplications/'.$user->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col-12">
@@ -69,6 +69,7 @@
                     <option></option>
                       <option>Approved</option>
                       <option>Decline</option>
+                      <option>Padding</option>
                     </select> 
                   </div>
 

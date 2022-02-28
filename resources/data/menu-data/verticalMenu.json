@@ -27,13 +27,13 @@
       "url": "admin/projectassign",
       "name": "Assign Project",
       "icon": "user",
-      "slug": "roles"
+      "slug": "projectassign"
     },
     {
       "url": "admin/leave",
       "name": "Apply for Leave",
       "icon": "user",
-      "slug": "roles"
+      "slug": "leave"
     },
   
     {
