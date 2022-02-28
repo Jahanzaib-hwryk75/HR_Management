@@ -10,19 +10,19 @@ class timelineController extends Controller
 {
     function timeline(){
         $data=Time::all();
-        return view('timeline.timer',compact('data'));
+        return  view('timeline.timer',compact('data'));
     }
     function clockin(){
         $data = new Time();
         $data->checkin = Carbon::now();
         $data->save();
-        return view('timeline.timer');
+        return redirect('/timeline.timer')->back()-with('message','Project Started');
     }
     function clockout(){
         $data = new Time();
         $data->checkout = Carbon::now();
         $data->save();
-        
+        return redirect('/timeline.timer')->back()-with('message','Project is not Started');
     }
     
 }
