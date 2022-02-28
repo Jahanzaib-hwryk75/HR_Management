@@ -10,7 +10,7 @@ class DashboardController extends Controller
   // Dashboard - Analytics
   public function dashboardAnalytics()
   {
-    $count = leave::all()->count();
+   
     $pageConfigs = ['pageHeader' => false];
 
     return view('/content/dashboard/dashboard-analytics', ['pageConfigs' => $pageConfigs]);
