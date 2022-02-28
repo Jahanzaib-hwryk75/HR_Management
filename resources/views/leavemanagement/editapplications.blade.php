@@ -11,55 +11,71 @@
             <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
 
           <?php } else { ?>
-            <h4 class="card-title">Leave Form</h4>
+            <h4 class="card-title">Update</h4>
           <?php }
           ?>
 
         </div>
         <div class="card-body">
 
-          <form class="form form-horizontal" action="{{ url('/admin/requestsends')}}" method="post" enctype="multipart/form-data">
+          <form class="form form-horizontal" action="{{ url('/admin/updateapplications')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
               <div class="col-12">
                 <div class="mb-1 row">
                   <div class="col-sm-8 offset-2">
                     <label for="">Enter Full Name</label>
-                    <input type="text" class="form-control" name="name" value="{{$users->name ?? ''}}" placeholder="Enter Fullname" required />
+                    <input type="text" readonly autocomplete="off" class="form-control" name="name" value="{{$user->name ?? ''}}" placeholder="Enter Fullname" required />
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Enter Your Rank</label>
-                    <input type="text" class="form-control" name="rank" value="{{$users->username ?? ''}}" placeholder="Enter Your Rank" required />
+                    <input type="text" readonly autocomplete="off" class="form-control" name="rank" value="{{$user->rank ?? ''}}" placeholder="Enter Your Rank" required />
                     @error('rank')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
-                  <label for="">Select Leave Type</label>
-                    <select class="form-select" id="basicSelect" name="type">
-                    <option></option>
-                      <option>Sick Leave</option>
-                      <option>Marriage Leave</option>
-                      <option>Earned Leave</option>
-                    </select> 
+                  <label for="">Leave Type</label>
+                  <input type="text" readonly autocomplete="off" class="form-control" name="rank" value="{{$user->type ?? ''}}" placeholder="Enter Your Rank" required />
+                     
+                     
+                  
                   </div>
 
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Select Date From</label>
-                    <input type="date" class="form-control" name="datestart" value="" placeholder="Enter date" required />
+                    <input type="date" readonly autocomplete="off" value="{{$user->datestart ?? ''}}" class="form-control" name="datestart" placeholder="Enter date" required />
 
                   </div>
 
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Select Date To</label>
-                    <input type="date" class="form-control" name="dateend" value="" placeholder="Enter date" required />
+                    <input type="date" readonly autocomplete="off" class="form-control" name="dateend" value="{{$user->dateend ?? ''}}" placeholder="Enter date" required />
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Approved Start Date</label>
+                    <input type="date" class="form-control" name="approvedstartdate" required />
+                  </div>
+                  <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Approved End Date</label>
+                    <input type="date" class="form-control" name="approvedenddate" required />
+                  </div>
+                  <div class="col-sm-8 offset-2 mt-1">
+                  <label for="">Select Status</label>
+                    <select class="form-select" id="basicSelect" name="status">
+                    <option></option>
+                      <option>Approved</option>
+                      <option>Decline</option>
+                    </select> 
+                  </div>
+
+                  <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Please Type Leave Description</label>
-                    <textarea id="textarea-default" name="desc" placeholder="Textarea" rows="5" wrap="soft" class="form-control" data-v-3bcd05f2=""></textarea>
+                  <input type="text" readonly autocomplete="off" class="form-control" name="rank" value="{{$user->desc ?? ''}}" placeholder="Enter Your Rank" required />
+                    <!-- <textarea id="textarea-default" readonly autocomplete="off" name="desc"  placeholder="{{$user->desc}}" rows="5"  class="form-control" data-v-3bcd05f2=""></textarea> -->
                     @error('desc')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror

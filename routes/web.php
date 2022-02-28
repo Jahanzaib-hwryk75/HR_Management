@@ -59,12 +59,14 @@ Route::group(['prefix' => 'admin'], function () {
     // Leave Mangement
     Route::get('/leave',[EmployController::class,'leave']);
     Route::get('/requestleave',[EmployController::class,'requestleave']);
-    Route::post('/requestsend',[EmployController::class,'requestsend']);
+    Route::post('/requestsends',[EmployController::class,'requestsends']);
     Route::get('/description/{id}',[EmployController::class,'description']);
-    Route::get('/leaveedit{id}',[EmployController::class,'leaveedit']);
-    Route::post('/leaveupdate{id}',[EmployController::class,'leaveupdate']);
+    // Route::get('/leaveedit{id}',[EmployController::class,'leaveedit']);
+    // Route::post('/leaveupdate{id}',[EmployController::class,'leaveupdate']);
     Route::get('mangeapplication',[EmployController::class,'mangeapplication']);
     Route::get('/deleteapplication/{id}',[EmployController::class,'deleteapplication']);
+    Route::get('/editapplication/{id}',[EmployController::class,'editapplication']);
+    Route::post('/updateapplications/{id}',[EmployController::class,'updateapplications']);
 
    
 

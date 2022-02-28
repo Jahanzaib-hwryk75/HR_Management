@@ -14,6 +14,11 @@ class leave extends Model
         'type',
         'datestart',
         'dateend',
-        'desc'
+        'desc',
+        'status',
+        'approvedstartdate',
+        'approvedenddate',
+        'applyday',
+        'approvedday'
     ];
 }

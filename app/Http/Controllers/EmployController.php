@@ -32,7 +32,7 @@ class EmployController extends Controller
         // ]);
         return view('/leavemanagement.requestleave');
     }
-    public function requestsend(Request $request){
+    public function requestsends(Request $request){
         
         $request->validate([
             'name'=>'required',
@@ -78,6 +78,18 @@ class EmployController extends Controller
         $user->delete();
         return redirect()->back();
     }
-   
+    public function editapplication($id){
+        $user=leave::find($id);
+        return view('/leavemanagement.editapplications',compact('user'));
+    }
+   public function updateapplications(Request $request, $id){
+    //    $user=leave::find($id);
+    //    $user->approvedstartdate=$request->approvedstartdate;
+    //    $user->approvedenddate=$request->approvedenddate;
+    //    $user->status=$request->status;
+    //    $user->update();
+        $user = leave::where('id', $id)->update($request->except('_token'));
+       return redirect()->back();
+   }
    
 }
