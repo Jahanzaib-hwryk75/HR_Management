@@ -45,10 +45,13 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Username</th>
               <th>Project Name</th>
-              <th>Project Details</th>
-              <th>Actions</th>
+              <th>Client Name</th>
+              <th>Project Lead</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Project Duration</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
