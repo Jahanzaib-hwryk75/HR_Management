@@ -9,7 +9,8 @@ use App\Models\Time;
 class timelineController extends Controller
 {
     function timeline(){
-        return view('timeline.timer');
+        $data=Time::all();
+        return view('timeline.timer',compact('data'));
     }
     function clockin(){
         $data = new Time();
@@ -21,7 +22,7 @@ class timelineController extends Controller
         $data = new Time();
         $data->checkout = Carbon::now();
         $data->save();
-        return view('timeline.timer');
+        
     }
     
 }
