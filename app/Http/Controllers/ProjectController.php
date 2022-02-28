@@ -19,14 +19,20 @@ class ProjectController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'username' => 'required',
             'projectname' => 'required',
-            'projectdetails' => 'required'
+            'clientname' => 'required',
+            'projectlead' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'projectduration' => 'required'
         ]);
         $user = new Project();
-        $user->username = $request->username;
         $user->projectname = $request->projectname;
-        $user->projectdetails = $request->projectdetails;
+        $user->clientname = $request->clientname;
+        $user->projectlead = $request->projectlead;
+        $user->startdate = $request->startdate;
+        $user->enddate = $request->enddate;
+        $user->projectduration = $request->projectduration;
         $user->save();
         return redirect()->back()->with('message','Project Assigned Successfully');
     }

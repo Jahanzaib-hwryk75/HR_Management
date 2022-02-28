@@ -5,23 +5,16 @@
     <div class="row">
         <div class="col-md-12 col-12">
             <div class="card">
-                <div class="card-header">
-               
-                    <?php
-                    if (isset($users->id) && $users->id != 0) { ?>
-                        <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
+                <!-- <div class="card-header">
 
-                    <?php } else { ?>
-                        <h4 class="card-title">Assign Project</h4>
-                    <?php }
-                    ?>
-                     @if(session()->has('message'))
-                   <div class="alert alert-success"> 
-                    {{ session()->get('message') }}
-                  </div>
-                  @endif
+                   
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
-                </div>
+                </div> -->
                 <div class="card-body">
                     <?php
                     if (isset($users->id) && $users->id != 0) {
@@ -30,34 +23,125 @@
                         $url = url('/admin/user/add');
                     }
                     ?>
-                    <form class="form form-horizontal" action="#" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mb-1 row">
-                                <div class="col-sm-8 offset-2 mt-1">
-                                        <select class="form-select" id="basicSelect" name="username">
-                                        <option>Select User</option>
-                                            @isset($data))
-                                            @foreach($data as $data)
-                                            <option>{{$data->username}}</option>
-                                            @endforeach
-                                            @endisset
-                                        </select>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-bd lobidrag">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <span class="title"> Create Project</span>
                                     </div>
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="projectname" value="" placeholder="Project Name" required />
-                                    </div>
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="projectdetails" value="" placeholder="Project Details" required />
-                                    </div> 
                                 </div>
-                            </div>
-                            <div class="col-sm-8 offset-sm-5">
-                                    <button type="submit" class="btn btn-success me-1">Assign</button> 
+                                <form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                    <div class="panel-body">
+
+                                        <div class="row">
+
+                                            <div class="col-sm-6">
+
+
+
+                                                <div class="form-group row">
+                                                    <label for="project_name" class="col-sm-3 col-form-label">
+                                                        Project Name<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mt-2">
+                                                    <label for="client" class="col-sm-3 col-form-label">
+                                                        Client<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+                                                        <div class="row">
+                                                            <div class="col-sm-9">
+                                                                <input type="text" name="client" id="client" class="form-control"placeholder="Client Name or Email">
+                                                            </div>
+                                                            <div class="col-sm-2">
+                                                                <a href="#"  class="btn btn-success">Add Client</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="project_lead" class="col-sm-3 col-form-label">
+                                                        Project Lead<i class="text-danger">*</i></label>
+                                                        <div class="col-sm-9">
+                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
+                                                        Team Members<i class="text-danger">*</i></label>
+                                                        <div class="col-sm-9">
+                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="approximate_tasks" class="col-sm-3 col-form-label">
+                                                        Approximate Tasks<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+
+                                                        <input type="number" name="approximate_tasks" class="form-control" required="" placeholder="Approximate Tasks" autocomplete="off">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="summary" class="col-sm-3 col-form-label">
+                                                        Summary<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+
+                                                        <textarea class="form-control" required="" name="summary" id="summary" rows="4" placeholder="Summary" tabindex="10" autocomplete="off"></textarea>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="project_start_date" class="col-sm-3 col-form-label">
+                                                        Start Date<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+
+                                                        <input type="text" name="project_start_date" class="form-control datepicker" required="" placeholder="Project start date" autocomplete="off">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+
+                                                    <label for="project_duration" class="col-sm-3 col-form-label">
+                                                        Project Duration<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+
+                                                        <input type="number" name="project_duration" class="form-control" required="" placeholder="In Days" autocomplete="off">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group form-group-margin text-right">
+                                                    <button type="reset" class="btn btn-primary w-md m-b-5" autocomplete="off">Reset</button>
+                                                    <button type="button" onclick="alert('Your Are In Demo Mode')" class="btn btn-success w-md m-b-5" autocomplete="off">Add</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+
+
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,4 +149,3 @@
 </section>
 
 @endsection
-
