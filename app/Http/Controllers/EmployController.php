@@ -19,6 +19,7 @@ class EmployController extends Controller
     public function leave()
     {
         $user = leave::all();
+        
         return view('/leavemanagement.leave', compact('user'));
     }
 

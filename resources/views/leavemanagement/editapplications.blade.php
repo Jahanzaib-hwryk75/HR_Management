@@ -73,10 +73,10 @@
                     </select> 
                   </div>
 
+                  
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Please Type Leave Description</label>
-                  <input type="text" readonly autocomplete="off" class="form-control" name="rank" value="{{$user->desc ?? ''}}" placeholder="Enter Your Rank" required />
-                    <!-- <textarea id="textarea-default" readonly autocomplete="off" name="desc"  placeholder="{{$user->desc}}" rows="5"  class="form-control" data-v-3bcd05f2=""></textarea> -->
+                    <textarea id="textarea-default" name="desc" placeholder="Textarea" rows="5" wrap="soft" class="form-control ckeditor" data-v-3bcd05f2="">{{$user->desc ?? ''}}</textarea>
                     @error('desc')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -140,4 +140,10 @@
 @section('page-script')
 <!-- Page js files -->
 <script src="{{ asset(mix('js/scripts/forms/form-file-uploader.js')) }}"></script>
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection
