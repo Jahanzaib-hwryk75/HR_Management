@@ -53,19 +53,19 @@
                                                     <div class="col-sm-9">
                                                         <div class="row">
                                                             <div class="col-sm-9">
-                                                                <input type="text" name="client" id="client" class="form-control"placeholder="Client Name or Email">
+                                                                <input type="text" name="client" id="client" class="form-control" placeholder="Client Name or Email">
                                                             </div>
                                                             <div class="col-sm-2">
-                                                                <a href="#"  class="btn btn-success">Add Client</a>
+                                                                <button type="button" class="btn btn-success">Add Client</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
+                                                <div class="form-group row mt-2">
                                                     <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Project Lead<i class="text-danger">*</i></label>
-                                                        <div class="col-sm-9">
+                                                    <div class="col-sm-9">
                                                         <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
                                                     </div>
 
@@ -73,62 +73,39 @@
 
                                                 <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Team Members<i class="text-danger">*</i></label>
-                                                        <div class="col-sm-9">
-                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-
-                                                    <label for="approximate_tasks" class="col-sm-3 col-form-label">
-                                                        Approximate Tasks<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-
-                                                        <input type="number" name="approximate_tasks" class="form-control" required="" placeholder="Approximate Tasks" autocomplete="off">
-
+                                                        <input type="text" name="project_name" class="form-control" placeholder="Team Members">
                                                     </div>
-
                                                 </div>
-
-                                                <div class="form-group row">
-
-                                                    <label for="summary" class="col-sm-3 col-form-label">
-                                                        Summary<i class="text-danger">*</i></label>
-                                                    <div class="col-sm-9">
-
-                                                        <textarea class="form-control" required="" name="summary" id="summary" rows="4" placeholder="Summary" tabindex="10" autocomplete="off"></textarea>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="form-group row">
-
-                                                    <label for="project_start_date" class="col-sm-3 col-form-label">
+                                                <div class="form-group row"> <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Start Date<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-
-                                                        <input type="text" name="project_start_date" class="form-control datepicker" required="" placeholder="Project start date" autocomplete="off">
-
+                                                        <input type="date" class="form-control" name="datestart" />
                                                     </div>
-
                                                 </div>
-
-                                                <div class="form-group row">
-
+                                                <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
+                                                        End Date<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="date" class="form-control" name="datestart" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row mt-2">
                                                     <label for="project_duration" class="col-sm-3 col-form-label">
                                                         Project Duration<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-
-                                                        <input type="number" name="project_duration" class="form-control" required="" placeholder="In Days" autocomplete="off">
-
+                                                        <input type="number" min="1" max="5" name="project_duration" class="form-control" placeholder="In Days">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="summary" class="col-sm-3 col-form-label">
+                                                        Summary<i class="text-danger">*</i></label>
+                                                    <div class="col-sm-9"> <textarea class="form-control" required="" name="summary" id="summary" rows="4" placeholder="Summary" tabindex="10" autocomplete="off"></textarea>
                                                     </div>
 
                                                 </div>
-
-                                                <div class="form-group form-group-margin text-right">
-                                                    <button type="reset" class="btn btn-primary w-md m-b-5" autocomplete="off">Reset</button>
-                                                    <button type="button" onclick="alert('Your Are In Demo Mode')" class="btn btn-success w-md m-b-5" autocomplete="off">Add</button>
+                                                <div class="form-group mt-2">
+                                                    <button type="submit" class="btn btn-danger me-1">Reset</button>
+                                                    <button type="submit" class="btn btn-success me-1">Assign new</button>
                                                 </div>
 
                                             </div>
