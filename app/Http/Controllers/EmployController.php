@@ -76,20 +76,25 @@ class EmployController extends Controller
        
         $user=leave::find($id);
         $user->delete();
-        return redirect()->back();
+        if ($user) {
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
+        // return redirect()->back();
     }
     public function editapplication($id){
         $user=leave::find($id);
         return view('/leavemanagement.editapplications',compact('user'));
     }
    public function updateapplications(Request $request, $id){
-    //    $user=leave::find($id);
-    //    $user->approvedstartdate=$request->approvedstartdate;
-    //    $user->approvedenddate=$request->approvedenddate;
-    //    $user->status=$request->status;
-    //    $user->update();
-        $user = leave::where('id', $id)->update($request->except('_token'));
-       return redirect()->back();
+       $user=leave::find($id);
+       $user->approvedstartdate=$request->approvedstartdate;
+       $user->approvedenddate=$request->approvedenddate;
+       $user->status=$request->status;
+       $user->save();
+        // $user = leave::where('id', $id)->update($request->except('_token'));
+       return redirect('/admin/mangeapplication');
    }
    
 }
