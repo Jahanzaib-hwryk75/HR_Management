@@ -57,16 +57,16 @@
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Approved Start Date</label>
-                    <input type="date" class="form-control" name="approvedstartdate" required />
+                    <input type="date" class="form-control" name="approvedstartdate" value="{{$user->approvedstartdate ?? ''}}" required />
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Approved End Date</label>
-                    <input type="date" class="form-control" name="approvedenddate" required />
+                    <input type="date" class="form-control" name="approvedenddate" value="{{$user->approvedenddate ?? ''}}" required />
                   </div>
                   <div class="col-sm-8 offset-2 mt-1">
                   <label for="">Select Status</label>
                     <select class="form-select" id="basicSelect" name="status">
-                    <option></option>
+                    <option>{{$user->status ?? ''}}</option>
                       <option>Approved</option>
                       <option>Decline</option>
                       <option>Padding</option>
