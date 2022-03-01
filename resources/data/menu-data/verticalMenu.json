@@ -35,6 +35,12 @@
       "icon": "user",
       "slug": "leave"
     },
+    {
+      "url": "admin/addemployee",
+      "name": "Add Employee",
+      "icon": "user",
+      "slug": "leave"
+    },
   
     {
       "url": "#",
