@@ -97,5 +97,13 @@ class EmployController extends Controller
         // $user = leave::where('id', $id)->update($request->except('_token'));
        return redirect('/admin/mangeapplication');
    }
+   public function addemployee(){
+    $breadcrumbs = [
+        ['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Forms"], ['name' => "Form Wizard"]
+    ];
+    return view('/employee.addemployee', [
+        'breadcrumbs' => $breadcrumbs
+    ]);
+   }
    
 }
