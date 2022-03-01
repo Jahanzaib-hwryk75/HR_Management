@@ -33,13 +33,10 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h1 class="card-title text-success">Assigned Projects</h1>
+        <h1 class="card-title text-success">Clients Table</h1>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
-            <span>Assign Project</span>
-          </button>
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addclient'">
             <span>Add Clients</span>
           </button>
@@ -48,13 +45,11 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Project Name</th>
               <th>Client Name</th>
-              <th>Project Lead</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Project Duration</th>
-              <th>Action</th>
+              <th>Company</th>
+              <th>Email Address</th>
+              <th>Country</th>
+              <th>Address</th>
             </tr>
           </thead>
           <tbody>
@@ -62,16 +57,11 @@
           @foreach($data as $data)
             <tr>
             <td>{{$data->id}}</td>
-              <td>{{$data->projectname}}</td>
               <td>{{$data->clientname}}</td>
-              <td>{{$data->projectlead}}</td>
-              <td>{{$data->startdate}}</td>
-              <td>{{$data->enddate}}</td>
-              <td>{{$data->projectduration}}</td>
-              <td class="d-flex">
-                <button class="btn btn-success col-sm-6">Clock In</button>
-                <button class="btn btn-danger col-sm-6">Clock Out</button>
-              </td>
+              <td>{{$data->company}}</td>
+              <td>{{$data->email}}</td>
+              <td>{{$data->country}}</td>
+              <td>{{$data->address}}</td>
             </tr>
             @endforeach
             @endisset

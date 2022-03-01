@@ -79,6 +79,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/assign', [ProjectController::class, 'store']);
     Route::get('/addclient', [ProjectController::class, 'addclient']);
     Route::post('/clientsave', [ProjectController::class, 'clientsave']);
+    Route::get('/clients', [ProjectController::class, 'clientstable']);
     
 });
 });

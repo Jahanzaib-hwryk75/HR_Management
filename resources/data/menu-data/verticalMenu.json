@@ -24,10 +24,25 @@
       "slug": "roles"
     },
     {
-      "url": "admin/projectassign",
-      "name": "Assign Project",
+      "url": "#",
+      "name": "Project Management",
       "icon": "user",
-      "slug": "projectassign"
+      "slug": "projectassign",
+      "submenu":[
+        {
+        "url": "admin/projectassign",
+        "name": "Projects",
+        "icon": "",
+        "slug": "projectassign"
+      },
+      {
+        "url": "admin/clients",
+        "name": "Clients",
+        "icon": "",
+        "slug": "clients"
+      }
+        
+      ]
     },
     {
       "url": "admin/leave",

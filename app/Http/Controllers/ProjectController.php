@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
 use App\Models\Client;
+use Carbon\Carbon;
 
 class ProjectController extends Controller
 {
@@ -60,5 +61,19 @@ class ProjectController extends Controller
         $user->address = $request->address;
         $user->save();
         return redirect()->back()->with('message','Client Add Successfully');
+    }
+    public function clientstable(){
+        $data = Client::all();
+        return view('/projects.ClientsTable', compact('data'));
+    }
+    public function checkin(){
+        $data = new Project();
+        $data->checkin = Carbon::now();
+        $data->save();
+    }
+    public function checkout(){
+        $data = new Project();
+        $data->checkout = Carbon::now();
+        $data->save();
     }
 }
