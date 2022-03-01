@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div> -->
                                                 <div class="form-group mt-2">
-                                                    <!-- <button type="reset" class="btn btn-danger me-1">Reset</button> -->
+                                                    <button type="reset" class="btn btn-danger me-1">Reset</button>
                                                     <button type="submit" class="btn btn-success me-1" name="">Submit</button>
                                                 </div>
                                             </div>
