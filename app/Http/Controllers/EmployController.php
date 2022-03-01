@@ -93,7 +93,7 @@ class EmployController extends Controller
        $user->approvedstartdate=$request->approvedstartdate;
        $user->approvedenddate=$request->approvedenddate;
        $user->status=$request->status;
-       $user->save();
+       $user->update();
         // $user = leave::where('id', $id)->update($request->except('_token'));
        return redirect('/admin/mangeapplication');
    }
