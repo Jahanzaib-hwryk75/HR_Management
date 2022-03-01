@@ -40,6 +40,9 @@
           <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
             <span>Assign Project</span>
           </button>
+          <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addclient'">
+            <span>Add Clients</span>
+          </button>
         </div>
         <table class="table datatable">
           <thead>
@@ -51,7 +54,7 @@
               <th>Start Date</th>
               <th>End Date</th>
               <th>Project Duration</th>
-              <th>Status</th>
+              <!-- <th>Status</th> -->
             </tr>
           </thead>
           <tbody>
@@ -59,11 +62,14 @@
           @foreach($data as $data)
             <tr>
             <td>{{$data->id}}</td>
-              <td>{{$data->username}}</td>
               <td>{{$data->projectname}}</td>
-              <td>{{$data->projectdetails}}</td>
+              <td>{{$data->clientname}}</td>
+              <td>{{$data->projectlead}}</td>
+              <td>{{$data->startdate}}</td>
+              <td>{{$data->enddate}}</td>
+              <td>{{$data->projectduration}}</td>
               
-              <td class="d-flex">
+              <!-- <td class="d-flex">
                 <div>  
                   <button class="dt-button add-new btn btn-danger" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/clockout'">
                     <span>clockout</span>
@@ -72,7 +78,7 @@
                   <span>clockin</span>
                   </button>
                 </div>
-              </td>
+              </td> -->
             </tr>
             @endforeach
             @endisset

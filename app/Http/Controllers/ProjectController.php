@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
+use App\Models\Client;
 
 class ProjectController extends Controller
 {
@@ -14,7 +15,7 @@ class ProjectController extends Controller
         return view('/projects.projectassign', compact('user'));
     }
     public function assign(){
-        $data = User::all();
+        $data = Client::all();
         return view('/projects.assign', compact('data'));
     }
     public function store(Request $request){
@@ -39,5 +40,25 @@ class ProjectController extends Controller
     public function projectstable(){
         $data = Project::orderBy('id' , 'desc')->get();
         return view('projects.projectassign', compact('data'));
+    }
+    public function addclient(){
+        return view('/projects.clients');
+    }
+    public function clientsave(Request $request){
+        $request->validate([
+            'clientname' => 'required',
+            'country' => 'required',
+            'email' => 'required' ,
+            'company' => 'required',
+            'address' => 'required'
+        ]);
+        $user = new Client();
+        $user->clientname = $request->clientname;
+        $user->country = $request->country;
+        $user->email = $request->email;
+        $user->company = $request->company;
+        $user->address = $request->address;
+        $user->save();
+        return redirect()->back()->with('message','Client Add Successfully');
     }
 }
