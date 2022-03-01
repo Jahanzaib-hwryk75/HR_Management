@@ -27,24 +27,25 @@
                         <div class="col-sm-12">
                             <div class="panel panel-bd lobidrag">
                                 <div class="panel-heading">
+                                @if(session()->has('message'))
+                   <div class="alert alert-success"> 
+                    {{ session()->get('message') }}
+                  </div>
+                  @endif
                                     <div class="panel-title">
                                         <span class="title"> Create Project</span>
                                     </div>
                                 </div>
-                                <form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                <form action="" method="post">
                                     <div class="panel-body">
 
                                         <div class="row">
 
-                                            <div class="col-sm-6">
-
-
-
-                                                <div class="form-group row">
+                                            <div class="col-sm-6"> <div class="form-group row">
                                                     <label for="project_name" class="col-sm-3 col-form-label">
                                                         Project Name<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
+                                                        <input type="text" name="projectname" class="form-control" required="" placeholder="Project Name" autocomplete="off">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-2">
@@ -66,34 +67,34 @@
                                                     <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Project Lead<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="project_name" class="form-control" required="" placeholder="Project Name" autocomplete="off">
+                                                        <input type="text" name="projectlead" class="form-control" required="" placeholder="Project Name" autocomplete="off">
                                                     </div>
 
                                                 </div>
 
-                                                <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
+                                                <!-- <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Team Members<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="project_name" class="form-control" placeholder="Team Members">
+                                                        <input type="text" name="teammembers" class="form-control" placeholder="Team Members">
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group row"> <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Start Date<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="date" class="form-control" name="datestart" />
+                                                        <input type="date" class="form-control" name="startdate" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
                                                         End Date<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="date" class="form-control" name="datestart" />
+                                                        <input type="date" class="form-control" name="enddate" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mt-2">
                                                     <label for="project_duration" class="col-sm-3 col-form-label">
                                                         Project Duration<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="number" min="1" max="5" name="project_duration" class="form-control" placeholder="In Days">
+                                                        <input type="number" min="1" max="5" name="projectduration" class="form-control" placeholder="In Days">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -104,8 +105,8 @@
 
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <button type="submit" class="btn btn-danger me-1">Reset</button>
-                                                    <button type="submit" class="btn btn-success me-1">Assign new</button>
+                                                    <button type="reset" class="btn btn-danger me-1">Reset</button>
+                                                    <button type="submit" class="btn btn-success me-1">Submit</button>
                                                 </div>
 
                                             </div>
