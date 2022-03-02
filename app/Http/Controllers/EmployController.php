@@ -105,5 +105,14 @@ class EmployController extends Controller
         'breadcrumbs' => $breadcrumbs
     ]);
    }
+   public function addleavetype(){
+       return view('/employee.addleavetype');
+   }
+   public function addposition(){
+       return view('/employee.addposition');
+   }
+   public function adddutytype(){
+       return view('/employee.adddutytype');
+   }
    
 }

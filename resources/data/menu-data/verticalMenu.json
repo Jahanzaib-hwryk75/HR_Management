@@ -93,9 +93,46 @@
           "role": "werwe"
         }
       ]
+    },
+    {
+      "url": "#",
+      "name": "General Setting",
+      "icon": "user",
+      "slug": "#",
+      "role": "admin",
+      "submenu":[
+        {
+          "url": "admin/addleavetype",
+          "name": "Add Leave Type",
+          "icon": "user",
+          "slug": "leave",
+          "role": ""
+        },
+        {
+          "url": "admin/addposition",
+          "name": "Add Position",
+          "icon": "user",
+          "slug": "leave",
+          "role": ""
+        },
+        {
+          "url": "admin/adddutytype",
+          "name": "Add Duty Type",
+          "icon": "user",
+          "slug": "leave",
+          "role": ""
+        },
+        {
+          "url": "admin/addcountry",
+          "name": "Add Country Name",
+          "icon": "user",
+          "slug": "leave",
+          "role": ""
+        }
+        
+      ]
     }
-    
- 
-  
+
   ]
 }
+
