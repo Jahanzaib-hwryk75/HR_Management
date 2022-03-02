@@ -11,21 +11,21 @@
                         <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
 
                     <?php } else { ?>
-                        <h4 class="card-title">Add Country Name</h4>
+                        <h4 class="card-title">Add Country</h4>
                     <?php }
                     ?>
 
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{ url('/admin/saveleavetype')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{ url('/admin/savecountry')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
-                                        <label for="addleavetype">Add Leave Type</label>
-                                        <input type="text" class="form-control" id="addleavetype" name="addleavetype" value="{{$users->fullname ?? ''}}" placeholder="Enter Country Name" required />
+                                        <label for="addcountry">Add Country</label>
+                                        <input type="text" class="form-control" id="addcountry" name="addcountry" value="{{$users->fullname ?? ''}}" placeholder="Enter Country" required />
                                         @error('countryname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror

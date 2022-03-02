@@ -69,6 +69,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/addleavetype',[EmployController::class,'addleavetype']);
     Route::get('/addposition',[EmployController::class,'addposition']);
     Route::get('/adddutytype',[EmployController::class,'adddutytype']);
+    Route::get('/addcountry',[EmployController::class,'addcountry']);
+    Route::post('/savecountry',[EmployController::class,'savecountry']);
 
    
 

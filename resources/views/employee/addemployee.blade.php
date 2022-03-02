@@ -125,8 +125,8 @@
               <input type="text" name="alternativephone" value="03036153706" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
             </div>
             <div class="mb-1 col-md-6">
-              <label for="selectleavetype">Select Leave Type</label>
-              <select class="form-select" id="selectleavetype" name="selectleavetype">
+              <label for="selectcountry">Select Country</label>
+              <select class="form-select" id="selectcountry" name="selectcountry">
                 <option>A</option>
                 <option></option>
                 <option></option>
@@ -146,17 +146,7 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label for="selectcountry">Select Country</label>
-              <select class="form-select" id="selectcountry" name="selectcountry">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
-              </select>
-            </div>
-          </div>
+          
 
         </form>
         <div class="d-flex justify-content-between">

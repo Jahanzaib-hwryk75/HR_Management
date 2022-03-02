@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\addleavetype;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\leave;
+use App\Models\country;
 
 class EmployController extends Controller
 {
@@ -113,6 +115,20 @@ class EmployController extends Controller
    }
    public function adddutytype(){
        return view('/employee.adddutytype');
+   }
+   public function addcountry(){
+       return view('/employee.addcountry');
+   }
+   public function savecountry(Request $request){
+       $request->validate([
+           'addcountry'=>'required'
+       ]);
+       $savecountry=new country();
+       {
+            $savecountry->addcountry=$request->addcountry;
+            $savecountry->save();
+            return redirect()->back();
+       }
    }
    
 }
