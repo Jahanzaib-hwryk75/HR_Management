@@ -66,14 +66,15 @@ class ProjectController extends Controller
         $data = Client::all();
         return view('/projects.ClientsTable', compact('data'));
     }
-    public function checkin(){
+    public function checkin($id){
         $data = new Project();
         $data->checkin = Carbon::now();
-        $data->save();
+       $start= $data->save();
     }
-    public function checkout(){
+    public function checkout($id){
         $data = new Project();
         $data->checkout = Carbon::now();
-        $data->save();
+       $end= $data->save();
     }
+    
 }

@@ -79,6 +79,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/addclient', [ProjectController::class, 'addclient']);
     Route::post('/clientsave', [ProjectController::class, 'clientsave']);
     Route::get('/clients', [ProjectController::class, 'clientstable']);
+    Route::get('/checkin{id}', [ProjectController::class, 'checkin']);
+    Route::get('/checkout{id}', [ProjectController::class, 'checkout']);
     
 });
 });
