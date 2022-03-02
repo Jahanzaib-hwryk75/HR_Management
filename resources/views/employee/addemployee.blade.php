@@ -382,32 +382,65 @@
           <small>Enter Your Address.</small>
         </div>
         <form>
-          <div class="row">
+        <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Address</label>
-              <input
-                type="text"
-                id="address"
-                name="address"
-                class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
-              />
+              <label class="form-label" for="dateofbirth">Date of Birth</label>
+              <input type="date" class="form-control" name="dateofbirth" id="dateofbirth" value="" placeholder="Enter date" required />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="landmark">Landmark</label>
-              <input type="text" name="landmark" id="landmark" class="form-control" placeholder="Borough bridge" />
+            <label class="form-label" for="gender">Gender*</label>
+              <select class="select2 w-100" name="gender" id="gender">
+                <option label=" "></option>
+                <option>MALE</option>
+                <option>FEMALE</option>
+              </select>
             </div>
           </div>
           <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="pincode1">Pincode</label>
-              <input type="text" id="pincode1" class="form-control" placeholder="658921" />
+          <div class="mb-1 col-md-6">
+            <label class="form-label" for="maritalstatus">Marital Status</label>
+              <select class="select2 w-100" name="maritalstatus" id="maritalstatus">
+                <option label=" "></option>
+                <option>MALE</option>
+                <option>FEMALE</option>
+              </select>
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="city1">City</label>
-              <input type="text" id="city1" class="form-control" placeholder="Birmingham" />
+            <label class="form-label" for="workinstate">Work in State</label>
+              <select class="select2 w-100" name="workinstate" id="workinstate">
+                <option></option>
+                <option>MALE</option>
+                <option>FEMALE</option>
+              </select>
             </div>
           </div>
+
+          <div class="row">
+          <div class="mb-1 col-md-6">
+            <label class="form-label" for="lineinstate">Line in State</label>
+              <select class="select2 w-100" name="lineinstate" id="lineinstate">
+                <option label=" "></option>
+                <option>MALE</option>
+                <option>FEMALE</option>
+              </select>
+            </div>
+            <div class="mb-1 col-md-6">
+            <label class="form-label" for="citizenship">CitizenShip</label>
+              <select class="select2 w-100" name="citizenship" id="citizenship">
+                <option></option>
+                <option>MALE</option>
+                <option>FEMALE</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+            <label class="form-label" for="pictureupload">Picture Upload</label>
+            <input class="form-control" type="file" id="pictureupload" name="pictureupload" />
+            </div>
+          </div>
+
         </form>
         <div class="d-flex justify-content-between">
           <button class="btn btn-primary btn-prev">
@@ -429,28 +462,28 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Address</label>
+              <label class="form-label" for="homeemail">Home Email</label>
               <input
-                type="text"
-                id="address"
-                name="address"
+                type="email"
+                id="homeemail"
+                name="homeemail"
                 class="form-control"
                 placeholder="98  Borough bridge Road, Birmingham"
               />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="landmark">Landmark</label>
-              <input type="text" name="landmark" id="landmark" class="form-control" placeholder="Borough bridge" />
+              <label class="form-label" for="homephone">Home Phone</label>
+              <input type="text" name="homephone" id="homephone" class="form-control" placeholder="Borough bridge" />
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="pincode1">Pincode</label>
-              <input type="text" id="pincode1" class="form-control" placeholder="658921" />
+              <label class="form-label" for="businessphone">Business Phone</label>
+              <input type="text" id="businessphone" name="businessphone" class="form-control" placeholder="658921" />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="city1">City</label>
-              <input type="text" id="city1" class="form-control" placeholder="Birmingham" />
+              <label class="form-label" for="cellphone">Cell Phone</label>
+              <input type="text" id="cellphone" name="cellphone" class="form-control" placeholder="Birmingham" />
             </div>
           </div>
         </form>
@@ -474,30 +507,62 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Address</label>
+              <label class="form-label" for="emergencycontact">Emergency Contact</label>
               <input
                 type="text"
-                id="address"
-                name="address"
+                id="emergencycontact"
+                name="emergencycontact"
                 class="form-control"
                 placeholder="98  Borough bridge Road, Birmingham"
               />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="landmark">Landmark</label>
-              <input type="text" name="landmark" id="landmark" class="form-control" placeholder="Borough bridge" />
+            <label class="form-label" for="emergencyhome">Emergency Home</label>
+              <input
+                type="text"
+                id="emergencyhome"
+                name="emergencyhome"
+                class="form-control"
+                placeholder="98  Borough bridge Road, Birmingham"
+              />
             </div>
           </div>
           <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="pincode1">Pincode</label>
-              <input type="text" id="pincode1" class="form-control" placeholder="658921" />
+          <div class="mb-1 col-md-6">
+            <label class="form-label" for="emergencycontactrelation">Emergency Contact Relation</label>
+              <input
+                type="text"
+                id="emergencycontactrelation"
+                name="emergencycontactrelation"
+                class="form-control"
+                placeholder="98  Borough bridge Road, Birmingham"
+              />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="city1">City</label>
-              <input type="text" id="city1" class="form-control" placeholder="Birmingham" />
+            <label class="form-label" for="alteremergencycontact">Alter Emergency Contact</label>
+              <input
+                type="text"
+                id="alteremergencycontact"
+                name="alteremergencycontact"
+                class="form-control"
+                placeholder="98  Borough bridge Road, Birmingham"
+              />
             </div>
           </div>
+
+          <div class="row">
+          <div class="mb-1 col-md-6">
+            <label class="form-label" for="alteremergencyphone">Alter Emergency Phone</label>
+              <input
+                type="text"
+                id="alteremergencyphone"
+                name="alteremergencyphone"
+                class="form-control"
+                placeholder="98  Borough bridge Road, Birmingham"
+              />
+            </div>
+          </div>
+
         </form>
         <div class="d-flex justify-content-between">
           <button class="btn btn-primary btn-prev">
@@ -519,30 +584,21 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Address</label>
+              <label class="form-label" for="emails">Email</label>
               <input
-                type="text"
-                id="address"
-                name="address"
+                type="email"
+                id="emails"
+                name="emails"
                 class="form-control"
                 placeholder="98  Borough bridge Road, Birmingham"
               />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="landmark">Landmark</label>
-              <input type="text" name="landmark" id="landmark" class="form-control" placeholder="Borough bridge" />
+              <label class="form-label" for="password">Password</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Borough bridge" />
             </div>
           </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="pincode1">Pincode</label>
-              <input type="text" id="pincode1" class="form-control" placeholder="658921" />
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="city1">City</label>
-              <input type="text" id="city1" class="form-control" placeholder="Birmingham" />
-            </div>
-          </div>
+         
         </form>
 
         <div class="d-flex justify-content-between">
