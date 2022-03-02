@@ -54,6 +54,7 @@
               <th>Start Date</th>
               <th>End Date</th>
               <th>Project Duration</th>
+              <th>Working Time</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -68,9 +69,11 @@
               <td>{{$data->startdate}}</td>
               <td>{{$data->enddate}}</td>
               <td>{{$data->projectduration}}</td>
+              
+              <td></td>
               <td class="d-flex">
-                <button class="btn btn-success col-sm-6">Clock In</button>
-                <button class="btn btn-danger col-sm-6">Clock Out</button>
+              <a class="btn btn-success col-sm-6">Clock In</a>
+                <a class="btn btn-danger col-sm-6">Clock Out</a>
               </td>
             </tr>
             @endforeach

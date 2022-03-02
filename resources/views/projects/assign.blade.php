@@ -66,7 +66,7 @@
                                                                     @endisset
                                                                 </select>
                                                             </div>
-                                                            <div class="col-sm-2">
+                                                            <div class="col-sm-2 ">
                                                                 <button class="dt-button add-new btn btn-success" type="button" onclick="window.location.href='/admin/addclient'">
                                                                     <span>Add Clients</span>
                                                                 </button>
@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div> -->
                                                 <div class="form-group mt-2">
-                                                    <button type="reset" class="btn btn-danger me-1">Reset</button>
+                                                    <button type="reset" class="btn btn-danger me-1 ">Reset</button>
                                                     <button type="submit" class="btn btn-success me-1" name="">Submit</button>
                                                 </div>
                                             </div>
