@@ -108,10 +108,16 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">Username</label>
-              <input type="text" name="username" value="Rizwan" id="username" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="username">First Name</label>
+              <input type="text" name="firstname" value="Rizwan" id="firstname" class="form-control" placeholder="johndoe" />
             </div>
             <div class="mb-1 col-md-6">
+              <label class="form-label" for="username">Last Name</label>
+              <input type="text" name="lastname" value="Rizwan" id="lastname" class="form-control" placeholder="johndoe" />
+            </div>
+          </div>
+          <div class="row">
+          <div class="mb-1 col-md-6">
               <label class="form-label" for="email">Email</label>
               <input
                 type="email"
@@ -123,31 +129,39 @@
                 value="rykrizwan32@gmail.com"
               />
             </div>
+            <div class="mb-1 form-password-toggle col-md-6">
+              <label class="form-label" for="confirm-password">Phone Number</label>
+              <input type="text" name="phonenumber" value="Rizwan" id="phonenumber" class="form-control" placeholder="johndoe" />
+            </div>
           </div>
+
           <div class="row">
-            <div class="mb-1 form-password-toggle col-md-6">
-              <label class="form-label" for="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="form-control"
-                value="12"
-                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-              />
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="username">Alternative Phone</label>
+              <input type="text" name="alternativephone" value="03036153706" id="alternativephone" class="form-control" placeholder="johndoe" />
             </div>
-            <div class="mb-1 form-password-toggle col-md-6">
-              <label class="form-label" for="confirm-password">Confirm Password</label>
-              <input
-                type="password"
-                name="confirm-password"
-                id="confirm-password"
-                class="form-control"
-                value="12"
-                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-              />
+            <div class="mb-1 col-md-6">
+            <label for="">Select Leave Type</label>
+                    <select class="form-select" id="basicSelect" name="type">
+                    <option></option>
+                      <option>Sick Leave</option>
+                      <option>Marriage Leave</option>
+                      <option>Earned Leave</option>
+                    </select> 
             </div>
           </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="username">City</label>
+              <input type="text" name="city" value="ryk" id="city" class="form-control" placeholder="johndoe" />
+            </div>
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="username">Zip Code</label>
+              <input type="text" name="zipcode" value="64200" id="zipcode" class="form-control" placeholder="johndoe" />
+            </div>
+          </div>
+
         </form>
         <div class="d-flex justify-content-between">
           <button class="btn btn-outline-secondary btn-prev" disabled>
@@ -168,18 +182,29 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="first-name">First Name</label>
-              <input type="text" name="first-name" id="first-name" class="form-control" placeholder="John" />
+            <label for="">Division</label>
+                    <select class="form-select" id="basicSelect" name="division">
+                    <option></option>
+                      <option>Account</option>
+                      <option>Admin</option>
+                      <option>Recuritment</option>
+                    </select> 
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="last-name">Last Name</label>
-              <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Doe" />
+              <label class="form-label" for="last-name">Position</label>
+              <label for="">Division</label>
+                    <select class="form-select" id="basicSelect" name="position">
+                    <option></option>
+                      <option>Account</option>
+                      <option>Admin</option>
+                      <option>Recuritment</option>
+                    </select> 
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="country">Country</label>
-              <select class="select2 w-100" name="country" id="country">
+              <label class="form-label" for="country">Duty Type</label>
+              <select class="select2 w-100" name="country" id="dutytype">
                 <option label=" "></option>
                 <option>UK</option>
                 <option>USA</option>
@@ -190,14 +215,102 @@
               </select>
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="language">Language</label>
-              <select class="select2 w-100" name="language" id="language" multiple>
-                <option>English</option>
-                <option>French</option>
-                <option>Spanish</option>
-              </select>
+            <label for="">Hire Date</label>
+                    <input type="date" class="form-control" name="hiredate" value="" placeholder="Enter date" required />
             </div>
           </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+            <label for="">Termination Date</label>
+                    <input type="date" class="form-control" name="terminationdate" value="" placeholder="Enter date" required />
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="">Termination Reason</label>
+                    <input type="text" class="form-control" name="terminationreason" id="terminationreason" value="dasd" placeholder="Enter date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="voluntarytermination">Voluntary Termination</label>
+              <select class="select2 w-100" name="voluntarytermination" id="voluntarytermination">
+                <option label=" "></option>
+                <option>UK</option>
+                <option>USA</option>
+                <option>Spain</option>
+                <option>France</option>
+                <option>Italy</option>
+                <option>Australia</option>
+              </select>
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="">Re Hire Date</label>
+                    <input type="date" class="form-control" name="rehiredate" value="" placeholder="Enter date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="ratetype">Rate Type</label>
+              <select class="select2 w-100" name="ratetype" id="ratetype">
+                <option label=" "></option>
+                <option>UK</option>
+                <option>USA</option>
+                <option>Spain</option>
+                <option>France</option>
+                <option>Italy</option>
+                <option>Australia</option>
+              </select>
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="">Rate</label>
+                    <input type="text" class="form-control" name="rate" value="" placeholder="Enter date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="payfrequency">Pay Frequency</label>
+              <select class="select2 w-100" name="payfrequency" id="payfrequency">
+                <option label=" "></option>
+                <option>UK</option>
+                <option>USA</option>
+                <option>Spain</option>
+                <option>France</option>
+                <option>Italy</option>
+                <option>Australia</option>
+              </select>
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="">Pay Frequency Text</label>
+                    <input type="text" class="form-control" name="payfrequencytext" value="" placeholder="Enter date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="hourlyrate2">Hourly Rate 2</label>
+              <input type="text" class="form-control" name="hourlyrate2" value="" placeholder="Enter date" required />
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="hourlyrate3">Hourly Rate 3</label>
+                    <input type="text" class="form-control" name="hourlyrate3" value="" placeholder="Enter date" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="mb-1 col-md-6">
+              <label class="form-label" for="homedepartment">Home Department</label>
+              <input type="text" class="form-control" name="homedepartment" value="" placeholder="Enter date" required />
+            </div>
+            <div class="mb-1 col-md-6">
+            <label for="homedepartmenttext">Home Department Text</label>
+                    <input type="text" class="form-control" name="homedepartmenttext" value="" placeholder="Enter date" required />
+            </div>
+          </div>
+
+
         </form>
         <div class="d-flex justify-content-between">
           <button class="btn btn-primary btn-prev">
@@ -218,28 +331,36 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Address</label>
+              <label class="form-label" for="address">Class Code</label>
               <input
                 type="text"
-                id="address"
-                name="address"
+                id="classcode"
+                name="classcode"
                 class="form-control"
                 placeholder="98  Borough bridge Road, Birmingham"
               />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="landmark">Landmark</label>
-              <input type="text" name="landmark" id="landmark" class="form-control" placeholder="Borough bridge" />
+              <label class="form-label" for="classdescription">Class Description</label>
+              <input type="text" name="classdescription" id="classdescription" class="form-control" placeholder="Borough bridge" />
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="pincode1">Pincode</label>
-              <input type="text" id="pincode1" class="form-control" placeholder="658921" />
+              <label class="form-label" for="classaccrualdate">Class Accrual date</label>
+              <input type="date" class="form-control" name="classaccrualdate" id="classaccrualdate" value="" placeholder="Enter date" required />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="city1">City</label>
-              <input type="text" id="city1" class="form-control" placeholder="Birmingham" />
+            <label class="form-label" for="classstatus">Class status</label>
+              <select class="select2 w-100" name="classstatus" id="classstatus">
+                <option label=" "></option>
+                <option>UK</option>
+                <option>USA</option>
+                <option>Spain</option>
+                <option>France</option>
+                <option>Italy</option>
+                <option>Australia</option>
+              </select>
             </div>
           </div>
         </form>
