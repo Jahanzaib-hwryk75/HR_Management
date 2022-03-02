@@ -108,12 +108,12 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">First Name</label>
-              <input type="text" name="firstname" value="Rizwan" id="firstname" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="firstname">First Name</label>
+              <input type="text" name="firstname" value="Rizwan" id="firstname" class="form-control" placeholder="Enter First Name" />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">Last Name</label>
-              <input type="text" name="lastname" value="Rizwan" id="lastname" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="lastname">Last Name</label>
+              <input type="text" name="lastname" value="Rizwan" id="lastname" class="form-control" placeholder="Enter Last Name" />
             </div>
           </div>
           <div class="row">
@@ -130,35 +130,35 @@
               />
             </div>
             <div class="mb-1 form-password-toggle col-md-6">
-              <label class="form-label" for="confirm-password">Phone Number</label>
-              <input type="text" name="phonenumber" value="Rizwan" id="phonenumber" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="phonenumber">Phone Number</label>
+              <input type="text" name="phonenumber" value="Rizwan" id="phonenumber" class="form-control" placeholder="Phone Number" />
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">Alternative Phone</label>
-              <input type="text" name="alternativephone" value="03036153706" id="alternativephone" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="alternativephone">Alternative Phone</label>
+              <input type="text" name="alternativephone" value="03036153706" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Select Leave Type</label>
-                    <select class="form-select" id="basicSelect" name="type">
-                    <option></option>
-                      <option>Sick Leave</option>
-                      <option>Marriage Leave</option>
-                      <option>Earned Leave</option>
+            <label for="selectleavetype">Select Leave Type</label>
+                    <select class="form-select" id="selectleavetype" name="selectleavetype">
+                    <option>A</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
                     </select> 
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">City</label>
-              <input type="text" name="city" value="ryk" id="city" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="city">City</label>
+              <input type="text" name="city" value="ryk" id="city" class="form-control" placeholder="Enter City" />
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="username">Zip Code</label>
-              <input type="text" name="zipcode" value="64200" id="zipcode" class="form-control" placeholder="johndoe" />
+              <label class="form-label" for="zipcode">Zip Code</label>
+              <input type="text" name="zipcode" value="64200" id="zipcode" class="form-control" placeholder="Zip Code" />
             </div>
           </div>
 
@@ -182,52 +182,52 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-            <label for="">Division</label>
-                    <select class="form-select" id="basicSelect" name="division">
-                    <option></option>
-                      <option>Account</option>
-                      <option>Admin</option>
-                      <option>Recuritment</option>
+            <label for="division">Division</label>
+                    <select class="form-select" id="division" name="division">
+                    <option>A</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
                     </select> 
             </div>
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="last-name">Position</label>
-              <label for="">Division</label>
-                    <select class="form-select" id="basicSelect" name="position">
-                    <option></option>
-                      <option>Account</option>
-                      <option>Admin</option>
-                      <option>Recuritment</option>
+              <!-- <label class="form-label" for="last-name">Position</label> -->
+              <label for="positiondivision">Position Division</label>
+                    <select class="form-select" id="positiondivision" name="positiondivision">
+                    <option>A</option>
+                      <option></option>
+                      <option></option>
+                      <option></option>
                     </select> 
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="country">Duty Type</label>
-              <select class="select2 w-100" name="country" id="dutytype">
-                <option label=" "></option>
-                <option>UK</option>
-                <option>USA</option>
-                <option>Spain</option>
-                <option>France</option>
-                <option>Italy</option>
-                <option>Australia</option>
+              <label class="form-label" for="dutytype">Duty Type</label>
+              <select class="select2 w-100" name="dutytype" id="dutytype">
+                <option>A</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Hire Date</label>
-                    <input type="date" class="form-control" name="hiredate" value="" placeholder="Enter date" required />
+            <label for="hiredate">Hire Date</label>
+                    <input type="date" class="form-control" id="hiredate" name="hiredate" value="" placeholder="Enter date" required />
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
-            <label for="">Termination Date</label>
-                    <input type="date" class="form-control" name="terminationdate" value="" placeholder="Enter date" required />
+            <label for="terminationdate">Termination Date</label>
+                    <input type="date" class="form-control" id="terminationdate" name="terminationdate" value="" placeholder="Enter date" required />
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Termination Reason</label>
-                    <input type="text" class="form-control" name="terminationreason" id="terminationreason" value="dasd" placeholder="Enter date" required />
+            <label for="terminationreason">Termination Reason</label>
+                    <input type="text" class="form-control" name="terminationreason" id="terminationreason" value="dasd" placeholder="Termination Reason" required />
             </div>
           </div>
 
@@ -235,18 +235,18 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="voluntarytermination">Voluntary Termination</label>
               <select class="select2 w-100" name="voluntarytermination" id="voluntarytermination">
-                <option label=" "></option>
-                <option>UK</option>
-                <option>USA</option>
-                <option>Spain</option>
-                <option>France</option>
-                <option>Italy</option>
-                <option>Australia</option>
+                <option>A</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Re Hire Date</label>
-                    <input type="date" class="form-control" name="rehiredate" value="" placeholder="Enter date" required />
+            <label for="rehiredate">Re Hire Date</label>
+                    <input type="date" class="form-control" id="rehiredate" name="rehiredate" value="" placeholder="Enter date" required />
             </div>
           </div>
 
@@ -254,18 +254,18 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="ratetype">Rate Type</label>
               <select class="select2 w-100" name="ratetype" id="ratetype">
-                <option label=" "></option>
-                <option>UK</option>
-                <option>USA</option>
-                <option>Spain</option>
-                <option>France</option>
-                <option>Italy</option>
-                <option>Australia</option>
+                <option>A</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Rate</label>
-                    <input type="text" class="form-control" name="rate" value="" placeholder="Enter date" required />
+            <label for="rate">Rate</label>
+                    <input type="text" class="form-control" id="rate" name="rate" value="" placeholder="Enter Rate" required />
             </div>
           </div>
 
@@ -273,40 +273,40 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="payfrequency">Pay Frequency</label>
               <select class="select2 w-100" name="payfrequency" id="payfrequency">
-                <option label=" "></option>
-                <option>UK</option>
-                <option>USA</option>
-                <option>Spain</option>
-                <option>France</option>
-                <option>Italy</option>
-                <option>Australia</option>
+                <option>A</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
-            <label for="">Pay Frequency Text</label>
-                    <input type="text" class="form-control" name="payfrequencytext" value="" placeholder="Enter date" required />
+            <label for="payfrequencytext">Pay Frequency Text</label>
+                    <input type="text" class="form-control" id="payfrequencytext" name="payfrequencytext" value="" placeholder="Enter Pay Frequency Text" required />
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="hourlyrate2">Hourly Rate 2</label>
-              <input type="text" class="form-control" name="hourlyrate2" value="" placeholder="Enter date" required />
+              <input type="text" class="form-control" id="hourlyrate2" name="hourlyrate2" value="" placeholder="Enter Hourly Rate 2" required />
             </div>
             <div class="mb-1 col-md-6">
             <label for="hourlyrate3">Hourly Rate 3</label>
-                    <input type="text" class="form-control" name="hourlyrate3" value="" placeholder="Enter date" required />
+                    <input type="text" class="form-control" id="hourlyrate3" name="hourlyrate3" value="" placeholder="Enter Hourly Rate 3" required />
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="homedepartment">Home Department</label>
-              <input type="text" class="form-control" name="homedepartment" value="" placeholder="Enter date" required />
+              <input type="text" class="form-control" id="homedepartment" name="homedepartment" value="" placeholder="Enter Home Department" required />
             </div>
             <div class="mb-1 col-md-6">
             <label for="homedepartmenttext">Home Department Text</label>
-                    <input type="text" class="form-control" name="homedepartmenttext" value="" placeholder="Enter date" required />
+                    <input type="text" class="form-control" id="homedepartmenttext" name="homedepartmenttext" value="" placeholder="Enter Home Department Text" required />
             </div>
           </div>
 
@@ -331,18 +331,18 @@
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
-              <label class="form-label" for="address">Class Code</label>
+              <label class="form-label" for="classcode">Class Code</label>
               <input
                 type="text"
                 id="classcode"
                 name="classcode"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Class Code"
               />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="classdescription">Class Description</label>
-              <input type="text" name="classdescription" id="classdescription" class="form-control" placeholder="Borough bridge" />
+              <input type="text" name="classdescription" id="classdescription" class="form-control" placeholder="Class Description" />
             </div>
           </div>
           <div class="row">
@@ -353,13 +353,13 @@
             <div class="mb-1 col-md-6">
             <label class="form-label" for="classstatus">Class status</label>
               <select class="select2 w-100" name="classstatus" id="classstatus">
-                <option label=" "></option>
-                <option>UK</option>
-                <option>USA</option>
-                <option>Spain</option>
-                <option>France</option>
-                <option>Italy</option>
-                <option>Australia</option>
+                <option>A</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
               </select>
             </div>
           </div>
@@ -388,9 +388,8 @@
               <input type="date" class="form-control" name="dateofbirth" id="dateofbirth" value="" placeholder="Enter date" required />
             </div>
             <div class="mb-1 col-md-6">
-            <label class="form-label" for="gender">Gender*</label>
+            <label class="form-label" for="gender">Gender</label>
               <select class="select2 w-100" name="gender" id="gender">
-                <option label=" "></option>
                 <option>MALE</option>
                 <option>FEMALE</option>
               </select>
@@ -400,17 +399,16 @@
           <div class="mb-1 col-md-6">
             <label class="form-label" for="maritalstatus">Marital Status</label>
               <select class="select2 w-100" name="maritalstatus" id="maritalstatus">
-                <option label=" "></option>
-                <option>MALE</option>
-                <option>FEMALE</option>
+                <option>A</option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
             <label class="form-label" for="workinstate">Work in State</label>
               <select class="select2 w-100" name="workinstate" id="workinstate">
+                <option>A</option>
                 <option></option>
-                <option>MALE</option>
-                <option>FEMALE</option>
+                <option></option>
               </select>
             </div>
           </div>
@@ -419,17 +417,17 @@
           <div class="mb-1 col-md-6">
             <label class="form-label" for="lineinstate">Line in State</label>
               <select class="select2 w-100" name="lineinstate" id="lineinstate">
-                <option label=" "></option>
-                <option>MALE</option>
-                <option>FEMALE</option>
+                <option>A</option>
+                <option></option>
+                <option></option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
             <label class="form-label" for="citizenship">CitizenShip</label>
               <select class="select2 w-100" name="citizenship" id="citizenship">
+                <option>A</option>
                 <option></option>
-                <option>MALE</option>
-                <option>FEMALE</option>
+                <option></option>
               </select>
             </div>
           </div>
@@ -468,22 +466,22 @@
                 id="homeemail"
                 name="homeemail"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Home Email"
               />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="homephone">Home Phone</label>
-              <input type="text" name="homephone" id="homephone" class="form-control" placeholder="Borough bridge" />
+              <input type="text" name="homephone" id="homephone" class="form-control" placeholder="Enter Home Phone" />
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="businessphone">Business Phone</label>
-              <input type="text" id="businessphone" name="businessphone" class="form-control" placeholder="658921" />
+              <input type="text" id="businessphone" name="businessphone" class="form-control" placeholder="Enter Business Phone" />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="cellphone">Cell Phone</label>
-              <input type="text" id="cellphone" name="cellphone" class="form-control" placeholder="Birmingham" />
+              <input type="text" id="cellphone" name="cellphone" class="form-control" placeholder="Enter Cell Phone" />
             </div>
           </div>
         </form>
@@ -513,7 +511,7 @@
                 id="emergencycontact"
                 name="emergencycontact"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Emergency Contact"
               />
             </div>
             <div class="mb-1 col-md-6">
@@ -523,7 +521,7 @@
                 id="emergencyhome"
                 name="emergencyhome"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Emergency Home"
               />
             </div>
           </div>
@@ -535,7 +533,7 @@
                 id="emergencycontactrelation"
                 name="emergencycontactrelation"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Emergency Contact Relation"
               />
             </div>
             <div class="mb-1 col-md-6">
@@ -545,7 +543,7 @@
                 id="alteremergencycontact"
                 name="alteremergencycontact"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Alter Emergency Contact"
               />
             </div>
           </div>
@@ -558,7 +556,7 @@
                 id="alteremergencyphone"
                 name="alteremergencyphone"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter Alter Emergency Phone"
               />
             </div>
           </div>
@@ -590,12 +588,12 @@
                 id="emails"
                 name="emails"
                 class="form-control"
-                placeholder="98  Borough bridge Road, Birmingham"
+                placeholder="Enter login Email"
               />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Borough bridge" />
+              <input type="password" name="password" id="password" class="form-control" placeholder="Enter login Password" />
             </div>
           </div>
          
@@ -608,16 +606,7 @@
           </button>
           <button class="btn btn-success btn-submit">Submit</button>
         </div>
-        <!-- <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div> -->
+        
       </div>
 
     
