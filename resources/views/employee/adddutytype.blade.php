@@ -48,6 +48,40 @@
         </div>
     </div>
 </section>
+<section>
+<div class="row" id="basic-table">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Users</h4>
+      </div>
+      <div class="table-responsive width-95-per mx-auto">
+       
+        <table class="table datatable">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Position</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+        @foreach($data as $data)
+          <tbody>
+            <tr>
+           <td>{{$data->id}}</td>
+           <td>{{$data->dutytime}}</td>
+          <td><a href="" class="btn btn-success">Edit</a>
+          <a href="" class="btn btn-danger">Delete</a>
+        </td>
+           </tr>
+           @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 <!-- Basic Horizontal form layout section end -->
 <!-- Dropzone section start -->
 <!-- <section id="dropzone-examples">

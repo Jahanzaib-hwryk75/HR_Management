@@ -207,8 +207,9 @@
               <!-- <label class="form-label" for="last-name">Position</label> -->
               <label for="positionname">Position</label>
               <select class="form-select" id="positionname" name="positionname">
-              @foreach($position as $position)  
               <option value="null">Select position</option>
+              @foreach($position as $position)  
+             
               <option>{{$position->positionname}}</option>
                 @endforeach
               </select>

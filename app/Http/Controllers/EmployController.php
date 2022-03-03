@@ -110,13 +110,16 @@ class EmployController extends Controller
    }
   
    public function addposition(){
-       return view('/employee.addposition');
+    $position=position::all();
+       return view('/employee.addposition',compact('position'));
    }
    public function adddutytype(){
-       return view('/employee.adddutytype');
+    $data=duty::all();
+       return view('/employee.adddutytype',compact('data'));
    }
    public function addcountry(){
-       return view('/employee.addcountry');
+    $user=country::all();
+       return view('/employee.addcountry',compact('user'));
    }
    public function savecountry(Request $request){
        $request->validate([

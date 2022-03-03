@@ -71,8 +71,7 @@
            <td>{{$user->approvedenddate}}</td>
            <td>{{$user->status}}</td>
            <td>{{$user->rank}}</td>
-           <td>{{Str::limit($user->desc, 10)}}
-           </td>
+           <td>{{Str::limit($user->desc, 10)}}</td>
            </tr>
            @endforeach
           </tbody>
