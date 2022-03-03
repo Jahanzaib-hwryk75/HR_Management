@@ -102,20 +102,32 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="firstname">First Name</label>
               <input type="text" name="firstname" value="" id="firstname" class="form-control" placeholder="Enter First Name" />
+              @error('firstname')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="lastname">Last Name</label>
               <input type="text" name="lastname" value="" id="lastname" class="form-control" placeholder="Enter Last Name" />
+              @error('lastname')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="email">Email</label>
               <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" value="" />
+              @error('email')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 form-password-toggle col-md-6">
               <label class="form-label" for="phonenumber">Phone Number</label>
               <input type="text" name="phonenumber" value="" id="phonenumber" class="form-control" placeholder="Phone Number" />
+              @error('phonenumber')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -123,14 +135,21 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="alternativephone">Alternative Phone</label>
               <input type="text" name="alternativephone" value="" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
+              @error('alternativephone')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="selectcountry">Select Country</label>
               <select class="form-select" id="selectcountry" name="selectcountry">
                 @foreach($user as $user)
+                <option value="null">Select Country</option>
                 <option>{{$user->couuntryname}}</option>
                 @endforeach
               </select>
+              @error('selectcountry')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -138,10 +157,16 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="city">City</label>
               <input type="text" name="city" value="" id="city" class="form-control" placeholder="Enter City" />
+              @error('city')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="zipcode">Zip Code</label>
               <input type="text" name="zipcode" value="" id="zipcode" class="form-control" placeholder="Zip Code" />
+              @error('zipcode')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -174,6 +199,9 @@
                 <option>Admin</option>
                 <option>HR</option>
               </select>
+              @error('division')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <!-- <label class="form-label" for="last-name">Position</label> -->
@@ -184,6 +212,9 @@
               <option>{{$position->positionname}}</option>
                 @endforeach
               </select>
+              @error('positionname')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
           <div class="row">
@@ -195,10 +226,16 @@
                 <option>{{$data->dutytime}}</option>
                 @endforeach
               </select>
+              @error('dutytype')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="hiredate">Hire Date</label>
               <input type="date" class="form-control" id="hiredate" name="hiredate" value="" placeholder="Enter date" required />
+              @error('hiredate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -206,10 +243,16 @@
             <div class="mb-1 col-md-6">
               <label for="terminationdate">Termination Date</label>
               <input type="date" class="form-control" id="terminationdate" name="terminationdate" value="" placeholder="Enter date" required />
+              @error('terminationdate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="terminationreason">Termination Reason</label>
               <input type="text" class="form-control" name="terminationreason" id="terminationreason" value="dasd" placeholder="Termination Reason" required />
+              @error('terminationreason')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -220,10 +263,16 @@
                 <option>Yes</option>
                 <option>No</option>
               </select>
+              @error('voluntarytermination')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="rehiredate">Re Hire Date</label>
               <input type="date" class="form-control" id="rehiredate" name="rehiredate" value="" placeholder="Enter date" required />
+              @error('rehiredate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -234,10 +283,16 @@
                 <option>Salary</option>
                 <option>Hourly</option>
               </select>
+              @error('ratetype')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="rate">Rate</label>
               <input type="text" class="form-control" id="rate" name="rate" value="" placeholder="Enter Rate" required />
+              @error('rate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -250,10 +305,16 @@
                 <option>Monthly</option>
                 <option>Annual</option>
               </select>
+              @error('payfrequency')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="payfrequencytext">Pay Frequency Text</label>
               <input type="text" class="form-control" id="payfrequencytext" name="payfrequencytext" value="" placeholder="Enter Pay Frequency Text" required />
+              @error('payfrequencytext')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -263,10 +324,16 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="homedepartment">Home Department</label>
               <input type="text" class="form-control" id="homedepartment" name="homedepartment" value="" placeholder="Enter Home Department" required />
+              @error('homedepartment')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="homedepartmenttext">Home Department Text</label>
               <input type="text" class="form-control" id="homedepartmenttext" name="homedepartmenttext" value="" placeholder="Enter Home Department Text" required />
+              @error('homedepartmenttext')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -295,6 +362,9 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="dateofbirth">Date of Birth</label>
               <input type="date" class="form-control" name="dateofbirth" id="dateofbirth" value="" placeholder="Enter date" required />
+              @error('dateofbirth')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="gender">Gender</label>
@@ -303,6 +373,9 @@
                 <option>Femail</option>
                 <option>Other</option>
               </select>
+              @error('gender')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
           <div class="row">
@@ -315,6 +388,9 @@
                 <option>Widowed</option>
                 <option>Other</option>
               </select>
+              @error('maritalstatus')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="workinstate">Work in State</label>
@@ -322,6 +398,9 @@
                 <option>Yes</option>
                 <option>No</option>
               </select>
+              @error('workinstate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -332,6 +411,9 @@
                 <option>Yes</option>
                 <option>No</option>
               </select>
+              @error('lineinstate')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="citizenship">CitizenShip</label>
@@ -339,6 +421,9 @@
                 <option>Citizen</option>
                 <option>Non-Citizen</option>
               </select>
+              @error('citizenship')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -346,6 +431,9 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="pictureupload">Picture Upload</label>
               <input class="form-control" type="file" id="pictureupload" name="pictureupload" />
+              @error('pictureupload')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -372,20 +460,32 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="homeemail">Home Email</label>
               <input type="email" id="homeemail" name="homeemail" class="form-control" placeholder="Enter Home Email" />
+              @error('homeemail')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="homephone">Home Phone</label>
               <input type="text" name="homephone" id="homephone" class="form-control" placeholder="Enter Home Phone" />
+              @error('homephone')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="businessphone">Business Phone</label>
               <input type="text" id="businessphone" name="businessphone" class="form-control" placeholder="Enter Business Phone" />
+              @error('businessphone')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="cellphone">Cell Phone</label>
               <input type="text" id="cellphone" name="cellphone" class="form-control" placeholder="Enter Cell Phone" />
+              @error('cellphone')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
         </form>
@@ -411,20 +511,32 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="emergencycontact">Emergency Contact</label>
               <input type="text" id="emergencycontact" name="emergencycontact" class="form-control" placeholder="Enter Emergency Contact" />
+              @error('emergencycontact')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="emergencyhome">Emergency Home</label>
               <input type="text" id="emergencyhome" name="emergencyhome" class="form-control" placeholder="Enter Emergency Home" />
+              @error('emergencyhome')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="emergencycontactrelation">Emergency Contact Relation</label>
               <input type="text" id="emergencycontactrelation" name="emergencycontactrelation" class="form-control" placeholder="Enter Emergency Contact Relation" />
+              @error('emergencycontactrelation')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="alteremergencycontact">Alter Emergency Contact</label>
               <input type="text" id="alteremergencycontact" name="alteremergencycontact" class="form-control" placeholder="Enter Alter Emergency Contact" />
+              @error('alteremergencycontact')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -432,6 +544,9 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="alteremergencyphone">Alter Emergency Phone</label>
               <input type="text" id="alteremergencyphone" name="alteremergencyphone" class="form-control" placeholder="Enter Alter Emergency Phone" />
+              @error('alteremergencyphone')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
@@ -458,10 +573,16 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="emails">Email</label>
               <input type="email" id="emails" name="emails" class="form-control" placeholder="Enter login Email" />
+              @error('emails')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="password">Password</label>
               <input type="password" name="password" id="password" class="form-control" placeholder="Enter login Password" />
+              @error('password')
+              <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
           </div>
 
