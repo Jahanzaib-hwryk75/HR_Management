@@ -24,9 +24,9 @@
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
-                                        <label for="addcountry">Add Country</label>
-                                        <input type="text" class="form-control" id="addcountry" name="addcountry" value="{{$users->fullname ?? ''}}" placeholder="Enter Country" required />
-                                        @error('countryname')
+                                        <label for="couuntryname">Add Country</label>
+                                        <input type="text" class="form-control" id="couuntryname" name="couuntryname" placeholder="Enter Country" required />
+                                        @error('couuntryname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -48,6 +48,7 @@
         </div>
     </div>
 </section>
+
 <!-- Basic Horizontal form layout section end -->
 <!-- Dropzone section start -->
 <!-- <section id="dropzone-examples">

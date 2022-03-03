@@ -66,11 +66,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/editapplication/{id}',[EmployController::class,'editapplication']);
     Route::post('/updateapplications/{id}',[EmployController::class,'updateapplications']);
     Route::get('/addemployee',[EmployController::class,'addemployee']);
-    Route::get('/addleavetype',[EmployController::class,'addleavetype']);
+  
     Route::get('/addposition',[EmployController::class,'addposition']);
     Route::get('/adddutytype',[EmployController::class,'adddutytype']);
     Route::get('/addcountry',[EmployController::class,'addcountry']);
     Route::post('/savecountry',[EmployController::class,'savecountry']);
+    Route::post('/savedutytype',[EmployController::class,'savedutytype']);
+   
 
    
 

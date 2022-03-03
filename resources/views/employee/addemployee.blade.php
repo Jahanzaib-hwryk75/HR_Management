@@ -127,10 +127,9 @@
             <div class="mb-1 col-md-6">
               <label for="selectcountry">Select Country</label>
               <select class="form-select" id="selectcountry" name="selectcountry">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
+                @foreach($user as $user)
+                <option>{{$user->couuntryname}}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -191,9 +190,7 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="dutytype">Duty Type</label>
               <select class="select2 w-100" name="dutytype" id="dutytype">
-                <option>A</option>
-                <option></option>
-                <option></option>
+           
                 <option></option>
                 <option></option>
                 <option></option>

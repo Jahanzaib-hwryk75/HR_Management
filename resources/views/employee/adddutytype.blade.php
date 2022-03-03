@@ -18,15 +18,15 @@
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{ url('/admin/adddutytype')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{ url('/admin/savedutytype')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
-                                        <label for="adddutytype">Add Duty Type</label>
-                                        <input type="text" class="form-control" id="adddutytype" name="adddutytype" value="{{$users->fullname ?? ''}}" placeholder="Enter Duty Type" required />
-                                        @error('countryname')
+                                        <label for="dutytime">Add Duty Type</label>
+                                        <input type="text" class="form-control" id="dutytime" name="dutytime" placeholder="Enter Duty Type" required />
+                                        @error('dutytime')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\leave;
 use App\Models\country;
+use App\Models\duty;
 
 class EmployController extends Controller
 {
@@ -100,16 +101,12 @@ class EmployController extends Controller
        return redirect('/admin/mangeapplication');
    }
    public function addemployee(){
-    $breadcrumbs = [
-        ['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "Forms"], ['name' => "Form Wizard"]
-    ];
-    return view('/employee.addemployee', [
-        'breadcrumbs' => $breadcrumbs
-    ]);
+   $user=country::all();
+    return view('/employee.addemployee',compact('user'));
+       
    }
-   public function addleavetype(){
-       return view('/employee.addleavetype');
-   }
+  
+  
    public function addposition(){
        return view('/employee.addposition');
    }
@@ -121,14 +118,25 @@ class EmployController extends Controller
    }
    public function savecountry(Request $request){
        $request->validate([
-           'addcountry'=>'required'
+           'couuntryname'=>'required'
        ]);
        $savecountry=new country();
        {
-            $savecountry->addcountry=$request->addcountry;
+            $savecountry->couuntryname=$request->couuntryname;
             $savecountry->save();
             return redirect()->back();
        }
+      
    }
+   public function savedutytype(Request $request){
+       $request->validate([
+           'dutytime'=>'required'
+       ]);
+       $savedutytype=new duty();
+       $savedutytype->dutytime=$request->dutytime;
+       $savedutytype->save();
+       return redirect()->back();
+          
+    }
    
 }
