@@ -18,15 +18,15 @@
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{ url('/admin/addposition')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{ url('/admin/saveposition')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
-                                        <label for="position">Position</label>
-                                        <input type="text" class="form-control" id="position" name="position" value="{{$users->fullname ?? ''}}" placeholder="Enter Position" required />
-                                        @error('countryname')
+                                        <label for="positionname">Position</label>
+                                        <input type="text" class="form-control" id="positionname" name="positionname" value="{{$users->fullname ?? ''}}" placeholder="Enter Position"/>
+                                        @error('positionname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>

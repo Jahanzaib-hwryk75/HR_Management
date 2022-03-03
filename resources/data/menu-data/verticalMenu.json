@@ -102,13 +102,6 @@
       "role": "admin",
       "submenu":[
         {
-          "url": "admin/addleavetype",
-          "name": "Add Leave Type",
-          "icon": "user",
-          "slug": "leave",
-          "role": ""
-        },
-        {
           "url": "admin/addposition",
           "name": "Add Position",
           "icon": "user",

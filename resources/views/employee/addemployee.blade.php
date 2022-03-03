@@ -101,28 +101,28 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="firstname">First Name</label>
-              <input type="text" name="firstname" value="Rizwan" id="firstname" class="form-control" placeholder="Enter First Name" />
+              <input type="text" name="firstname" value="" id="firstname" class="form-control" placeholder="Enter First Name" />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="lastname">Last Name</label>
-              <input type="text" name="lastname" value="Rizwan" id="lastname" class="form-control" placeholder="Enter Last Name" />
+              <input type="text" name="lastname" value="" id="lastname" class="form-control" placeholder="Enter Last Name" />
             </div>
           </div>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="email">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" value="rykrizwan32@gmail.com" />
+              <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" value="" />
             </div>
             <div class="mb-1 form-password-toggle col-md-6">
               <label class="form-label" for="phonenumber">Phone Number</label>
-              <input type="text" name="phonenumber" value="Rizwan" id="phonenumber" class="form-control" placeholder="Phone Number" />
+              <input type="text" name="phonenumber" value="" id="phonenumber" class="form-control" placeholder="Phone Number" />
             </div>
           </div>
 
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="alternativephone">Alternative Phone</label>
-              <input type="text" name="alternativephone" value="03036153706" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
+              <input type="text" name="alternativephone" value="" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
             </div>
             <div class="mb-1 col-md-6">
               <label for="selectcountry">Select Country</label>
@@ -137,11 +137,11 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="city">City</label>
-              <input type="text" name="city" value="ryk" id="city" class="form-control" placeholder="Enter City" />
+              <input type="text" name="city" value="" id="city" class="form-control" placeholder="Enter City" />
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="zipcode">Zip Code</label>
-              <input type="text" name="zipcode" value="64200" id="zipcode" class="form-control" placeholder="Zip Code" />
+              <input type="text" name="zipcode" value="" id="zipcode" class="form-control" placeholder="Zip Code" />
             </div>
           </div>
 
@@ -169,20 +169,20 @@
             <div class="mb-1 col-md-6">
               <label for="division">Division</label>
               <select class="form-select" id="division" name="division">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
+                <option value="null">Select Division</option>
+                <option>Accounts</option>
+                <option>Admin</option>
+                <option>HR</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
               <!-- <label class="form-label" for="last-name">Position</label> -->
-              <label for="positiondivision">Position Division</label>
-              <select class="form-select" id="positiondivision" name="positiondivision">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
+              <label for="positionname">Position</label>
+              <select class="form-select" id="positionname" name="positionname">
+              @foreach($position as $position)  
+              <option value="null">Select position</option>
+              <option>{{$position->positionname}}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -190,11 +190,10 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="dutytype">Duty Type</label>
               <select class="select2 w-100" name="dutytype" id="dutytype">
-           
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
+                @foreach($data as $data)
+                <option value="null">Select Duty type</option>
+                <option>{{$data->dutytime}}</option>
+                @endforeach
               </select>
             </div>
             <div class="mb-1 col-md-6">
@@ -218,13 +217,8 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="voluntarytermination">Voluntary Termination</label>
               <select class="select2 w-100" name="voluntarytermination" id="voluntarytermination">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
+                <option>Yes</option>
+                <option>No</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
@@ -237,13 +231,8 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="ratetype">Rate Type</label>
               <select class="select2 w-100" name="ratetype" id="ratetype">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
+                <option>Salary</option>
+                <option>Hourly</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
@@ -256,13 +245,10 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="payfrequency">Pay Frequency</label>
               <select class="select2 w-100" name="payfrequency" id="payfrequency">
-                <option>A</option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
+                <option>Weekly</option>
+                <option>Biweekly</option>
+                <option>Monthly</option>
+                <option>Annual</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
@@ -313,8 +299,9 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="gender">Gender</label>
               <select class="select2 w-100" name="gender" id="gender">
-                <option>MALE</option>
-                <option>FEMALE</option>
+                <option>male</option>
+                <option>Femail</option>
+                <option>Other</option>
               </select>
             </div>
           </div>
@@ -322,16 +309,18 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="maritalstatus">Marital Status</label>
               <select class="select2 w-100" name="maritalstatus" id="maritalstatus">
-                <option>A</option>
-                <option></option>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Divorced</option>
+                <option>Widowed</option>
+                <option>Other</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="workinstate">Work in State</label>
               <select class="select2 w-100" name="workinstate" id="workinstate">
-                <option>A</option>
-                <option></option>
-                <option></option>
+                <option>Yes</option>
+                <option>No</option>
               </select>
             </div>
           </div>
@@ -340,17 +329,15 @@
             <div class="mb-1 col-md-6">
               <label class="form-label" for="lineinstate">Line in State</label>
               <select class="select2 w-100" name="lineinstate" id="lineinstate">
-                <option>A</option>
-                <option></option>
-                <option></option>
+                <option>Yes</option>
+                <option>No</option>
               </select>
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="citizenship">CitizenShip</label>
               <select class="select2 w-100" name="citizenship" id="citizenship">
-                <option>A</option>
-                <option></option>
-                <option></option>
+                <option>Citizen</option>
+                <option>Non-Citizen</option>
               </select>
             </div>
           </div>

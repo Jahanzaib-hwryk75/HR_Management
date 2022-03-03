@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\leave;
 use App\Models\country;
 use App\Models\duty;
+use App\Models\position;
 
 class EmployController extends Controller
 {
@@ -102,10 +103,11 @@ class EmployController extends Controller
    }
    public function addemployee(){
    $user=country::all();
-    return view('/employee.addemployee',compact('user'));
+   $data=duty::all();
+   $position=position::all();
+    return view('/employee.addemployee',compact('user','data','position'));
        
    }
-  
   
    public function addposition(){
        return view('/employee.addposition');
@@ -138,5 +140,14 @@ class EmployController extends Controller
        return redirect()->back();
           
     }
+public function saveposition(Request $request){
+    $request->validate([
+        'positionname'=>'required'
+    ]);
+    $saveposition=new position();
+    $saveposition->positionname=$request->positionname;
+    $saveposition->save();
+    return redirect()->back();
+}
    
 }
