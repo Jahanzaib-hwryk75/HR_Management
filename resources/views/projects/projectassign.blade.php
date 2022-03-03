@@ -69,7 +69,6 @@
               <td>{{$data->startdate}}</td>
               <td>{{$data->enddate}}</td>
               <td>{{$data->projectduration}}</td>
-              
               <td></td>
               <td class="d-flex">
               <a class="btn btn-success col-sm-6">Clock In</a>
