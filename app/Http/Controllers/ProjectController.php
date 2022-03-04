@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Project;
 use App\Models\Client;
 use Carbon\Carbon;
+use App\Models\Time;
 
 class ProjectController extends Controller
 {
@@ -66,15 +67,19 @@ class ProjectController extends Controller
         $data = Client::all();
         return view('/projects.ClientsTable', compact('data'));
     }
+    public function timetable(){
+        return view('/projects.timer');
+    }
     public function checkin($id){
-        $data = new Project();
+        $data = new Time();
         $data->checkin = Carbon::now();
-       $start= $data->save();
+       $data->save();
     }
     public function checkout($id){
-        $data = new Project();
+        $data = new Time();
         $data->checkout = Carbon::now();
        $end= $data->save();
     }
+    
     
 }

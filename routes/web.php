@@ -90,6 +90,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/clients', [ProjectController::class, 'clientstable']);
     Route::get('/checkin{id}', [ProjectController::class, 'checkin']);
     Route::get('/checkout{id}', [ProjectController::class, 'checkout']);
+    Route::get('/timing', [ProjectController::class, 'timetable']);
     
 });
 });

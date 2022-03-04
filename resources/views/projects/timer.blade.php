@@ -43,21 +43,15 @@
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addclient'">
             <span>Add Clients</span>
           </button>
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/timing'">
-            <span>Timer</span>
-          </button>
         </div>
         <table class="table datatable">
           <thead>
             <tr>
               <th>Id</th>
-              <th>Project Name</th>
-              <th>Client Name</th>
-              <th>Project Lead</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Project Duration</th>
-              <th>Working Time</th>
+              <th>Foreign Id</th>
+              <th>Time In</th>
+              <th>Time Out</th>
+              <th>Total Time</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -74,7 +68,7 @@
               <td>{{$data->projectduration}}</td>
               <td></td>
               <td class="d-flex">
-              <a class="btn btn-success col-sm-6" href="{{'/checkin{id}'}}">Clock In</a>
+              <a class="btn btn-success col-sm-6">Clock In</a>
                 <a class="btn btn-danger col-sm-6">Clock Out</a>
               </td>
             </tr>
