@@ -1,622 +1,555 @@
 @extends('layouts/contentLayoutMaster')
-
-@section('title', 'Form Wizard')
-
-@section('vendor-style')
-<!-- vendor css files -->
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/wizard/bs-stepper.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
-@endsection
-
-@section('page-style')
-<!-- Page css files -->
-<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-validation.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('css/base/plugins/forms/form-wizard.css')) }}">
-@endsection
-
 @section('content')
-<!-- Horizontal Wizard -->
-<section class="horizontal-wizard">
-  <div class="bs-stepper horizontal-wizard-example">
-    <div class="bs-stepper-header" role="tablist">
-      <div class="step" data-target="#basic-info" role="tab" id="basic-info-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">1</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Basic Info</span>
-            <span class="bs-stepper-subtitle">Setup Account Details</span>
-          </span>
-        </button>
-      </div>
-      <div class="line">
-        <i data-feather="chevron-right" class="font-medium-2"></i>
-      </div>
-      <div class="step" data-target="#personal-info" role="tab" id="personal-info-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">2</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Personal Info</span>
-            <span class="bs-stepper-subtitle">Add Personal Info</span>
-          </span>
-        </button>
-      </div>
-      <div class="line">
-        <i data-feather="chevron-right" class="font-medium-2"></i>
-      </div>
 
+<link rel="stylesheet" href="{{ asset('newadmin/assets/css/style.bundle.css') }}">
+<link rel="stylesheet" href="{{ asset('newadmin/assets/css/style.bundle.css.map') }}">
+<!--end::Toolbar-->
+<!--begin::Container-->
+<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container">
+	<!--begin::Post-->
+	<div class="content flex-row-fluid" id="kt_content" style="margin-left:30px;">
+		<!--begin::Stepper-->
+		<div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_create_account_stepper">
+			<!--begin::Aside-->
+			<div class="display d-flex justify-content-center bg-body rounded justify-content-xl-start flex-row-auto w-100 w-xl-300px w-xxl-400px me-9">
+				<!--begin::Wrapper-->
+				<div class="px-6 px-lg-10 px-xxl-15 py-20">
+					<!--begin::Nav-->
+					<div class="stepper-nav">
+						<!--begin::Step 1-->
+						<div class="stepper-item current" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">1</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Personal Details</h3>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Step 1-->
+						<!--begin::Step 2-->
+						<div class="stepper-item" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">2</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Work Details</h3>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Step 2-->
+						<!--begin::Step 3-->
+						<div class="stepper-item" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">3</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Guarantor's Details</h3>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Step 3-->
+						<!--begin::Step 3-->
+						<div class="stepper-item" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">4</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Loan Details</h3>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Step 3-->
+						<!--begin::Step 5-->
+						<div class="stepper-item" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">5</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Term of use</h3>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Step 5-->
+					</div>
+					<!--end::Nav-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--begin::Aside-->
+			<!--begin::Content-->
+			<div class="d-flex flex-row-fluid flex-center bg-body rounded">
+				<!--begin::Form-->
+				<form class="py-20 w-100 w-xl-700px px-9" action="/quickloan" method="post">
 
-      <div class="step" data-target="#biographical-info" role="tab" id="biographical-info-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">3</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Biographical Info</span>
-            <span class="bs-stepper-subtitle">Add Address</span>
-          </span>
-        </button>
-      </div>
+					<!--begin::Step 1-->
+					<div class="current" data-kt-stepper-element="content">
+						<!--begin::Wrapper-->
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-15">
+								<!--begin::Title-->
+								<h2 class="fw-bolder d-flex align-items-center text-dark">Quick Loan
 
-      <div class="step" data-target="#additional-address" role="tab" id="additional-address-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">4</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Additional Address</span>
-            <span class="bs-stepper-subtitle">Add Address</span>
-          </span>
-        </button>
-      </div>
+								</h2>
+								<!--end::Title-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row">
+								<!--begin::Row-->
+								<div class="row">
+									<!--begin::Col-->
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">First Name</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="firstname" class="form-control form-control-lg form-control-solid" type="text" required />
+										@error('firstname')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										@csrf
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Last Name</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="lastname" class="form-control form-control-lg form-control-solid" type="text" /> @error('lastname')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Email</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="email" class="form-control form-control-lg form-control-solid" type="email" /> @error('email')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<!--begin::Input group-->
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Gender</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="gender" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+										@error('gender')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<!--end::Input group-->
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Date Of Birth</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="dob" class="form-control form-control-lg form-control-solid" type="date" />@error('dob')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Martial Status</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="materialstatus" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Single">Single</option>
+											<option value="Married">Married</option>
+											<option value="Widowed">Widowed</option>
+											<option value="Divorced">Divorced</option>
+										</select>
+										@error('materialstatus')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Education</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="education" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option value="Primary">Primary</option>
+											<option value="Secondary">Secondary</option>
+											<option value="Graduate">Graduate</option>
+											<option value="Post-Graduate">Post-Graduate</option>
+										</select>
+										@error('education')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Home Address</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="homeaddress" class="form-control form-control-lg form-control-solid" type="text" /> @error('homeaddress')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">State You Live In</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="state" class="form-control form-control-lg form-control-solid" type="text" /> @error('state')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Input group-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Step 1-->
+					<!--begin::Step 2-->
+					<div data-kt-stepper-element="content">
+						<!--begin::Wrapper-->
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-15">
+								<!--begin::Title-->
+								<h2 class="fw-bolder text-dark">Work Details</h2>
+								<!--end::Title-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Professional Status</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="professionalstatus" class="form-control form-control-lg form-control-solid" type="text" /> @error('professionalstatus')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Proffesional Category</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="professionalcategory" class="form-control form-control-lg form-control-solid" type="text" /> @error('professionalcategory')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Place Of Work</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="companyname" class="form-control form-control-lg form-control-solid" type="text" /> @error('companyname')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Years Of Work</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="yearsofwork" class="form-control form-control-lg form-control-solid" type="text" /> @error('yearsofwork')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Monthly Salary</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="monthlyincome" class="form-control form-control-lg form-control-solid" type="numerics" /> @error('monthlyincome')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Step 2-->
+					<!--begin::Step 3-->
+					<div data-kt-stepper-element="content">
+						<!--begin::Wrapper-->
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-12">
+								<!--begin::Title-->
+								<h2 class="fw-bolder text-dark">Guarantor's Details</h2>
+								<!--end::Notice-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Guarantor's Name(Employer)</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="gurantorname" class="form-control form-control-lg form-control-solid" type="text" /> @error('gurantorname')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Guarantor's Current Position</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="gurantorposition" class="form-control form-control-lg form-control-solid" type="text" /> @error('gurantorposition')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Relationship</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="relation" class="form-control form-control-lg form-control-solid" type="text" /> @error('relation')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Guarantor's Phone Number</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="gurantorphone" class="form-control form-control-lg form-control-solid" type="numerics" /> @error('gurantorphone')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Guarantor's Email Address</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="gurantoremail" class="form-control form-control-lg form-control-solid" type="email" /> @error('gurantoremail')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Step 3-->
+					<!--begin::Step 3-->
+					<div data-kt-stepper-element="content">
+						<!--begin::Wrapper-->
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-12">
+								<!--begin::Title-->
+								<h2 class="fw-bolder text-dark">Loan Details</h2>
+								<!--end::Notice-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Loan Amount(₦) ?</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="neededmoney" class="form-control form-control-lg form-control-solid" type="number" /> @error('neededmoney')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">Purpose Of Loan ?</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<select name="loanpurpose" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+									<option></option>
+									<option value="Bussiness">Bussiness</option>
+									<option value="Familyneeds">Family needs</option>
+									<option value="Schoolfees">School fees</option>
+									<option value="Payrent">Pay rent</option>
+									<option value="Medicalbill">Medical bill</option>
+									<option value="Padayloan">Paday loan</option>
+									<option value="Others">Others</option>
+								</select>
+								@error('loanpurpose')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+							<!--end::Input group-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-10">
+								<!--begin::Label-->
+								<label class="form-label required">How Will You Payback ?</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<input name="duration" class="form-control form-control-lg form-control-solid" type="date" /> @error('duration')
+								<div class="alert alert-danger">{{ $message }}</div>
+								@enderror
+								<!--end::Input-->
+							</div>
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Step 3-->
+					<!--begin::Step 5-->
+					<div data-kt-stepper-element="content">
+						<!--begin::Wrapper-->
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-8 pb-lg-10">
+								<!--begin::Title-->
+								<h2 class="fw-bolder text-dark">Term Of Use</h2>
+								<!--end::Title-->
+								<!--begin::Notice-->
+								<div class="text-muted text fw-bold fs-6">If you pay on time...
+								</div>
+								<!--end::Notice-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Body-->
+							<div class="mb-0" style="margin-left: 20px;">
+								<!--begin::Text-->
+								<div class="fs-6 text-gray-600 mb-5">
+									<i class="fa-solid fa-naira-sign"></i>Higher amounts
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">Upto 500,000</p>
+								</div>
+								<div class="fs-6 text-gray-600 mb-5">
+									<i class="fa-regular fa-badge-percent"></i>Discounts
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">When you pay early</p>
+								</div>
+								<div class="fs-6 text-gray-600 mb-5">Instalments
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">Spread your payments</p>
+								</div>
+								<!--end::Text-->
+								<!--begin::Alert-->
+								<!--end::Alert-->
+							</div>
+							<!--end::Body-->
+							<!--begin::Heading-->
+							<div class="pb-8 pb-lg-10">
+								<!--begin::Notice-->
+								<div class="text-muted text-red fw-bold fs-6">If you pay late...
+								</div>
+								<!--end::Notice-->
+							</div>
+							<!--end::Heading-->
+							<!--begin::Body-->
+							<div class="mb-0" style="margin-left: 20px;">
+								<!--begin::Text-->
+								<div class="fs-6 text-gray-600 mb-5">Automatic debit
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">On your bank account</p>
+								</div>
+								<div class="fs-6 text-gray-600 mb-5">Late fees
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">1.5% per day for 10 days</p>
+								</div>
+								<div class="fs-6 text-gray-600 mb-5">Credit bureaus
+									<p style="color: #7e8299!important; font-size: 0.85rem!important; font-family: inherit;">Defaulters are reported</p>
+								</div>
+								<!--end::Text-->
+								<!--begin::Alert-->
+								<!--end::Alert-->
+							</div>
+							<!--end::Body-->
+							<p class="p">Read our Terms of Use and privacy policy<br>
+								Loan amounts range from ₦5,000 to ₦500,000 with a repayment period from 14days to 6months at monthly interest rates of 20%(APRs 240%)
+								<br>
+								<br>
+								<div class="d-flex">
+                                <input class="checkbox me-5" type="checkbox" name="checkbox">I Agree to the terms and privacy policy
+                                </div>
+							</p>
+							<input type="submit" class="btn btn-lg btn-primary me-3" style="float: right;" value="Submit">
+						</div>
+						<!--end::Wrapper-->
 
-      <div class="step" data-target="#emergency-contact" role="tab" id="emergency-contact-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">5</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Emergency Contact</span>
-            <span class="bs-stepper-subtitle">Add Address</span>
-          </span>
-        </button>
-      </div>
-
-      <div class="step" data-target="#login-info" role="tab" id="login-info-trigger">
-        <button type="button" class="step-trigger">
-          <span class="bs-stepper-box">6</span>
-          <span class="bs-stepper-label">
-            <span class="bs-stepper-title">Login Info</span>
-            <span class="bs-stepper-subtitle">Add Address</span>
-          </span>
-        </button>
-      </div>
-
-      <div class="line">
-        <i data-feather="chevron-right" class="font-medium-2"></i>
-      </div>
-
-    </div>
-    <div class="bs-stepper-content">
-      <div id="basic-info" class="content" role="tabpanel" aria-labelledby="basic-info-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Account Details</h5>
-          <small class="text-muted">Enter Your Account Details.</small>
-        </div>
-        <form action="{{ url('/admin/saveemployee')}}" method="post" enctype="multipart/form-data"></form>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="firstname">First Name</label>
-              <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Enter First Name" required />
-              @error('firstname')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="lastname">Last Name</label>
-              <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Enter Last Name" required />
-              @error('lastname')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="email">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" required />
-              @error('email')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 form-password-toggle col-md-6">
-              <label class="form-label" for="phonenumber">Phone Number</label>
-              <input type="text" name="phonenumber" value="" id="phonenumber" class="form-control" placeholder="Phone Number" required />
-              @error('phonenumber')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="alternativephone">Alternative Phone</label>
-              <input type="text" name="alternativephone" value="" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" required />
-              @error('alternativephone')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="selectcountry">Select Country</label>
-              <select class="form-select" id="selectcountry" name="selectcountry" required>
-                @foreach($user as $user)
-                <option value="null">Select Country</option>
-                <option>{{$user->couuntryname}}</option>
-                @endforeach
-              </select>
-              @error('selectcountry')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="city">City</label>
-              <input type="text" name="city" id="city" class="form-control" placeholder="Enter City" required />
-              @error('city')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="zipcode">Zip Code</label>
-              <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="Zip Code" required/>
-              @error('zipcode')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          
-
-        </form>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-outline-secondary btn-prev" disabled>
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div>
-      </div>
-      <div id="personal-info" class="content" role="tabpanel" aria-labelledby="personal-info-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Personal Info</h5>
-          <small>Enter Your Personal Info.</small>
-        </div>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label for="division">Division</label>
-              <select class="form-select" id="division" name="division" required>
-                <option value="null">Select Division</option>
-                <option>Accounts</option>
-                <option>Admin</option>
-                <option>HR</option>
-              </select>
-              @error('division')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <!-- <label class="form-label" for="last-name">Position</label> -->
-              <label for="positionname">Position</label>
-              <select class="form-select" id="positionname" name="positionname" required>
-              <option value="null">Select position</option>
-              @foreach($position as $position)  
-             
-              <option>{{$position->positionname}}</option>
-                @endforeach
-              </select>
-              @error('positionname')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="dutytype">Duty Type</label>
-              <select class="select2 w-100" name="dutytype" id="dutytype" required>
-                @foreach($data as $data)
-                <option value="null">Select Duty type</option>
-                <option>{{$data->dutytime}}</option>
-                @endforeach
-              </select>
-              @error('dutytype')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="hiredate">Hire Date</label>
-              <input type="date" class="form-control" id="hiredate" name="hiredate" value="" placeholder="Enter date" required />
-              @error('hiredate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label for="terminationdate">Termination Date</label>
-              <input type="date" class="form-control" id="terminationdate" name="terminationdate" placeholder="Enter date" required />
-              @error('terminationdate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="terminationreason">Termination Reason</label>
-              <input type="text" class="form-control" name="terminationreason" id="terminationreason" value="dasd" placeholder="Termination Reason" required />
-              @error('terminationreason')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="voluntarytermination">Voluntary Termination</label>
-              <select class="select2 w-100" name="voluntarytermination" id="voluntarytermination">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              @error('voluntarytermination')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="rehiredate">Re Hire Date</label>
-              <input type="date" class="form-control" id="rehiredate" name="rehiredate" value="" placeholder="Enter date" required />
-              @error('rehiredate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="ratetype">Rate Type</label>
-              <select class="select2 w-100" name="ratetype" id="ratetype">
-                <option>Salary</option>
-                <option>Hourly</option>
-              </select>
-              @error('ratetype')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="rate">Rate</label>
-              <input type="text" class="form-control" id="rate" name="rate" value="" placeholder="Enter Rate" required />
-              @error('rate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="payfrequency">Pay Frequency</label>
-              <select class="select2 w-100" name="payfrequency" id="payfrequency">
-                <option>Weekly</option>
-                <option>Biweekly</option>
-                <option>Monthly</option>
-                <option>Annual</option>
-              </select>
-              @error('payfrequency')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="payfrequencytext">Pay Frequency Text</label>
-              <input type="text" class="form-control" id="payfrequencytext" name="payfrequencytext" value="" placeholder="Enter Pay Frequency Text" required />
-              @error('payfrequencytext')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="homedepartment">Home Department</label>
-              <input type="text" class="form-control" id="homedepartment" name="homedepartment" value="" placeholder="Enter Home Department" required />
-              @error('homedepartment')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label for="homedepartmenttext">Home Department Text</label>
-              <input type="text" class="form-control" id="homedepartmenttext" name="homedepartmenttext" value="" placeholder="Enter Home Department Text" required />
-              @error('homedepartmenttext')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-
-        </form>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div>
-      </div>
-
-
-      <div id="biographical-info" class="content" role="tabpanel" aria-labelledby="biographical-info-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Biographical-Info</h5>
-          <small>Enter Your Address.</small>
-        </div>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="dateofbirth">Date of Birth</label>
-              <input type="date" class="form-control" name="dateofbirth" id="dateofbirth" value="" placeholder="Enter date" required />
-              @error('dateofbirth')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="gender">Gender</label>
-              <select class="select2 w-100" name="gender" id="gender">
-                <option>male</option>
-                <option>Femail</option>
-                <option>Other</option>
-              </select>
-              @error('gender')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="maritalstatus">Marital Status</label>
-              <select class="select2 w-100" name="maritalstatus" id="maritalstatus">
-                <option>Single</option>
-                <option>Married</option>
-                <option>Divorced</option>
-                <option>Widowed</option>
-                <option>Other</option>
-              </select>
-              @error('maritalstatus')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="workinstate">Work in State</label>
-              <select class="select2 w-100" name="workinstate" id="workinstate">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              @error('workinstate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="lineinstate">Line in State</label>
-              <select class="select2 w-100" name="lineinstate" id="lineinstate">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              @error('lineinstate')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="citizenship">CitizenShip</label>
-              <select class="select2 w-100" name="citizenship" id="citizenship">
-                <option>Citizen</option>
-                <option>Non-Citizen</option>
-              </select>
-              @error('citizenship')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="pictureupload">Picture Upload</label>
-              <input class="form-control" type="file" id="pictureupload" name="pictureupload" />
-              @error('pictureupload')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-        </form>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div>
-      </div>
-
-      <div id="additional-address" class="content" role="tabpanel" aria-labelledby="additional-address-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Additional-Address</h5>
-          <small>Enter Your Address.</small>
-        </div>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="homeemail">Home Email</label>
-              <input type="email" id="homeemail" name="homeemail" class="form-control" placeholder="Enter Home Email" />
-              @error('homeemail')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="homephone">Home Phone</label>
-              <input type="text" name="homephone" id="homephone" class="form-control" placeholder="Enter Home Phone" />
-              @error('homephone')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="businessphone">Business Phone</label>
-              <input type="text" id="businessphone" name="businessphone" class="form-control" placeholder="Enter Business Phone" />
-              @error('businessphone')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="cellphone">Cell Phone</label>
-              <input type="text" id="cellphone" name="cellphone" class="form-control" placeholder="Enter Cell Phone" />
-              @error('cellphone')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-        </form>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div>
-      </div>
-
-      <div id="emergency-contact" class="content" role="tabpanel" aria-labelledby="emergency-contact-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Emergency Contact</h5>
-          <small>Enter Your Address.</small>
-        </div>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="emergencycontact">Emergency Contact</label>
-              <input type="text" id="emergencycontact" name="emergencycontact" class="form-control" placeholder="Enter Emergency Contact" />
-              @error('emergencycontact')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="emergencyhome">Emergency Home</label>
-              <input type="text" id="emergencyhome" name="emergencyhome" class="form-control" placeholder="Enter Emergency Home" />
-              @error('emergencyhome')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="emergencycontactrelation">Emergency Contact Relation</label>
-              <input type="text" id="emergencycontactrelation" name="emergencycontactrelation" class="form-control" placeholder="Enter Emergency Contact Relation" />
-              @error('emergencycontactrelation')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="alteremergencycontact">Alter Emergency Contact</label>
-              <input type="text" id="alteremergencycontact" name="alteremergencycontact" class="form-control" placeholder="Enter Alter Emergency Contact" />
-              @error('alteremergencycontact')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="alteremergencyphone">Alter Emergency Phone</label>
-              <input type="text" id="alteremergencyphone" name="alteremergencyphone" class="form-control" placeholder="Enter Alter Emergency Phone" />
-              @error('alteremergencyphone')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-        </form>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button class="btn btn-primary btn-next">
-            <span class="align-middle d-sm-inline-block d-none">Next</span>
-            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-          </button>
-        </div>
-      </div>
-
-      <div id="login-info" class="content" role="tabpanel" aria-labelledby="login-info-trigger">
-        <div class="content-header">
-          <h5 class="mb-0">Login Info</h5>
-          <small>Enter Your Address.</small>
-        </div>
-        <form>
-          <div class="row">
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="emails">Email</label>
-              <input type="email" id="emails" name="emails" class="form-control" placeholder="Enter login Email" />
-              @error('emails')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-            <div class="mb-1 col-md-6">
-              <label class="form-label" for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" placeholder="Enter login Password" />
-              @error('password')
-              <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-          </div>
-
-        </form>
-        </form>
-
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-primary btn-prev">
-            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-          </button>
-          <button type="submit" class="btn btn-primary me-1">Submit</button>
-        
-        </div>
-
-      </div>
-
-
-    </div>
-  </div>
-</section>
-<!-- /Horizontal Wizard -->
-
+					</div>
+					<!--end::Step 5-->
+					<!--begin::Actions-->
+					<div class="d-flex flex-stack pt-10" style="float: right;">
+						<!--begin::Wrapper-->
+						<div>
+							<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue
+							</button>
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Actions-->
+				</form>
+				<!--end::Form-->
+			</div>
+			<!--end::Content-->
+		</div>
+		<!--end::Stepper-->
+	</div>
+	<!--end::Post-->
+</div>
 
 @endsection
 
-@section('vendor-script')
-<!-- vendor files -->
-<script src="{{ asset(mix('vendors/js/forms/wizard/bs-stepper.min.js')) }}"></script>
-<script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>
-<script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
-@endsection
-@section('page-script')
-<!-- Page js files -->
-<script src="{{ asset(mix('js/scripts/forms/form-wizard.js')) }}"></script>
-@endsection
+<script src="{{ asset('newadmin/assets/css/style.bundle.js') }}"></script>
+<script src="{{ asset('newadmin/assets/css/style.bundle.js.map') }}"></script>
+<script src="{{ asset('newadmin/assets/js/scripts.bundle.js') }}"></script>
+<script src="{{ asset('newadmin/assets/js/scripts.bundle.js.map') }}"></script>
+
