@@ -74,8 +74,8 @@
               <td>{{$data->projectduration}}</td>
               <td></td>
               <td class="d-flex">
-              <a class="btn btn-success col-sm-6" href="{{'/checkin{id}'}}">Clock In</a>
-                <a class="btn btn-danger col-sm-6">Clock Out</a>
+              <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin')}}">Clock In</a>
+                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout/{id}')}}">Clock Out</a>
               </td>
             </tr>
             @endforeach

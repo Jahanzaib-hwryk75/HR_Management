@@ -70,15 +70,18 @@ class ProjectController extends Controller
     public function timetable(){
         return view('/projects.timer');
     }
-    public function checkin($id){
+    public function checkin(){
         $data = new Time();
-        $data->checkin = Carbon::now();
+        $data->checkin = Carbon::now()->toTimeString();
        $data->save();
+       return redirect()->back();
     }
-    public function checkout($id){
-        $data = new Time();
-        $data->checkout = Carbon::now();
-       $end= $data->save();
+    public function checkout(Request $request, $id){
+        $data = Time::find($id);
+        $data->checkout = Carbon::now()->toTimeString();
+        $data = Time::where('id',$id)->update($request);
+        $data->save();
+       return redirect()->back();
     }
     
     

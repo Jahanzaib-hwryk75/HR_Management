@@ -62,15 +62,11 @@
             <td>{{$data->id}}</td>
               <td>{{$data->projectname}}</td>
               <td>{{$data->clientname}}</td>
-              <td>{{$data->projectlead}}</td>
-              <td>{{$data->startdate}}</td>
-              <td>{{$data->enddate}}</td>
-              <td>{{$data->projectduration}}</td>
               <td></td>
-              <td class="d-flex">
+              <!-- <td class="d-flex">
               <a class="btn btn-success col-sm-6">Clock In</a>
                 <a class="btn btn-danger col-sm-6">Clock Out</a>
-              </td>
+              </td> -->
             </tr>
             @endforeach
             @endisset
