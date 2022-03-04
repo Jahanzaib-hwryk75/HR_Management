@@ -29,7 +29,7 @@
 							<!--end::Icon-->
 							<!--begin::Label-->
 							<div class="stepper-label">
-								<h3 class="stepper-title">Personal Details</h3>
+								<h3 class="stepper-title">Basic Info</h3>
 							</div>
 							<!--end::Label-->
 						</div>
@@ -47,7 +47,7 @@
 							<!--end::Icon-->
 							<!--begin::Label-->
 							<div class="stepper-label">
-								<h3 class="stepper-title">Work Details</h3>
+								<h3 class="stepper-title">Positional Information</h3>
 							</div>
 							<!--end::Label-->
 						</div>
@@ -65,7 +65,7 @@
 							<!--end::Icon-->
 							<!--begin::Label-->
 							<div class="stepper-label">
-								<h3 class="stepper-title">Guarantor's Details</h3>
+								<h3 class="stepper-title">Biographical Info</h3>
 							</div>
 							<!--end::Label-->
 						</div>
@@ -83,7 +83,7 @@
 							<!--end::Icon-->
 							<!--begin::Label-->
 							<div class="stepper-label">
-								<h3 class="stepper-title">Loan Details</h3>
+								<h3 class="stepper-title">Additional Address</h3>
 							</div>
 							<!--end::Label-->
 						</div>
@@ -101,11 +101,27 @@
 							<!--end::Icon-->
 							<!--begin::Label-->
 							<div class="stepper-label">
-								<h3 class="stepper-title">Term of use</h3>
+								<h3 class="stepper-title">Emergency Contact</h3>
 							</div>
 							<!--end::Label-->
 						</div>
 						<!--end::Step 5-->
+						<div class="stepper-item" data-kt-stepper-element="nav">
+							<!--begin::Line-->
+							<div class="stepper-line w-40px"></div>
+							<!--end::Line-->
+							<!--begin::Icon-->
+							<div class="stepper-icon w-40px h-40px">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">6</span>
+							</div>
+							<!--end::Icon-->
+							<!--begin::Label-->
+							<div class="stepper-label">
+								<h3 class="stepper-title">Login Info</h3>
+							</div>
+							<!--end::Label-->
+						</div>
 					</div>
 					<!--end::Nav-->
 				</div>
@@ -115,7 +131,7 @@
 			<!--begin::Content-->
 			<div class="d-flex flex-row-fluid flex-center bg-body rounded">
 				<!--begin::Form-->
-				<form class="py-20 w-100 w-xl-700px px-9" action="/quickloan" method="post">
+				<form class="py-20 w-100 w-xl-700px px-9" action="{{ url('/admin/saveemployee')}}" method="post">
 
 					<!--begin::Step 1-->
 					<div class="current" data-kt-stepper-element="content">
@@ -167,38 +183,76 @@
 										@enderror
 										<!--end::Input-->
 									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Phone No</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="phonenumber" class="form-control form-control-lg form-control-solid" type="text" /> @error('phonenumber')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Alternative Phone</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="alternativephone" class="form-control form-control-lg form-control-solid" type="text" /> @error('alternativephone')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
 									<!--begin::Input group-->
 									<div class="fv-row mb-10">
 										<!--begin::Label-->
-										<label class="form-label required">Gender</label>
+										<label class="form-label required">Country</label>
 										<!--end::Label-->
 										<!--begin::Input-->
-										<select name="gender" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
 											<option></option>
-											<option value="Male">Male</option>
-											<option value="Female">Female</option>
+											<option>Pakistan</option>
+											<option>USA</option>
 										</select>
-										@error('gender')
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Cite</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="city" class="form-control form-control-lg form-control-solid" type="text" /> @error('city')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Zip Code</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="zipcode" class="form-control form-control-lg form-control-solid" type="text" /> @error('zipcode')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
 										<!--end::Input-->
 									</div>
 									<!--end::Input group-->
-									<div class="fv-row mb-10">
-										<!--begin::Label-->
+									<!-- <div class="fv-row mb-10">
+									
 										<label class="form-label required">Date Of Birth</label>
-										<!--end::Label-->
-										<!--begin::Input-->
+										
 										<input name="dob" class="form-control form-control-lg form-control-solid" type="date" />@error('dob')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
-										<!--end::Input-->
-									</div>
-									<div class="fv-row mb-10">
-										<!--begin::Label-->
+										
+									</div> -->
+									<!-- <div class="fv-row mb-10">
+									
 										<label class="form-label required">Martial Status</label>
-										<!--end::Label-->
-										<!--begin::Input-->
+										
 										<select name="materialstatus" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
 											<option></option>
 											<option value="Single">Single</option>
@@ -209,13 +263,12 @@
 										@error('materialstatus')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
-										<!--end::Input-->
-									</div>
-									<div class="fv-row mb-10">
-										<!--begin::Label-->
+									
+									</div> -->
+									<!-- <div class="fv-row mb-10">
+										
 										<label class="form-label required">Education</label>
-										<!--end::Label-->
-										<!--begin::Input-->
+										
 										<select name="education" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
 											<option></option>
 											<option value="Primary">Primary</option>
@@ -226,28 +279,26 @@
 										@error('education')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
-										<!--end::Input-->
-									</div>
-									<div class="fv-row mb-10">
-										<!--begin::Label-->
+										
+									</div> -->
+									<!-- <div class="fv-row mb-10">
+										
 										<label class="form-label required">Home Address</label>
-										<!--end::Label-->
-										<!--begin::Input-->
+										
 										<input name="homeaddress" class="form-control form-control-lg form-control-solid" type="text" /> @error('homeaddress')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
-										<!--end::Input-->
-									</div>
-									<div class="fv-row mb-10">
-										<!--begin::Label-->
+										
+									</div> -->
+									<!-- <div class="fv-row mb-10">
+									
 										<label class="form-label required">State You Live In</label>
-										<!--end::Label-->
-										<!--begin::Input-->
+										
 										<input name="state" class="form-control form-control-lg form-control-solid" type="text" /> @error('state')
 										<div class="alert alert-danger">{{ $message }}</div>
 										@enderror
-										<!--end::Input-->
-									</div>
+										
+									</div> -->
 								</div>
 								<!--end::Row-->
 							</div>
@@ -263,7 +314,7 @@
 							<!--begin::Heading-->
 							<div class="pb-10 pb-lg-15">
 								<!--begin::Title-->
-								<h2 class="fw-bolder text-dark">Work Details</h2>
+								<h2 class="fw-bolder text-dark">Positional Information</h2>
 								<!--end::Title-->
 							</div>
 							<!--end::Heading-->
