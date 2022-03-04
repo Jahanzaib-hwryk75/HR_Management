@@ -9,6 +9,7 @@ use App\Models\leave;
 use App\Models\country;
 use App\Models\duty;
 use App\Models\position;
+use App\Models\employee;
 
 class EmployController extends Controller
 {
@@ -151,6 +152,95 @@ public function saveposition(Request $request){
     $saveposition->positionname=$request->positionname;
     $saveposition->save();
     return redirect()->back();
-}
+    }
+    public function saveemployee(Request $request){
+        $request->validate([
+        'firstname'=>'required',
+        'lastname'=>'required',
+        'email'=>'required|email|unique:employees',
+        'phonenumber'=>'required',
+        'alternativephone'=>'required',
+        'selectcountry'=>'required',
+        'city'=>'required',
+        'zipcode'=>'required',
+        'division'=>'required',
+        'positionname'=>'required',
+        'dutytype'=>'required',
+        'hiredate'=>'required',
+        'terminationdate'=>'required',
+        'terminationreason'=>'required',
+        'voluntarytermination'=>'required',
+        'rehiredate'=>'required',
+        'ratetype'=>'required',
+        'rate'=>'required',
+        'payfrequency'=>'required',
+        'payfrequencytext'=>'required',
+        'homedepartment'=>'required',
+        'homedepartmenttext'=>'required',
+        'dateofbirth'=>'required',
+        'gender'=>'required',
+        'maritalstatus'=>'required',
+        'workinstate'=>'required',
+        'lineinstate'=>'required',
+        'citizenship'=>'required',
+        'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'homeemail'=>'required|email|unique:employees',
+        'homephone'=>'required',
+        'businessphone'=>'required',
+        'cellphone'=>'required',
+        'emergencycontact'=>'required',
+        'emergencyhome'=>'required',
+        'emergencycontactrelation'=>'required',
+        'alteremergencycontact'=>'required',
+        'alteremergencyphone'=>'required',
+        'emails'=>'required|email|unique:employees',
+        'password'=>'required|min:4'
+        ]);
+
+        $saveemployee=new employee();
+        $saveemployee->firstname=$request->firstname;
+        $saveemployee->lastname=$request->lastname;
+        $saveemployee->email=$request->email;
+        $saveemployee->phonenumber=$request->phonenumber;
+        $saveemployee->alternativephone=$request->alternativephone;
+        $saveemployee->selectcountry=$request->selectcountry;
+        $saveemployee->city=$request->city;
+        $saveemployee->zipcode=$request->zipcode;
+        $saveemployee->division=$request->division;
+        $saveemployee->positionname=$request->positionname;
+        $saveemployee->dutytype=$request->dutytype;
+        $saveemployee->hiredate=$request->hiredate;
+        $saveemployee->terminationdate=$request->terminationdate;
+        $saveemployee->terminationreason=$request->terminationreason;
+        $saveemployee->voluntarytermination=$request->voluntarytermination;
+        $saveemployee->rehiredate=$request->rehiredate;
+        $saveemployee->ratetype=$request->ratetype;
+        $saveemployee->rate=$request->rate;
+        $saveemployee->payfrequency=$request->payfrequency;
+        $saveemployee->payfrequencytext=$request->payfrequencytext;
+        $saveemployee->homedepartment=$request->homedepartment;
+        $saveemployee->homedepartmenttext=$request->homedepartmenttext;
+        $saveemployee->dateofbirth=$request->dateofbirth;
+        $saveemployee->gender=$request->gender;
+        $saveemployee->maritalstatus=$request->maritalstatus;
+        $saveemployee->workinstate=$request->workinstate;
+        $saveemployee->lineinstate=$request->lineinstate;
+        $saveemployee->citizenship=$request->citizenship;
+        $saveemployee->pictureupload=time().'.'.$request->pictureupload->extension();
+        $request->pictureupload->move(public_path('picture'), $$saveemployee->pictureupload);
+        $saveemployee->homeemail=$request->homeemail;
+        $saveemployee->homephone=$request->homephone;
+        $saveemployee->businessphone=$request->businessphone;
+        $saveemployee->cellphone=$request->cellphone;
+        $saveemployee->emergencycontact=$request->emergencycontact;
+        $saveemployee->emergencyhome=$request->emergencyhome;
+        $saveemployee->emergencycontactrelation=$request->emergencycontactrelation;
+        $saveemployee->alteremergencycontact=$request->alteremergencycontact;
+        $saveemployee->alteremergencyphone=$request->alteremergencyphone;
+        $saveemployee->emails=$request->emails;
+        $saveemployee->password=$request->password;
+        $saveemployee->save();
+        return redirect('/employee.addcountry');
+    }
    
 }

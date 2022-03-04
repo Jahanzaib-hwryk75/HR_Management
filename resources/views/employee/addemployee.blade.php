@@ -96,19 +96,19 @@
           <h5 class="mb-0">Account Details</h5>
           <small class="text-muted">Enter Your Account Details.</small>
         </div>
-        <form action="" method="POST"></form>
+        <form action="{{ url('/admin/saveemployee')}}" method="post" enctype="multipart/form-data"></form>
         <form>
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="firstname">First Name</label>
-              <input type="text" name="firstname" value="" id="firstname" class="form-control" placeholder="Enter First Name" />
+              <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Enter First Name" required />
               @error('firstname')
               <div class="text-danger">{{ $message }}</div>
                @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="lastname">Last Name</label>
-              <input type="text" name="lastname" value="" id="lastname" class="form-control" placeholder="Enter Last Name" />
+              <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Enter Last Name" required />
               @error('lastname')
               <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -117,14 +117,14 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="email">Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" value="" />
+              <input type="email" name="email" id="email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" required />
               @error('email')
               <div class="text-danger">{{ $message }}</div>
                @enderror
             </div>
             <div class="mb-1 form-password-toggle col-md-6">
               <label class="form-label" for="phonenumber">Phone Number</label>
-              <input type="text" name="phonenumber" value="" id="phonenumber" class="form-control" placeholder="Phone Number" />
+              <input type="text" name="phonenumber" value="" id="phonenumber" class="form-control" placeholder="Phone Number" required />
               @error('phonenumber')
               <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -134,14 +134,14 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="alternativephone">Alternative Phone</label>
-              <input type="text" name="alternativephone" value="" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" />
+              <input type="text" name="alternativephone" value="" id="alternativephone" class="form-control" placeholder="Alternative Phone Number" required />
               @error('alternativephone')
               <div class="text-danger">{{ $message }}</div>
                @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label for="selectcountry">Select Country</label>
-              <select class="form-select" id="selectcountry" name="selectcountry">
+              <select class="form-select" id="selectcountry" name="selectcountry" required>
                 @foreach($user as $user)
                 <option value="null">Select Country</option>
                 <option>{{$user->couuntryname}}</option>
@@ -156,14 +156,14 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="city">City</label>
-              <input type="text" name="city" value="" id="city" class="form-control" placeholder="Enter City" />
+              <input type="text" name="city" id="city" class="form-control" placeholder="Enter City" required />
               @error('city')
               <div class="text-danger">{{ $message }}</div>
                @enderror
             </div>
             <div class="mb-1 col-md-6">
               <label class="form-label" for="zipcode">Zip Code</label>
-              <input type="text" name="zipcode" value="" id="zipcode" class="form-control" placeholder="Zip Code" />
+              <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="Zip Code" required/>
               @error('zipcode')
               <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -193,7 +193,7 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label for="division">Division</label>
-              <select class="form-select" id="division" name="division">
+              <select class="form-select" id="division" name="division" required>
                 <option value="null">Select Division</option>
                 <option>Accounts</option>
                 <option>Admin</option>
@@ -206,7 +206,7 @@
             <div class="mb-1 col-md-6">
               <!-- <label class="form-label" for="last-name">Position</label> -->
               <label for="positionname">Position</label>
-              <select class="form-select" id="positionname" name="positionname">
+              <select class="form-select" id="positionname" name="positionname" required>
               <option value="null">Select position</option>
               @foreach($position as $position)  
              
@@ -221,7 +221,7 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label class="form-label" for="dutytype">Duty Type</label>
-              <select class="select2 w-100" name="dutytype" id="dutytype">
+              <select class="select2 w-100" name="dutytype" id="dutytype" required>
                 @foreach($data as $data)
                 <option value="null">Select Duty type</option>
                 <option>{{$data->dutytime}}</option>
@@ -243,7 +243,7 @@
           <div class="row">
             <div class="mb-1 col-md-6">
               <label for="terminationdate">Termination Date</label>
-              <input type="date" class="form-control" id="terminationdate" name="terminationdate" value="" placeholder="Enter date" required />
+              <input type="date" class="form-control" id="terminationdate" name="terminationdate" placeholder="Enter date" required />
               @error('terminationdate')
               <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -595,7 +595,8 @@
             <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
             <span class="align-middle d-sm-inline-block d-none">Previous</span>
           </button>
-          <button class="btn btn-success btn-submit">Submit</button>
+          <button type="submit" class="btn btn-primary me-1">Submit</button>
+        
         </div>
 
       </div>
