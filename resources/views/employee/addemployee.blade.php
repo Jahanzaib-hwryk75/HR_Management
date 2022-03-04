@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" href="{{ asset('newadmin/assets/css/style.bundle.css') }}">
 <link rel="stylesheet" href="{{ asset('newadmin/assets/css/style.bundle.css.map') }}">
+
 <!--end::Toolbar-->
 <!--begin::Container-->
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container">
