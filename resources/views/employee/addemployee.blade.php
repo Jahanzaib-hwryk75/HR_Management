@@ -240,7 +240,176 @@
 										@enderror
 										<!--end::Input-->
 									</div>
-									<!--end::Input group-->
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Division</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option>Pakistan</option>
+											<option>USA</option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Position</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option>Pakistan</option>
+											<option>USA</option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Duty Type</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option>Pakistan</option>
+											<option>USA</option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<!-- end::Input group-->
+									<div class="fv-row mb-10">
+									
+									<label class="form-label required">Hire Date</label>
+									
+									<input name="dob" class="form-control form-control-lg form-control-solid" type="date" />@error('dob')
+									<div class="alert alert-danger">{{ $message }}</div>
+									@enderror
+									
+								</div>
+								<div class="fv-row mb-10">
+									
+									<label class="form-label required">Termination Date</label>
+									
+									<input name="dob" class="form-control form-control-lg form-control-solid" type="date" />@error('dob')
+									<div class="alert alert-danger">{{ $message }}</div>
+									@enderror
+									
+								</div>
+								<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Termination Reason</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="alternativephone" class="form-control form-control-lg form-control-solid" type="text" /> @error('alternativephone')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Voluntary Termination</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option></option>
+											<option></option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+
+									<div class="fv-row mb-10">
+									
+									<label class="form-label required">Re Hire Date</label>
+									
+									<input name="dob" class="form-control form-control-lg form-control-solid" type="date" />@error('dob')
+									<div class="alert alert-danger">{{ $message }}</div>
+									@enderror
+									
+								</div>
+
+								<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Rate Type</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option></option>
+											<option></option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Rate</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="zipcode" class="form-control form-control-lg form-control-solid" type="text" /> @error('zipcode')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Pay Frequency</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<select name="selectcountry" class="form-select form-select-lg form-select-solid" data-control="select2" data-placeholder="Select..." data-allow-clear="true" data-hide-search="true">
+											<option></option>
+											<option></option>
+											<option></option>
+										</select>
+										@error('selectcountry')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Pay Frequency Text</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="zipcode" class="form-control form-control-lg form-control-solid" type="text" /> @error('zipcode')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Home Department</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="zipcode" class="form-control form-control-lg form-control-solid" type="text" /> @error('zipcode')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
+									<div class="fv-row mb-10">
+										<!--begin::Label-->
+										<label class="form-label required">Department Text</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input name="zipcode" class="form-control form-control-lg form-control-solid" type="text" /> @error('zipcode')
+										<div class="alert alert-danger">{{ $message }}</div>
+										@enderror
+										<!--end::Input-->
+									</div>
 									<!-- <div class="fv-row mb-10">
 									
 										<label class="form-label required">Date Of Birth</label>
