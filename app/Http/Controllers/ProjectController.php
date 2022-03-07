@@ -67,22 +67,35 @@ class ProjectController extends Controller
         $data = Client::all();
         return view('/projects.ClientsTable', compact('data'));
     }
+
+
+
+    public function nametimesave(Request $request){
+        $request->validate([
+            'clientname' => 'required'
+        ]);
+        $user = new Time();
+        $user->name = $request->name;
+        $user->save();
+        return redirect()->back();
+    }
     public function timetable(){
-        return view('/projects.timer');
+        $data = Time::all();
+        return view('/projects.timer', compact('data'));
     }
-    public function checkin(){
-        $data = new Time();
-        $data->checkin = Carbon::now()->toTimeString();
-       $data->save();
-       return redirect()->back();
-    }
-    public function checkout(Request $request, $id){
-        $data = Time::find($id);
-        $data->checkout = Carbon::now()->toTimeString();
-        $data = Time::where('id',$id)->update($request);
-        $data->save();
-       return redirect()->back();
-    }
+    // public function checkin(){
+    //     $data = new Time();
+    //     $data->checkin = Carbon::now()->toTimeString();
+    //    $data->save();
+    //    return redirect()->back();
+    // }
+    // public function checkout(Request $request, $id){
+    //     $data = Time::find($id);
+    //     $data->checkout = Carbon::now()->toTimeString();
+    //     $data = Time::where('id',$id)->update($request);
+    //     $data->save();
+    //    return redirect()->back();
+    // }
     
     
 }

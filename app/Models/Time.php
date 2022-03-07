@@ -9,7 +9,7 @@ class Time extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'name',
         'checkin',
         'checkout'
     ];
