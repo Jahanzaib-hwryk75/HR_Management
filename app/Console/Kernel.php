@@ -2,7 +2,9 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -24,7 +26,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('db:seed --class=TimeSeeder')->daily();
+        $schedule->command(function () {
+            DB::table('times')->create('name','user');
+        })->everyMinute();
     }
 
     /**
