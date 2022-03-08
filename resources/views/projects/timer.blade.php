@@ -30,10 +30,11 @@
 </style>
 <!-- Basic Tables start -->
 
+
 <form action="{{url('/admin/nametimesave')}}" method="post" role="form">
  @csrf
   <label>Name</label>
-  <input type="text" name="name" id="name" placeholder="Enter Name"/>
+  <input type="text" name="name" id="name" placeholder="Enter Name">
   <button type="submit" class="btn-success" name="save">Add Name</button>
 </button>
 </form>
@@ -69,13 +70,13 @@
             <tr>
             <td>{{$data->id}}</td>
               <td>{{$data->name}}</td>
-              <td></td>
-              <td></td>
+              <td>{{$data->checkin}}</td>
+              <td>{{$data->checkout}}</td>
               <!-- <td>{{$data->clientname}}</td> -->
               <td></td>
               <td class="d-flex">
-              <a class="btn btn-success col-sm-6 "  href="{{url('/admin/checkin')}}">Clock In</a>
-                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout/{id}')}}">Clock Out</a>
+              <a class="btn btn-success col-sm-6 "  href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
+                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Clock Out</a>
               </td>
             </tr>
             @endforeach
