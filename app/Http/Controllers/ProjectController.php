@@ -72,7 +72,7 @@ class ProjectController extends Controller
 
     public function nametimesave(Request $request){
         $request->validate([
-            'clientname' => 'required'
+            'name' => 'required'
         ]);
         $user = new Time();
         $user->name = $request->name;
@@ -80,22 +80,47 @@ class ProjectController extends Controller
         return redirect()->back();
     }
     public function timetable(){
-        $data = Time::all();
+        $userId = Auth::user()->id;
+        
+        $data = Time::where('user',$userId)->whereDate('created_at', Carbon::today())->orderby('created_at','DESC')->get();
+        if(isset($data) && empty($data)){
+            $data = Time::whereDate('created_at', Carbon::today())->orderby('created_at','DESC')->get();
+        }
         return view('/projects.timer', compact('data'));
     }
-    // public function checkin(){
-    //     $data = new Time();
-    //     $data->checkin = Carbon::now()->toTimeString();
-    //    $data->save();
-    //    return redirect()->back();
-    // }
-    // public function checkout(Request $request, $id){
-    //     $data = Time::find($id);
-    //     $data->checkout = Carbon::now()->toTimeString();
-    //     $data = Time::where('id',$id)->update($request);
-    //     $data->save();
-    //    return redirect()->back();
-    // }
+    public function checkin(Request $request,$id){
+        $userId = Auth::user()->id;
+        $data =Time::where('user',$userId)->get();
+        foreach($data as $data){
+            $date = $data->created_at->toDateString();
+           $date = $date == Carbon::now()->toDateString();
+        }
+        if($date == false){
+            $data = new Time();
+            $data->checkin = Carbon::now()->toTimeString();
+            $data->user = Auth::user()->id;
+            $data->name = Auth::user()->username;
+            $data->save();
+            return redirect()->back();
+        }else{
+            $data =Time::find($id);
+            $data->checkin = Carbon::now()->toTimeString();
+            $data->user = Auth::user()->id;
+            $data->name = Auth::user()->username;
+            $data->update();
+            return redirect()->back();
+        }
+
+
+    
+    
+    }
+    public function checkout(Request $request, $id){
+        $data = Time::find($id);
+        $data->checkout = Carbon::now()->toTimeString();
+        $data->save();
+       return redirect()->back();
+    }
     
     
 }

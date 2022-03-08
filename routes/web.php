@@ -88,8 +88,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/addclient', [ProjectController::class, 'addclient']);
     Route::post('/clientsave', [ProjectController::class, 'clientsave']);
     Route::get('/clients', [ProjectController::class, 'clientstable']);
-    Route::get('/checkin', [ProjectController::class, 'checkin']);
-    Route::get('/checkout', [ProjectController::class, 'checkout']);
+    Route::get('/checkin/{id}', [ProjectController::class, 'checkin']);
+    Route::get('/checkout/{id}', [ProjectController::class, 'checkout']);
     Route::get('/timing', [ProjectController::class, 'timetable']);
     Route::post('/nametimesave', [ProjectController::class, 'nametimesave']);
     

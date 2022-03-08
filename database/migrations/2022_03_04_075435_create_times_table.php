@@ -15,6 +15,7 @@ class CreateTimesTable extends Migration
     {
         Schema::create('times', function (Blueprint $table) {
             $table->id();
+            $table->string('user')->nullable();
             $table->string('name')->nullable();
             $table->string('checkin')->nullable();
             $table->string('checkout')->nullable();
