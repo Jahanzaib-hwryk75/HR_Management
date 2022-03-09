@@ -12,20 +12,24 @@ use App\Models\Time;
 
 class ProjectController extends Controller
 {
-    function data(){
+    function data()
+    {
         $data = new Time();
         $data->name = 'User';
         $data->save();
     }
-    public function projectassign(){
+    public function projectassign()
+    {
         $user = User::all();
         return view('/projects.projectassign', compact('user'));
     }
-    public function assign(){
+    public function assign()
+    {
         $data = Client::all();
         return view('/projects.assign', compact('data'));
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'projectname' => 'required',
             'clientname' => 'required',
@@ -42,20 +46,23 @@ class ProjectController extends Controller
         $user->enddate = $request->enddate;
         $user->projectduration = $request->projectduration;
         $user->save();
-        return redirect()->back()->with('message','Project Assigned Successfully');
+        return redirect()->back()->with('message', 'Project Assigned Successfully');
     }
-    public function projectstable(){
-        $data = Project::orderBy('id' , 'desc')->get();
+    public function projectstable()
+    {
+        $data = Project::orderBy('id', 'desc')->get();
         return view('projects.projectassign', compact('data'));
     }
-    public function addclient(){
+    public function addclient()
+    {
         return view('/projects.clients');
     }
-    public function clientsave(Request $request){
+    public function clientsave(Request $request)
+    {
         $request->validate([
             'clientname' => 'required',
             'country' => 'required',
-            'email' => 'required' ,
+            'email' => 'required',
             'company' => 'required',
             'address' => 'required'
         ]);
@@ -66,16 +73,18 @@ class ProjectController extends Controller
         $user->company = $request->company;
         $user->address = $request->address;
         $user->save();
-        return redirect()->back()->with('message','Client Add Successfully');
+        return redirect()->back()->with('message', 'Client Add Successfully');
     }
-    public function clientstable(){
+    public function clientstable()
+    {
         $data = Client::all();
         return view('/projects.ClientsTable', compact('data'));
     }
 
 
 
-    public function nametimesave(Request $request){
+    public function nametimesave(Request $request)
+    {
         $request->validate([
             'name' => 'required'
         ]);
@@ -84,44 +93,67 @@ class ProjectController extends Controller
         $user->save();
         return redirect()->back();
     }
-    public function timetable(){
+    public function timetable()
+    {
         $userId = Auth::user()->id;
-        
-        $data = Time::where('user',$userId)->whereDate('created_at', Carbon::today())->orderby('created_at','DESC')->get();
-        if(isset($data) && empty($data)){
-            $data = Time::whereDate('created_at', Carbon::today())->orderby('created_at','DESC')->get();
+        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
+        if (empty($data[''])){
+            $data = Time::whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
         }
-        return view('/projects.timer', compact('data'));
+            return view('/projects.timer', compact('data'));
     }
-    public function checkin(Request $request,$id){
+    public function checkin(Request $request, $id)
+    {
         $userId = Auth::user()->id;
-        $data =Time::where('user',$userId)->get();
-        foreach($data as $data){
-            $date = $data->created_at->toDateString();
-           $date = $date == Carbon::now()->toDateString();
-        }
-        if($date == false){
-            $data = new Time();
-            $data->checkin = Carbon::now()->toTimeString();
-            $data->user = Auth::user()->id;
-            $data->name = Auth::user()->username;
-            $data->save();
-            return redirect()->back();
-        }else{
-            $data =Time::find($id);
+        $data = Time::where('user', $userId)->get();
+        if ($data == null) {
+            foreach ($data as $data) {
+                $date = $data->created_at->toDateString();
+                $date = $date == Carbon::now()->toDateString();
+            }
+            if ($date == false) {
+                $data = new Time();
+                $data->checkin = Carbon::now()->toTimeString();
+                $data->user = Auth::user()->id;
+                $data->name = Auth::user()->username;
+                $data->save();
+                return redirect()->back();
+            } else {
+                $data = Time::find($id);
+                $data->checkin = Carbon::now()->toTimeString();
+                $data->user = Auth::user()->id;
+                $data->name = Auth::user()->username;
+                $data->update();
+                return redirect()->back();
+            }
+        } else {
+            $data = Time::find($id);
             $data->checkin = Carbon::now()->toTimeString();
             $data->user = Auth::user()->id;
             $data->name = Auth::user()->username;
             $data->update();
             return redirect()->back();
         }
- }
-    public function checkout(Request $request, $id){
+    }
+    public function checkout(Request $request, $id)
+    {
         $data = Time::find($id);
         $data->checkout = Carbon::now()->toTimeString();
         $data->save();
-       return redirect()->back();
+        $userId = Auth::user()->id;
+        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->first();
+        $checkin = $data->checkin;
+        $checkout = $data->checkout;
+        $data = $checkin - $checkout;
+        return redirect()->back();
     }
-    
-    
+    public function totaltime(Request $request, $id)
+    {
+        $userId = Auth::user()->id;
+        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->first();
+        $checkin = $data->checkin;
+        $checkout = $data->checkout;
+        $data = $checkin - $checkout;
+        return redirect()->back();
+    }
 }

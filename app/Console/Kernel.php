@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Mail;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +16,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        
     ];
 
     /**
@@ -26,9 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(function () {
-            DB::table('times')->create('name','user');
-        })->everyMinute();
+        $schedule->command('minute:update')->everyMinute();
     }
 
     /**
