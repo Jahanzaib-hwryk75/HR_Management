@@ -153,8 +153,8 @@
 <div class="container mt-5">
 	<div class="row d-flex justify-content-center align-items-center">
 		<div class="col-md-6">
-			<form id="regForm" action="{{ url('/admin/saveemployee')}}" method="post" enctype="multipart/form-data">
-				<h1 id="register">Donate</h1>
+			<form id="regForm" action="{{url('/admin/saveemployee')}}" method="post" enctype="multipart/form-data">
+				<h1 id="register">Add Employee</h1>
 				<div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span> <span class="step"></span> <span class="step"></span><span class="step"></span> </div>
 				<!-- <div class="tab">
                     <h3>Donation Type:</h3> <label class="container">One time <input type="radio" checked="checked" name="radio"> <span class="checkmark"></span> </label> <label class="container">Recurring <input type="radio" name="radio"> <span class="checkmark"></span> </label>
@@ -252,31 +252,32 @@
 					<p><input type="date" placeholder="Date of Birth" oninput="this.className = ''" name="dateofbirth"></p>
 					<label for="">Gender</label>
 					<select id="gender" name="gender">
-						<option value="1">Male</option>
-						<option value="2">Female</option>
+						<option>Male</option>
+						<option>Female</option>
 					</select>
 					<label for="">Marital Status</label>
 					<select id="maritalstatus" name="maritalstatus">
-						<option value="1"></option>
-						<option value="2"></option>
+						<option>Single</option>
+						<option>Married</option>
+
 					</select>
 					<label for="">Work in State</label>
 					<select id="workinstate" name="workinstate">
-						<option value="1">Yes</option>
-						<option value="2">No</option>
+						<option>Yes</option>
+						<option>No</option>
 					</select>
 					<label for="">Live in State</label>
 					<select id="lineinstate" name="lineinstate">
-						<option value="1">Yes</option>
-						<option value="2">No</option>
+						<option>Yes</option>
+						<option>No</option>
 					</select>
 					<label for="">Citizenship</label>
 					<select id="citizenship" name="citizenship">
-						<option value="1"></option>
-						<option value="2"></option>
+						<option>Citizen</option>
+						<option>Non-Citizen</option>
 					</select>
 					<label for="">Photograph</label>
-					<p><input type="file" placeholder="Last Name" oninput="this.className = ''" name="pictureupload"></p>
+					<p><input type="file" placeholder="Photograph" oninput="this.className = ''" name="pictureupload"></p>
 				</div>
 				<div class="tab">
 					<label for="">Home Email</label>
@@ -307,6 +308,9 @@
 					<p><input placeholder="Enter Password" oninput="this.className = ''" name="password" type="password"></p>
 					
 				</div>
+				<div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
+                    <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you shortly!</span>
+                </div>
 				<div style="overflow:auto;" id="nextprevious">
 					<div style="float:right;"> <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> </div>
 				</div>
@@ -347,9 +351,9 @@
 		x[currentTab].style.display = "none";
 		currentTab = currentTab + n;
 		if (currentTab >= x.length) {
-			document.getElementById("regForm").submit();
-			return false;
-			alert("sdf");
+			// document.getElementById("regForm").submit();
+			// return false;
+			// alert("sdf");
 			document.getElementById("nextprevious").style.display = "none";
 			document.getElementById("all-steps").style.display = "none";
 			document.getElementById("register").style.display = "none";
