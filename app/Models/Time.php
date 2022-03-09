@@ -12,6 +12,7 @@ class Time extends Model
         'user',
         'name',
         'checkin',
-        'checkout'
+        'checkout',
+        'totaltime'
     ];
 }

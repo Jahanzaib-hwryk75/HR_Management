@@ -19,6 +19,7 @@ class CreateTimesTable extends Migration
             $table->string('name')->nullable();
             $table->string('checkin')->nullable();
             $table->string('checkout')->nullable();
+            $table->string('totaltime')->nullable();
             $table->timestamps();
         });
     }

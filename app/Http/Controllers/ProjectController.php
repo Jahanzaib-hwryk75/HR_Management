@@ -139,12 +139,11 @@ class ProjectController extends Controller
     {
         $data = Time::find($id);
         $data->checkout = Carbon::now()->toTimeString();
-        $data->save();
-        $userId = Auth::user()->id;
-        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->first();
         $checkin = $data->checkin;
         $checkout = $data->checkout;
-        $data = $checkin - $checkout;
+        // $totaltime = $checkout->diffForHumans($checkin);
+        // dd($totaltime);
+        $data->save();
         return redirect()->back();
     }
     public function totaltime(Request $request, $id)
