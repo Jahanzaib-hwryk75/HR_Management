@@ -3,22 +3,23 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\Time;
 
-class UpdateRecord extends Command
+class everyMinute extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'minute:update';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'This will send mail to user!';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,8 @@ class UpdateRecord extends Command
      */
     public function handle()
     {
-        return Command::SUCCESS;
+        $user = new Time();
+        $user->name = 'please start timer';
+        $user->save();
     }
 }
