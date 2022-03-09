@@ -12,6 +12,11 @@ use App\Models\Time;
 
 class ProjectController extends Controller
 {
+    function data(){
+        $data = new Time();
+        $data->name = 'User';
+        $data->save();
+    }
     public function projectassign(){
         $user = User::all();
         return view('/projects.projectassign', compact('user'));
@@ -110,11 +115,7 @@ class ProjectController extends Controller
             $data->update();
             return redirect()->back();
         }
-
-
-    
-    
-    }
+ }
     public function checkout(Request $request, $id){
         $data = Time::find($id);
         $data->checkout = Carbon::now()->toTimeString();
