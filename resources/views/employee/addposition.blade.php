@@ -63,6 +63,7 @@
               <th>Id</th>
               <th>Position</th>
               <th>Action</th>
+             
             </tr>
           </thead>
         @foreach($position as $position)
@@ -70,9 +71,10 @@
             <tr>
            <td>{{$position->id}}</td>
            <td>{{$position->positionname}}</td>
-          <td><a class="btn btn-success" href="/admin/editposition/{{$position->id}}">Edit</a>
-          <a class="btn btn-danger" href="/admin/deleteposition/{{$position->id}}">Delete</a>
+          <td><a href="{{url('/admin/editposition',$position->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
+          <a href="/admin/deleteposition/{{$position->id}}"><img src="\icon\images.png" alt="" width="5%"></a>
         </td>
+       
            </tr>
            @endforeach
           </tbody>

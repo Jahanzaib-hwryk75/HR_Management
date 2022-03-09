@@ -166,7 +166,7 @@ public function saveposition(Request $request){
         $updateposition=position::find($id);
         $updateposition->positionname=$request->positionname;
        $updateposition->update();
-        return redirect('employee.addpositon');
+       return redirect('/admin/addposition');
     }
     public function saveemployee(Request $request){
         dd('ok');

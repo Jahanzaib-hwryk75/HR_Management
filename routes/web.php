@@ -76,7 +76,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/savecountry',[EmployController::class,'savecountry']);
     Route::post('/savedutytype',[EmployController::class,'savedutytype']);
     Route::post('/saveposition',[EmployController::class,'saveposition']);
-    Route::post('saveemployee',[EmployController::class,'saveemployee']);
+    Route::post('/saveemployee',[EmployController::class,'saveemployee']);
   
 
    

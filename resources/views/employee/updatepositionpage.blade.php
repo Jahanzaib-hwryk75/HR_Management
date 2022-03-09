@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{ url('/admin/updateposition/'.$position->id)}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{ url('/admin/updateposition/'.$editposition->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
@@ -37,7 +37,7 @@
                                 if (isset($users->id) && $users->id != 0) {?>
                                     <button type="submit" class="btn btn-primary me-1">Update</button>
                               <?php  } else {?>
-                                    <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                    <button type="update" class="btn btn-primary me-1">Submit</button>
                                <?php }
                                 ?>
                             </div>

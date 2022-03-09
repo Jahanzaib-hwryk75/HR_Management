@@ -71,6 +71,7 @@
            <td>{{$user->id}}</td>
            <td>{{$user->couuntryname}}</td>
           <td><a href="" class="btn btn-success">Edit</a>
+        
           <a href="" class="btn btn-danger">Delete</a>
         </td>
            </tr>
