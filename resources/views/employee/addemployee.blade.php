@@ -153,7 +153,7 @@
 <div class="container mt-5">
 	<div class="row d-flex justify-content-center align-items-center">
 		<div class="col-md-6">
-			<form id="regForm">
+			<form id="regForm" action="{{ url('/admin/saveemployee')}}" method="post" enctype="multipart/form-data">
 				<h1 id="register">Donate</h1>
 				<div class="all-steps" id="all-steps"> <span class="step"></span> <span class="step"></span> <span class="step"></span> <span class="step"></span><span class="step"></span> </div>
 				<!-- <div class="tab">
@@ -162,25 +162,31 @@
                 </div> -->
 				<div class="tab">
 					<label for="">First Name</label>
-					<p><input placeholder="First Name" value="dasfd" oninput="this.className = ''" name="first"></p>
+					<p><input placeholder="First Name" value="" oninput="this.className = ''" name="firstname" required></p>
 					<label for="">Last Name</label>
-					<p><input placeholder="Last Name" value="dasfd" oninput="this.className = ''" name="last"></p>
+					<p><input placeholder="Last Name" value="" oninput="this.className = ''" name="lastname" required></p>
 					<label for="">Email Address</label>
-					<p><input placeholder="Email" value="dasfd" oninput="this.className = ''" name="email"></p>
+					<p><input placeholder="Email" value="" oninput="this.className = ''" name="email" required></p>
 					<label for="">Phone Number</label>
-					<p><input placeholder="Phone Number" value="dasfd" oninput="this.className = ''" name="phone"></p>
+					<p><input placeholder="Phone Number" value="" oninput="this.className = ''" name="phonenumber" required></p>
 					<label for="">Alternative Phone</label>
-					<p><input placeholder="Alternative Phone" value="dasfd" oninput="this.className = ''" name="address"></p>
+					<p><input placeholder="Alternative Phone" value="" oninput="this.className = ''" name="alternativephone" required></p>
 					<label for="">Country</label>
-					<p><input placeholder="Country" value="dasfd" oninput="this.className = ''" name="city"></p>
+					<p><select name="selectcountry" required>
+					<option value="null">Select Country</option>
+						@foreach($user as $user)
+						<option>{{$user->couuntryname}}</option>
+						@endforeach
+					</select></p>
+				
 					<label for="">City</label>
-					<p><input placeholder="City" value="dasfd" oninput="this.className = ''" name="state"></p>
+					<p><input placeholder="City" value="" oninput="this.className = ''" name="city" required></p>
 					<label for="">Zip Code</label>
-					<p><input placeholder="Zip Code" value="dasfd" oninput="this.className = ''" name="country"></p>
+					<p><input placeholder="Zip Code" value="" oninput="this.className = ''" name="zipcode" required></p>
 				</div>
 				<div class="tab">
 					<label for="">Division</label>
-					<select id="division">
+					<select id="division" name="division" required>
 						<option value="1">January</option>
 						<option value="2">February</option>
 						<option value="3">March</option>
@@ -195,168 +201,112 @@
 						<option value="12">December</option>
 					</select>
 					<label for="">Position</label>
-					<select id="position">
-						<option value="1">January</option>
-						<option value="2">February</option>
-						<option value="3">March</option>
-						<option value="4">April</option>
-						<option value="5">May</option>
-						<option value="6">June</option>
-						<option value="7">July</option>
-						<option value="8">August</option>
-						<option value="9">September</option>
-						<option value="10">October</option>
-						<option value="11">November</option>
-						<option value="12">December</option>
+					<select id="position" name="positionname" required>
+						<option value="null">Select Position</option>
+						@foreach($position as $position)
+						<option value="2">{{$position->positionname}}</option>
+						@endforeach
 					</select>
 					<label for="">Duty Type</label>
-					<select id="dutytype">
-						<option value="1">January</option>
-						<option value="2">February</option>
-						<option value="3">March</option>
-						<option value="4">April</option>
-						<option value="5">May</option>
-						<option value="6">June</option>
-						<option value="7">July</option>
-						<option value="8">August</option>
-						<option value="9">September</option>
-						<option value="10">October</option>
-						<option value="11">November</option>
-						<option value="12">December</option>
+					<select id="dutytype" name="dutytype" required>
+					<option value="null">Select Duty Time</option>
+						@foreach($data as $data)
+						<option>{{$data->dutytime}}</option>
+						@endforeach
 					</select>
 					<label for="">Hire Date</label>
-					<p><input type="date" placeholder="Hire Date" oninput="this.className = ''" name=""></p>
+					<p><input type="date" placeholder="Hire Date" oninput="this.className = ''" name="hiredate" required></p>
 					<label for="">Termination Date</label>
-					<p><input type="date" placeholder="Termination Date" oninput="this.className = ''" name=""></p>
+					<p><input type="date" placeholder="Termination Date" oninput="this.className = ''" name="terminationdate" required></p>
 					<label for="">Termination Reason</label>
-					<p><input type="text" placeholder="Termination Reason" oninput="this.className = ''" name=""></p>
+					<p><input type="text" placeholder="Termination Reason" oninput="this.className = ''" name="terminationreason" required></p>
 					<label for="">Voluntary Termination</label>
-					<select id="voluntarytermination">
+					<select id="voluntarytermination" name="voluntarytermination" required>
 						<option value="1">Yes</option>
 						<option value="2">No</option>
 					</select>
 					<label for="">Re Hire Date</label>
-					<p><input type="date" placeholder="Re Hire Date" oninput="this.className = ''" name=""></p>
+					<p><input type="date" placeholder="Re Hire Date" oninput="this.className = ''" name="rehiredate" required></p>
 					<label for="">Rate Type</label>
-					<select id="ratetype">
+					<select id="ratetype" name="ratetype" required>
 						<option value="1">Hourly</option>
 						<option value="2">Salary</option>
 					</select>
 					<label for="">Rate</label>
-					<p><input placeholder="Rate" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Rate" oninput="this.className = ''" name="rate" required></p>
 					<label for="">Pay Frequency</label>
-					<select id="payfrequency">
+					<select id="payfrequency" name="payfrequency" required>
 						<option value="1">Yes</option>
 						<option value="2">No</option>
 					</select>
 					<label for="">Pay Frequency Text</label>
-					<p><input placeholder="Pay Frequency Text" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Pay Frequency Text" oninput="this.className = ''" name="payfrequencytext" required></p>
 					<label for="">Home Department</label>
-					<p><input placeholder="Home Department" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Home Department" oninput="this.className = ''" name="homedepartment" required></p>
 					<label for="">Department Text</label>
-					<p><input placeholder="Department Text" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Department Text" oninput="this.className = ''" name="homedepartmenttext" required></p>
 					<!-- <p><input placeholder="Country" oninput="this.className = ''" name="country"></p> -->
 				</div>
 				<div class="tab">
 					<label for="">Date of Birth</label>
-					<p><input type="date" placeholder="Date of Birth" oninput="this.className = ''" name=""></p>
+					<p><input type="date" placeholder="Date of Birth" oninput="this.className = ''" name="dateofbirth"></p>
 					<label for="">Gender</label>
-					<select id="division">
+					<select id="gender" name="gender">
 						<option value="1">Male</option>
 						<option value="2">Female</option>
 					</select>
 					<label for="">Marital Status</label>
-					<select id="division">
+					<select id="maritalstatus" name="maritalstatus">
 						<option value="1"></option>
 						<option value="2"></option>
 					</select>
 					<label for="">Work in State</label>
-					<select id="division">
+					<select id="workinstate" name="workinstate">
 						<option value="1">Yes</option>
 						<option value="2">No</option>
 					</select>
 					<label for="">Live in State</label>
-					<select id="division">
+					<select id="lineinstate" name="lineinstate">
 						<option value="1">Yes</option>
 						<option value="2">No</option>
 					</select>
 					<label for="">Citizenship</label>
-					<select id="division">
+					<select id="citizenship" name="citizenship">
 						<option value="1"></option>
 						<option value="2"></option>
 					</select>
 					<label for="">Photograph</label>
-					<p><input type="file" placeholder="Last Name" oninput="this.className = ''" name="last"></p>
-					<!-- <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
-					<p><input placeholder="Phone" oninput="this.className = ''" name="phone"></p>
-					<p><input placeholder="Street Address" oninput="this.className = ''" name="address"></p>
-					<p><input placeholder="City" oninput="this.className = ''" name="city"></p>
-					<p><input placeholder="State" oninput="this.className = ''" name="state"></p>
-					<p><input placeholder="Country" oninput="this.className = ''" name="country"></p> -->
+					<p><input type="file" placeholder="Last Name" oninput="this.className = ''" name="pictureupload"></p>
 				</div>
 				<div class="tab">
 					<label for="">Home Email</label>
-					<p><input placeholder="Home Email" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Home Email" oninput="this.className = ''" name="homeemail"></p>
 					<label for="">Home Phone</label>
-					<p><input placeholder="Home Phone" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Home Phone" oninput="this.className = ''" name="homephone"></p>
 					<label for="">Business Phone</label>
-					<p><input placeholder="Business Phone" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Business Phone" oninput="this.className = ''" name="businessphone"></p>
 					<label for="">Cell Phone</label>
-					<p><input placeholder="Cell Phone" oninput="this.className = ''" name=""></p>
-					<!-- <p><input placeholder="Street Address" oninput="this.className = ''" name="address"></p>
-					<p><input placeholder="City" oninput="this.className = ''" name="city"></p>
-					<p><input placeholder="State" oninput="this.className = ''" name="state"></p>
-					<p><input placeholder="Country" oninput="this.className = ''" name="country"></p> -->
+					<p><input placeholder="Cell Phone" oninput="this.className = ''" name="cellphone"></p>
 				</div>
 				<div class="tab">
 					<label for="">Emergency Contact</label>
-					<p><input placeholder="Emergency Contact" oninput="this.className = ''" name=""></p>
+					<p><input placeholder="Emergency Contact" oninput="this.className = ''" name="emergencycontact"></p>
 					<label for="">Emergency Home Phone</label>
-					<p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
-					
-					<p><input placeholder="Phone" oninput="this.className = ''" name="phone"></p>
-					<p><input placeholder="Street Address" oninput="this.className = ''" name="address"></p>
-					<p><input placeholder="City" oninput="this.className = ''" name="city"></p>
-					<p><input placeholder="State" oninput="this.className = ''" name="state"></p>
-					<p><input placeholder="Country" oninput="this.className = ''" name="country"></p>
+					<p><input placeholder="Emergency Home Phone" oninput="this.className = ''" name="emergencyhome"></p>
+					<label for="">Emergency Contact Relation</label>
+					<p><input placeholder="Phone" oninput="this.className = ''" name="emergencycontactrelation"></p>
+					<label for="">Alter Emergency Contact</label>
+					<p><input placeholder="Alter Emergency Contact" oninput="this.className = ''" name="alteremergencycontact"></p>
+					<label for="">Alt Emergency Home Phone </label>
+					<p><input placeholder="Alt Emergency Home Phone" oninput="this.className = ''" name="alteremergencyphone"></p>
 				</div>
 				<div class="tab">
-					<p><input placeholder="First Name" oninput="this.className = ''" name="first"></p>
-					<p><input placeholder="Last Name" oninput="this.className = ''" name="last"></p>
-					<p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
-					<p><input placeholder="Phone" oninput="this.className = ''" name="phone"></p>
-					<p><input placeholder="Street Address" oninput="this.className = ''" name="address"></p>
-					<p><input placeholder="City" oninput="this.className = ''" name="city"></p>
-					<p><input placeholder="State" oninput="this.className = ''" name="state"></p>
-					<p><input placeholder="Country" oninput="this.className = ''" name="country"></p>
+					<label for="">Email</label>
+					<p><input placeholder="Email" oninput="this.className = ''" name="emails" type="email"></p>
+					<label for="">Password</label>
+					<p><input placeholder="Enter Password" oninput="this.className = ''" name="password" type="password"></p>
+					
 				</div>
-				<!-- <div class="tab">
-                    <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email"></p>
-                    <p>Exp Month <select id="month">
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select></p>
-                    <p>Exp Year <select id="year">
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
-                        </select></p>
-                    <p><input placeholder="CVV" oninput="this.className = ''" name="phone"></p>
-                </div> -->
-				<!-- <div class="thanks-message text-center" id="text-message"> <img src="https://i.imgur.com/O18mJ1K.png" width="100" class="mb-4">
-                    <h3>Thanks for your Donation!</h3> <span>Your donation has been entered! We will contact you shortly!</span>
-                </div> -->
 				<div style="overflow:auto;" id="nextprevious">
 					<div style="float:right;"> <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button> </div>
 				</div>
@@ -397,9 +347,9 @@
 		x[currentTab].style.display = "none";
 		currentTab = currentTab + n;
 		if (currentTab >= x.length) {
-			// document.getElementById("regForm").submit();
-			// return false;
-			//alert("sdf");
+			document.getElementById("regForm").submit();
+			return false;
+			alert("sdf");
 			document.getElementById("nextprevious").style.display = "none";
 			document.getElementById("all-steps").style.display = "none";
 			document.getElementById("register").style.display = "none";

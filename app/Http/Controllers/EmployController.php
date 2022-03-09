@@ -153,7 +153,23 @@ public function saveposition(Request $request){
     $saveposition->save();
     return redirect()->back();
     }
+    public function deleteposition($id){
+        $delposition=position::find($id);
+        $delposition->delete();
+        return redirect()->back()->with('message','Data Deleted');
+    }
+    public function editposition($id){
+        $editposition=position::find($id);
+        return view('employee.updatepositionpage',compact('editposition'));
+    }
+    public function updateposition(Request $request, $id){
+        $updateposition=position::find($id);
+        $updateposition->positionname=$request->positionname;
+       $updateposition->update();
+        return redirect('employee.addpositon');
+    }
     public function saveemployee(Request $request){
+        dd('ok');
         $request->validate([
         'firstname'=>'required',
         'lastname'=>'required',

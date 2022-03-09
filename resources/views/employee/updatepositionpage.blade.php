@@ -18,14 +18,14 @@
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{ url('/admin/saveposition')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{ url('/admin/updateposition/'.$position->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
                                         <label for="positionname">Position</label>
-                                        <input type="text" class="form-control" id="positionname" name="positionname" value="{{$users->fullname ?? ''}}" placeholder="Enter Position"/>
+                                        <input type="text" class="form-control" id="positionname" name="positionname" value="{{$editposition->positionname ?? ''}}" placeholder="Enter Position"/>
                                         @error('positionname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -47,40 +47,6 @@
             </div>
         </div>
     </div>
-</section>
-<section>
-<div class="row" id="basic-table">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Position</h4>
-      </div>
-      <div class="table-responsive width-95-per mx-auto">
-       
-        <table class="table datatable">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Position</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-        @foreach($position as $position)
-          <tbody>
-            <tr>
-           <td>{{$position->id}}</td>
-           <td>{{$position->positionname}}</td>
-          <td><a class="btn btn-success" href="/admin/editposition/{{$position->id}}">Edit</a>
-          <a class="btn btn-danger" href="/admin/deleteposition/{{$position->id}}">Delete</a>
-        </td>
-           </tr>
-           @endforeach
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
 </section>
 <!-- Basic Horizontal form layout section end -->
 <!-- Dropzone section start -->
