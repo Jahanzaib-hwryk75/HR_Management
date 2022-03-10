@@ -40,12 +40,14 @@
           <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/assign'">
             <span>Assign Project</span>
           </button>
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addclient'">
+            <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addclient'">
             <span>Add Clients</span>
           </button>
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/timing'">
+
+         
+          <!-- <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/timing'">
             <span>Timer</span>
-          </button>
+          </button> -->
         </div>
         <table class="table datatable">
           <thead>
@@ -57,7 +59,9 @@
               <th>Start Date</th>
               <th>End Date</th>
               <th>Project Duration</th>
-              <th>Working Time</th>
+              <th>Checkin</th>
+              <th>Checkout</th>
+              <th>Total Time</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -72,10 +76,12 @@
               <td>{{$data->startdate}}</td>
               <td>{{$data->enddate}}</td>
               <td>{{$data->projectduration}}</td>
-              <td></td>
+              <td>{{$data->checkin}}</td>
+              <td>{{$data->checkout}}</td>
+              <td>{{$data->totaltime}}</td>
               <td class="d-flex">
-              <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin')}}">Clock In</a>
-                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout/{id}')}}">Clock Out</a>
+              <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
+                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Clock Out</a>
               </td>
             </tr>
             @endforeach

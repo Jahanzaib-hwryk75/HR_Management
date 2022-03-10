@@ -21,6 +21,9 @@ class CreateProjectsTable extends Migration
             $table->string('startdate');
             $table->string('enddate');
             $table->string('projectduration');
+            $table->string('checkin')->nullable();
+            $table->string('checkout')->nullable();
+            $table->string('totaltime')->nullable();
             $table->timestamps();
         });
     }

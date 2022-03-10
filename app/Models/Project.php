@@ -14,7 +14,10 @@ class Project extends Model
         'projectlead',
         'startdate',
         'enddate',
-        'projectduration'
+        'projectduration',
+        'checkin',
+        'checkout',
+        'totaltime'
         
     ];
 }
