@@ -1,7 +1,11 @@
 @extends('layouts/contentLayoutMaster')
 @section('content')
 <form class="">
+
 	<div class="row">
+	
+        <h4 class="card-title">Basic Info</h4>
+    
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1886"><label for="username" class="d-block" id="__BVID__1886__BV_label_">First Name</label>
 				<div><input id="username" type="text" class="form-control">
@@ -21,7 +25,7 @@
 			</div>
 		</div>
 </div>
-<div class="row">
+ <div class="row">
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1886"><label for="username" class="d-block" id="__BVID__1886__BV_label_">Phone No</label>
 				<div><input id="username" type="text" class="form-control">
@@ -48,12 +52,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 col-12">
+		<!-- <div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1888"><label for="full-name" class="d-block" id="__BVID__1888__BV_label_">Name</label>
 				<div><input id="full-name" type="text" class="form-control">
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1890"><label for="email" class="d-block" id="__BVID__1890__BV_label_">Zip Code</label>
 				<div><input id="email" type="email" class="form-control">
@@ -62,6 +66,7 @@
 		</div>
 </div>
 <div class="row">
+<h4 class="card-title my-2">Positional Information</h4>
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1886"><label for="username" class="d-block" id="__BVID__1886__BV_label_">Division</label>
 				<div><input id="username" type="text" class="form-control">
@@ -154,14 +159,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 col-12">
+		<!-- <div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1890"><label for="email" class="d-block" id="__BVID__1890__BV_label_">Date of Birth*</label>
 				<div><input id="email" type="email" class="form-control">
 				</div>
 			</div>
-		</div>
+		</div> -->
 </div>
-<div class="row">
+<!--<div class="row">
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1886"><label for="username" class="d-block" id="__BVID__1886__BV_label_">Gender</label>
 				<div><input id="username" type="text" class="form-control">
@@ -184,7 +189,7 @@
 <div class="row">
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1886"><label for="username" class="d-block" id="__BVID__1886__BV_label_"> 
-Live in State</label>
+              Live in State</label>
 				<div><input id="username" type="text" class="form-control">
 				</div>
 			</div>
@@ -197,7 +202,7 @@ Live in State</label>
 		</div>
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1890"><label for="email" class="d-block" id="__BVID__1890__BV_label_"> 
-Photograph</label>
+             Photograph</label>
 				<div><input id="email" type="email" class="form-control">
 				</div>
 			</div>
@@ -282,6 +287,7 @@ Photograph</label>
 				</div>
 			</div>
 		</div>
-</div>
+</div> -->
 </form>
 @endsection
+
