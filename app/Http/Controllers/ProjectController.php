@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\Client;
 use Carbon\Carbon;
 use App\Models\Time;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -97,10 +98,10 @@ class ProjectController extends Controller
     {
         $userId = Auth::user()->id;
         $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
-        if (empty($data[''])){
+        if (empty($data[''])) {
             $data = Time::whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
         }
-            return view('/projects.timer', compact('data'));
+        return view('/projects.timer', compact('data'));
     }
     public function checkin(Request $request, $id)
     {
@@ -137,12 +138,14 @@ class ProjectController extends Controller
     }
     public function checkout(Request $request, $id)
     {
+
+
         $data = Time::find($id);
         $data->checkout = Carbon::now()->toTimeString();
-        $checkin = $data->checkin;
-        $checkout = $data->checkout;
-        // $totaltime = $checkout->diffForHumans($checkin);
-        // dd($totaltime);
+        $data->save();
+        $dataa = DB::Table('times')->where('id', '=', $id)->selectRaw('time(sum(TIMEDIFF( checkout, checkin ))) as total')->first();
+        $data = Time::find($id);
+        $data->totaltime =$dataa->total;
         $data->save();
         return redirect()->back();
     }

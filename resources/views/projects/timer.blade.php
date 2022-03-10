@@ -67,7 +67,7 @@
               <td>{{$data->name}}</td>
               <td>{{$data->checkin}}</td>
               <td>{{$data->checkout}}</td>
-              <!-- <td>{{$data->clientname}}</td> -->
+              <td>{{$data->totaltime}}</td>
               <td></td>
               <td class="d-flex">
               <a class="btn btn-success col-sm-6 "  href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
