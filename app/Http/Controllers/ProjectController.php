@@ -97,7 +97,7 @@ class ProjectController extends Controller
     public function timetable()
     {
         $userId = Auth::user()->id;
-        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
+        $data = Time::where('user', $userId)->whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->first();
         if (empty($data[''])) {
             $data = Time::whereDate('created_at', Carbon::today())->orderby('created_at', 'DESC')->get();
         }
@@ -145,7 +145,7 @@ class ProjectController extends Controller
         $data->save();
         $dataa = DB::Table('times')->where('id', '=', $id)->selectRaw('time(sum(TIMEDIFF( checkout, checkin ))) as total')->first();
         $data = Time::find($id);
-        $data->totaltime =$dataa->total;
+        $data->totaltime =Carbon::parse($dataa->total)->format('H:i:s');
         $data->save();
         return redirect()->back();
     }
