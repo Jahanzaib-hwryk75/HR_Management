@@ -183,6 +183,7 @@ public function saveposition(Request $request){
         'positionname'=>'required',
         'dutytype'=>'required',
         'hiredate'=>'required',
+        'rehiredate'=>'required',
         'terminationdate'=>'required',
         'terminationreason'=>'required',
         'voluntarytermination'=>'required',
