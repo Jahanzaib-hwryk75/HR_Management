@@ -289,5 +289,13 @@ public function saveposition(Request $request){
         $request->pictureupload->move(public_path('picture'), $ImageName);
         return redirect()->back();
     }
-   
+   public function showemployee(){
+       $showemployee=employee::all();
+       return view('/employee.updateemployee',compact('showemployee'));
+   }
+   public function deleteemployee($id){
+       $deleteemployee=employee::find($id);
+       $deleteemployee->delete();
+       return redirect()->back();
+   }
 }

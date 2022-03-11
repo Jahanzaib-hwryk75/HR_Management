@@ -17,7 +17,7 @@
 
                 </div>
                 <div class="card-body">
-                   
+
                     <form class="form form-horizontal" action="{{ url('/admin/saveposition')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
@@ -25,7 +25,7 @@
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
                                         <label for="positionname">Position</label>
-                                        <input type="text" class="form-control" id="positionname" name="positionname" value="{{$users->fullname ?? ''}}" placeholder="Enter Position"/>
+                                        <input type="text" class="form-control" id="positionname" name="positionname" value="{{$users->fullname ?? ''}}" placeholder="Enter Position" />
                                         @error('positionname')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
@@ -34,11 +34,11 @@
                             </div>
                             <div class="col-sm-8 offset-sm-5">
                                 <?php
-                                if (isset($users->id) && $users->id != 0) {?>
+                                if (isset($users->id) && $users->id != 0) { ?>
                                     <button type="submit" class="btn btn-primary me-1">Update</button>
-                              <?php  } else {?>
+                                <?php  } else { ?>
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
-                               <?php }
+                                <?php }
                                 ?>
                             </div>
                         </div>
@@ -49,40 +49,40 @@
     </div>
 </section>
 <section>
-<div class="row" id="basic-table">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Position</h4>
-      </div>
-      <div class="table-responsive width-95-per mx-auto">
-       
-        <table class="table datatable">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Position</th>
-              <th>Action</th>
-             
-            </tr>
-          </thead>
-        @foreach($position as $position)
-          <tbody>
-            <tr>
-           <td>{{$position->id}}</td>
-           <td>{{$position->positionname}}</td>
-          <td><a href="{{url('/admin/editposition',$position->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
-          <a href="/admin/deleteposition/{{$position->id}}"><img src="\icon\images.png" alt="" width="5%"></a>
-        </td>
-       
-           </tr>
-           @endforeach
-          </tbody>
-        </table>
-      </div>
+    <div class="row" id="basic-table">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Position</h4>
+                </div>
+                <div class="table-responsive width-95-per mx-auto">
+
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Position</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        @foreach($position as $position)
+                        <tbody>
+                            <tr>
+                                <td>{{$position->id}}</td>
+                                <td>{{$position->positionname}}</td>
+                                <td><a href="{{url('/admin/editposition',$position->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
+                                    <a href="/admin/deleteposition/{{$position->id}}"><img src="\icon\images.png" alt="" width="5%"></a>
+                                </td>
+
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </section>
 <!-- Basic Horizontal form layout section end -->
 <!-- Dropzone section start -->

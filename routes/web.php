@@ -83,6 +83,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/editcountry/{id}',[EmployController::class,'editcountry']);
     Route::post('/updatecountry/{id}',[EmployController::class,'updatecountry']);
     Route::get('/deletecountry/{id}',[EmployController::class,'deletecountry']);
+    Route::get('/showemployee',[EmployController::class,'showemployee']);
+    Route::get('/deleteemployee/{id}',[EmployController::class,'deleteemployee']);
   
 
    

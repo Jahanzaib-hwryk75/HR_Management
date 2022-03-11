@@ -121,6 +121,13 @@
           "icon": "user",
           "slug": "leave",
           "role": ""
+        },
+        {
+          "url": "admin/showemployee",
+          "name": "Update Employee",
+          "icon": "user",
+          "slug": "leave",
+          "role": ""
         }
         
       ]
