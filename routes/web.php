@@ -77,6 +77,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/savedutytype',[EmployController::class,'savedutytype']);
     Route::post('/saveposition',[EmployController::class,'saveposition']);
     Route::post('/saveemployee',[EmployController::class,'saveemployee']);
+    Route::get('/deletedutytime/{id}',[EmployController::class,'deletedutytime']);
+    Route::get('/editdutytime/{id}',[EmployController::class,'editdutytime']);
+    Route::post('/updatedutytime/{id}',[EmployController::class,'updatedutytime']);
+    Route::get('/editcountry/{id}',[EmployController::class,'editcountry']);
+    Route::post('/updatecountry/{id}',[EmployController::class,'updatecountry']);
+    Route::get('/deletecountry/{id}',[EmployController::class,'deletecountry']);
   
 
    

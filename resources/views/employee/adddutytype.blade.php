@@ -70,8 +70,8 @@
             <tr>
            <td>{{$data->id}}</td>
            <td>{{$data->dutytime}}</td>
-          <td><a href="" class="btn btn-success">Edit</a>
-          <a href="" class="btn btn-danger">Delete</a>
+          <td><a href="{{url('/admin/editdutytime',$data->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
+          <a href="/admin/deletedutytime/{{$data->id}}"><img src="\icon\images.png" alt="" width="5%"></a>
         </td>
            </tr>
            @endforeach

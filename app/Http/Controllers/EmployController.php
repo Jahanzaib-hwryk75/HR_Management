@@ -132,7 +132,23 @@ class EmployController extends Controller
             $savecountry->save();
             return redirect()->back();
        }
+       
       
+   }
+   public function editcountry($id){
+       $editcountry=country::find($id);
+       return view('/employee.updatecountry',compact('editcountry'));
+   }
+   public function updatecountry(Request $request,$id){
+       $updatecountry=country::find($id);
+       $updatecountry->couuntryname=$request->couuntryname;
+       $updatecountry->update();
+       return redirect('/admin/addcountry');
+   }
+   public function deletecountry($id){
+       $deletecountry=country::find($id);
+       $deletecountry->delete();
+       return redirect('/admin/addcountry');
    }
    public function savedutytype(Request $request){
        $request->validate([
@@ -143,6 +159,21 @@ class EmployController extends Controller
        $savedutytype->save();
        return redirect()->back();
           
+    }
+    public function deletedutytime($id){
+        $deletedutytime=duty::find($id);
+        $deletedutytime->delete();
+        return redirect('/admin/adddutytype');
+    }
+    public function editdutytime($id){
+        $editdutytime=duty::find($id);
+        return view('/employee.updatedutytype',compact('editdutytime'));
+    }
+    public function updatedutytime(Request $request,$id){
+        $updatedutytime=duty::find($id);
+        $updatedutytime->dutytime=$request->dutytime;
+        $updatedutytime->update();
+        return redirect('/admin/adddutytype');
     }
 public function saveposition(Request $request){
     $request->validate([
@@ -197,7 +228,7 @@ public function saveposition(Request $request){
         // 'gender'=>'required',
         // 'maritalstatus'=>'required',
         // 'workinstate'=>'required',
-        // 'liveinstate'=>'required',
+        // 'lineinstate'=>'required',
         // 'citizenship'=>'required',
         // 'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // 'homeemail'=>'required|email|unique:employees',
@@ -243,7 +274,6 @@ public function saveposition(Request $request){
         $saveemployee->lineinstate=$request->lineinstate;
         $saveemployee->citizenship=$request->citizenship;
         $saveemployee->pictureupload = $ImageName;
-    
         $saveemployee->homeemail=$request->homeemail;
         $saveemployee->homephone=$request->homephone;
         $saveemployee->businessphone=$request->businessphone;

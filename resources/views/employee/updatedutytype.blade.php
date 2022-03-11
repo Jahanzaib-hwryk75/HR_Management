@@ -11,22 +11,22 @@
                         <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
 
                     <?php } else { ?>
-                        <h4 class="card-title">Add Country</h4>
+                        <h4 class="card-title">Add Duty Type</h4>
                     <?php }
                     ?>
 
                 </div>
                 <div class="card-body">
-                   
-                    <form class="form form-horizontal" action="{{ url('/admin/savecountry')}}" method="post" enctype="multipart/form-data">
+
+                    <form class="form form-horizontal" action="{{ url('/admin/updatedutytime/'.$editdutytime->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
-                                        <label for="couuntryname">Add Country</label>
-                                        <input type="text" class="form-control" id="couuntryname" name="couuntryname" placeholder="Enter Country" required />
-                                        @error('couuntryname')
+                                        <label for="dutytime">Add Duty Type</label>
+                                        <input type="text" class="form-control" value="{{$editdutytime->dutytime ?? ''}}" id="dutytime" name="dutytime" placeholder="Enter Duty Type" required />
+                                        @error('dutytime')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -34,11 +34,11 @@
                             </div>
                             <div class="col-sm-8 offset-sm-5">
                                 <?php
-                                if (isset($users->id) && $users->id != 0) {?>
+                                if (isset($users->id) && $users->id != 0) { ?>
                                     <button type="submit" class="btn btn-primary me-1">Update</button>
-                              <?php  } else {?>
-                                    <button type="submit" class="btn btn-primary me-1">Submit</button>
-                               <?php }
+                                <?php  } else { ?>
+                                    <button type="update" class="btn btn-primary me-1">Submit</button>
+                                <?php }
                                 ?>
                             </div>
                         </div>
@@ -48,40 +48,7 @@
         </div>
     </div>
 </section>
-<section>
-<div class="row" id="basic-table">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Country</h4>
-      </div>
-      <div class="table-responsive width-95-per mx-auto">
-       
-        <table class="table datatable">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Position</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-        @foreach($user as $user)
-          <tbody>
-            <tr>
-           <td>{{$user->id}}</td>
-           <td>{{$user->couuntryname}}</td>
-          <td><a href="{{url('/admin/editcountry',$user->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
-          <a href="/admin/deletecountry/{{$user->id}}"><img src="\icon\images.png" alt="" width="5%"></a>
-        </td>
-           </tr>
-           @endforeach
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
+
 <!-- Basic Horizontal form layout section end -->
 <!-- Dropzone section start -->
 <!-- <section id="dropzone-examples">
