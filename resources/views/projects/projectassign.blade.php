@@ -45,9 +45,9 @@
           </button>
 
          
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/timing'">
+          <!-- <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/timing'">
             <span>Timer</span>
-          </button>
+          </button> -->
         </div>
         <table class="table datatable">
           <thead>
@@ -80,9 +80,8 @@
               <td>{{$data->checkout}}</td>
               <td>{{$data->totaltime}}</td>
               <td class="d-flex">
-
-              <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
-              <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Clock Out</a>
+                <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
+                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Clock Out</a>
               </td>
             </tr>
             @endforeach
