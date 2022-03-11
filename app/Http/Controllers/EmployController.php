@@ -187,7 +187,7 @@ public function saveposition(Request $request){
         'terminationdate'=>'required',
         'terminationreason'=>'required',
         'voluntarytermination'=>'required',
-        'rehiredate'=>'required',
+       
         'ratetype'=>'required',
         'rate'=>'required',
         'payfrequency'=>'required',
@@ -198,7 +198,7 @@ public function saveposition(Request $request){
         'gender'=>'required',
         'maritalstatus'=>'required',
         'workinstate'=>'required',
-        'lineinstate'=>'required',
+        'liveinstate'=>'required',
         'citizenship'=>'required',
         'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'homeemail'=>'required|email|unique:employees',
