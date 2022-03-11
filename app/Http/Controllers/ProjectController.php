@@ -61,12 +61,12 @@ class ProjectController extends Controller
         $data->save();
        return redirect()->back();
     }
-    public function checkout(Request $request, $id)
+public function checkout(Request $request, $id)
     {
         $data = Project::find($id);
         $data->checkout = Carbon::now()->toTimeString();
         $data->save();
-        $dataa = DB::Table('times')->where('id', '=', $id)->selectRaw('time(sum(TIMEDIFF( checkout, checkin ))) as total')->first();
+        $dataa = DB::Table('projects')->where('id', '=', $id)->selectRaw('time(sum(TIMEDIFF( checkout, checkin ))) as total')->first();
         $data = Project::find($id);
         $data->totaltime =Carbon::parse($dataa->total)->format('H:i:s');
         $data->save();
@@ -100,16 +100,16 @@ class ProjectController extends Controller
         return view('/projects.ClientsTable', compact('data'));
     }
 
-        // public function nametimesave(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required'
-    //     ]);
-    //     $user = new Time();
-    //     $user->name = $request->name;
-    //     $user->save();
-    //     return redirect()->back();
-    // }
+        public function nametimesave(Request $request)
+    {
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $user = new Time();
+        $user->name = $request->name;
+        $user->save();
+        return redirect()->back();
+    }
     // public function timetable()
     // {
     //     $userId = Auth::user()->id;
