@@ -30,8 +30,8 @@
                                 <td>{{$showemployee->firstname}}</td>
                                 <td>{{$showemployee->lastname}}</td>
                                 <td>{{$showemployee->email}}</td>
-                                <td><a href="{{url('/admin/',$showemployee->id)}}"><img src="\icon\images1.jpg" alt="" width="20%"></a>
-                                    <a href="/admin/deleteemployee/{{$showemployee->id}}"><img src="\icon\images.png" alt="" width="20%"></a></td>
+                                <td><a href="{{url('/admin/',$showemployee->id)}}"><img src="\icon\images1.jpg" alt="" width="10%"></a>
+                                    <a href="/admin/deleteemployee/{{$showemployee->id}}"><img src="\icon\images.png" alt="" width="10%"></a></td>
 
                             </tr>
                             @endforeach
