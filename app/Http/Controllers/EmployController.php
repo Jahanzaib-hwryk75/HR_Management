@@ -169,51 +169,50 @@ public function saveposition(Request $request){
        return redirect('/admin/addposition');
     }
     public function saveemployee(Request $request){
-        dd('ok');
-        $request->validate([
-        'firstname'=>'required',
-        'lastname'=>'required',
-        'email'=>'required|email|unique:employees',
-        'phonenumber'=>'required',
-        'alternativephone'=>'required',
-        'selectcountry'=>'required',
-        'city'=>'required',
-        'zipcode'=>'required',
-        'division'=>'required',
-        'positionname'=>'required',
-        'dutytype'=>'required',
-        'hiredate'=>'required',
-        'rehiredate'=>'required',
-        'terminationdate'=>'required',
-        'terminationreason'=>'required',
-        'voluntarytermination'=>'required',
-       
-        'ratetype'=>'required',
-        'rate'=>'required',
-        'payfrequency'=>'required',
-        'payfrequencytext'=>'required',
-        'homedepartment'=>'required',
-        'homedepartmenttext'=>'required',
-        'dateofbirth'=>'required',
-        'gender'=>'required',
-        'maritalstatus'=>'required',
-        'workinstate'=>'required',
-        'liveinstate'=>'required',
-        'citizenship'=>'required',
-        'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'homeemail'=>'required|email|unique:employees',
-        'homephone'=>'required',
-        'businessphone'=>'required',
-        'cellphone'=>'required',
-        'emergencycontact'=>'required',
-        'emergencyhome'=>'required',
-        'emergencycontactrelation'=>'required',
-        'alteremergencycontact'=>'required',
-        'alteremergencyphone'=>'required',
-        'emails'=>'required|email|unique:employees',
-        'password'=>'required|min:4'
-        ]);
-
+     
+        // $request->validate([
+        // 'firstname'=>'required',
+        // 'lastname'=>'required',
+        // 'email'=>'required|email|unique:employees',
+        // 'phonenumber'=>'required',
+        // 'alternativephone'=>'required',
+        // 'selectcountry'=>'required',
+        // 'city'=>'required',
+        // 'zipcode'=>'required',
+        // 'division'=>'required',
+        // 'positionname'=>'required',
+        // 'dutytype'=>'required',
+        // 'hiredate'=>'required',
+        // 'rehiredate'=>'required',
+        // 'terminationdate'=>'required',
+        // 'terminationreason'=>'required',
+        // 'voluntarytermination'=>'required',
+        // 'ratetype'=>'required',
+        // 'rate'=>'required',
+        // 'payfrequency'=>'required',
+        // 'payfrequencytext'=>'required',
+        // 'homedepartment'=>'required',
+        // 'homedepartmenttext'=>'required',
+        // 'dateofbirth'=>'required',
+        // 'gender'=>'required',
+        // 'maritalstatus'=>'required',
+        // 'workinstate'=>'required',
+        // 'liveinstate'=>'required',
+        // 'citizenship'=>'required',
+        // 'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // 'homeemail'=>'required|email|unique:employees',
+        // 'homephone'=>'required',
+        // 'businessphone'=>'required',
+        // 'cellphone'=>'required',
+        // 'emergencycontact'=>'required',
+        // 'emergencyhome'=>'required',
+        // 'emergencycontactrelation'=>'required',
+        // 'alteremergencycontact'=>'required',
+        // 'alteremergencyphone'=>'required',
+        // 'emails'=>'required|email|unique:employees',
+        // 'password'=>'required|min:4'
+        // ]);
+        $ImageName =time().'.'.$request->pictureupload->extension();
         $saveemployee=new employee();
         $saveemployee->firstname=$request->firstname;
         $saveemployee->lastname=$request->lastname;
@@ -243,8 +242,8 @@ public function saveposition(Request $request){
         $saveemployee->workinstate=$request->workinstate;
         $saveemployee->lineinstate=$request->lineinstate;
         $saveemployee->citizenship=$request->citizenship;
-        $saveemployee->pictureupload=time().'.'.$request->pictureupload->extension();
-        $request->pictureupload->move(public_path('picture'), $$saveemployee->pictureupload);
+        $saveemployee->pictureupload = $ImageName;
+    
         $saveemployee->homeemail=$request->homeemail;
         $saveemployee->homephone=$request->homephone;
         $saveemployee->businessphone=$request->businessphone;
@@ -257,7 +256,8 @@ public function saveposition(Request $request){
         $saveemployee->emails=$request->emails;
         $saveemployee->password=$request->password;
         $saveemployee->save();
-        return redirect('/employee.addcountry');
+        $request->pictureupload->move(public_path('picture'), $ImageName);
+        return redirect()->back();
     }
    
 }
