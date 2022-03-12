@@ -55,8 +55,8 @@
               <th>Approve Start Date</th>
               <th>Approve End Date</th>
               <th>Status</th>
-              <th>Accept</th>
-              <th>Delete</th>
+              <th>Action</th>
+              <!-- <th>Delete</th> -->
               
              
             </tr>
@@ -81,9 +81,11 @@
            <td>{{Str::limit($user->desc, 10)}} -->
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
-           <td><a class="btn btn-success" style="height: 45px;" href="/admin/editapplication/{{$user->id}}">Accept</a></td>
-           <td><a class="btn btn-success" style="height: 45px;" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">Delete</a></td>
-          
+          <td> <a href="/admin/editapplication/{{$user->id}}"><img src="\icon\images1.jpg" alt="" width="30%"></a>
+          <a data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})"><img src="\icon\images.png" alt="" width="30%"></a></td>
+           <!-- <td><a class="btn btn-success" style="height: 45px;" href="/admin/editapplication/{{$user->id}}">Accept</a></td> -->
+           <!-- <td><a class="btn btn-success" style="height: 45px;" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">Delete</a></td> -->
+           
            </tr>
            @endforeach
           </tbody>
