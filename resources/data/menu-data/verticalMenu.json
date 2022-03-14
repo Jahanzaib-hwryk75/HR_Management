@@ -51,13 +51,13 @@
       "slug": "payroll",
       "submenu":[
         {
-        "url": "admin/",
+        "url": "admin/salarytypesetup",
         "name": "Salary Type Setup",
         "icon": "",
         "slug": "salarytypesetup"
       },
       {
-        "url": "admin/",
+        "url": "admin/createsetup",
         "name": "Salary Setup",
         "icon": "",
         "slug": "salarysetup"
