@@ -92,6 +92,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/managesalarybenefits',[PayrollController::class,'managesalarybenefits']);
     Route::get('/createsetup',[PayrollController::class,'createsetup']);
     Route::get('/managesalarysetup',[PayrollController::class,'managesalarysetup']);
+    Route::get('/salarysetup',[PayrollController::class,'salarysetup']);
   
 
    

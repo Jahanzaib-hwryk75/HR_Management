@@ -36,13 +36,13 @@
         <h4 class="card-title">Users</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
+        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px; margin-bottom: 10px;">
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/managesalarysetup'">
             <span>Manage Salary SetUp</span>
           </button>
         </div>
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/'">
+          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/salarysetup'">
             <span>Add Salary SetUp</span>
           </button>
         </div>

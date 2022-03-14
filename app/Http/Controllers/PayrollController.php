@@ -21,4 +21,7 @@ public function createsetup(){
 public function managesalarysetup(){
     return view('payroll.managesalarysetup');
 }
+public function salarysetup(){
+    return view('payroll.salarysetup');
+}
 }
