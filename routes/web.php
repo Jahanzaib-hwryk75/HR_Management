@@ -12,7 +12,6 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\timelineController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\PayrollController;
 
 
 /*
