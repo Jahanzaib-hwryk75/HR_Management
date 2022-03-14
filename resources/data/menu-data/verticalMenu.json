@@ -45,6 +45,40 @@
       ]
     },
     {
+      "url": "#",
+      "name": "Payroll",
+      "icon": "user",
+      "slug": "payroll",
+      "submenu":[
+        {
+        "url": "admin/",
+        "name": "Salary Type Setup",
+        "icon": "",
+        "slug": "salarytypesetup"
+      },
+      {
+        "url": "admin/",
+        "name": "Salary Setup",
+        "icon": "",
+        "slug": "salarysetup"
+      },
+      {
+        "url": "admin/",
+        "name": "Salary Generate",
+        "icon": "",
+        "slug": "salarygenerate"
+      },
+      {
+        "url": "admin/",
+        "name": "Manage Employee Salary",
+        "icon": "",
+        "slug": "manageemployeesalery"
+      }
+        
+      ]
+    },
+
+    {
       "url": "admin/leave",
       "name": "Apply for Leave",
       "icon": "user",
