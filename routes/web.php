@@ -9,6 +9,7 @@ use App\Http\Controllers\EmployController;
 use App\Http\Controllers\User\RolesController;
 use App\Http\Controllers\User\FrontController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\timelineController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PayrollController;
@@ -86,6 +87,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/deletecountry/{id}',[EmployController::class,'deletecountry']);
     Route::get('/showemployee',[EmployController::class,'showemployee']);
     Route::get('/deleteemployee/{id}',[EmployController::class,'deleteemployee']);
+
+    Route::get('/salarytypesetup',[PayrollController::class,'salarytypesetup']);
+    Route::get('/addsalarybenfit',[PayrollController::class,'addsalarybenfit']);
+    Route::get('/managesalarybenefits',[PayrollController::class,'managesalarybenefits']);
+    Route::get('/createsetup',[PayrollController::class,'createsetup']);
+    Route::get('/managesalarysetup',[PayrollController::class,'managesalarysetup']);
+    Route::get('/salarysetup',[PayrollController::class,'salarysetup']);
   
 
    

@@ -33,36 +33,36 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Manage Salary Setup</h4>
       </div>
-      <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px; margin-bottom: 10px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/managesalarybenefits'">
-            <span>Manage Salary Benefits</span>
-          </button>
-        </div>
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-          <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addsalarybenfit'">
-            <span>Add Salary Benefits</span>
-          </button>
-        </div>
+    
         <table class="table datatable">
           <thead>
             <tr>
-            <th>Sl No</th>
-              <th>Salary Benefits</th>
-              <th>Benefit Type</th>
-             
+              <th>Sl No</th>
+              <th>Employee Name</th>
+              <th>Position</th>
+              <th>Division</th>
+              <th>Salary Type</th>
+              <th>Basic</th>
+              <th>Gross Salary</th>
+              <th>Date</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
          
             <tr>
               <td class="count"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            
                 <div class="d-flex flex-column">
                   <div class="form-check form-switch form-check-success">
                     <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="" /> -->

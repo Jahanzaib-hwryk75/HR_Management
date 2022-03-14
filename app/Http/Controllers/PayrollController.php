@@ -15,4 +15,22 @@ class PayrollController extends Controller
     public function paymentform(){
         return view('/payroll.payment');
     }
+   public function salarytypesetup(){
+       return view('payroll.salarytypesetup');
+   }
+   public function addsalarybenfit(){
+       return view('payroll.addsalarybenfit');
+   }
+   public function managesalarybenefits(){
+    return view('payroll.managesalarybenefits');
+}
+public function createsetup(){
+    return view('payroll.createsetup');
+}
+public function managesalarysetup(){
+    return view('payroll.managesalarysetup');
+}
+public function salarysetup(){
+    return view('payroll.salarysetup');
+}
 }
