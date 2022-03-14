@@ -63,13 +63,13 @@
         "slug": "salarysetup"
       },
       {
-        "url": "admin/",
+        "url": "admin/salarygenerate",
         "name": "Salary Generate",
         "icon": "",
         "slug": "salarygenerate"
       },
       {
-        "url": "admin/",
+        "url": "admin/manageemployeesalery",
         "name": "Manage Employee Salary",
         "icon": "",
         "slug": "manageemployeesalery"

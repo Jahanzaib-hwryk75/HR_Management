@@ -11,6 +11,7 @@ use App\Http\Controllers\User\FrontController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\timelineController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PayrollController;
 
 
 /*
@@ -89,10 +90,6 @@ Route::group(['prefix' => 'admin'], function () {
 
    
 
-
-
-
-
     Route::get('/projectassign', [ProjectController::class, 'projectstable']);
     Route::get('/assign', [ProjectController::class, 'assign']);
     Route::post('/assign', [ProjectController::class, 'store']);
@@ -103,6 +100,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/checkout/{id}', [ProjectController::class, 'checkout']);
     Route::get('/timing', [ProjectController::class, 'timetable']);
     Route::post('/nametimesave', [ProjectController::class, 'nametimesave']);
+
+    Route::get('/salarygenerate', [PayrollController::class, 'salarygenerate']);
+    Route::get('/manageemployeesalery', [PayrollController::class, 'manageemployeesalery']);
+    Route::get('/paymentform', [PayrollController::class, 'paymentform']);
     
 });
 });

@@ -29,38 +29,12 @@
     }
 </style>
 <!-- Basic Tables start -->
-<div class="row">
-    <div class="col-md-12 col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Salary Month</h4>
-            </div>
-            <div class="card-body">
-                <form class="form form-horizontal" action="{{ url('/admin/savedutytype')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="mb-1 row">
-                                <div class="col-sm-8 offset-2">
-                                    <input type="text" class="form-control" id="dutytime" name="dutytime" placeholder="Month" required />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-8 offset-sm-5">
-                            <button type="reset" class="btn btn-primary me-1">Reset</button>
-                            <button type="submit" class="btn btn-success me-1">Generate</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="row" id="basic-table">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h1 class="card-title text-success">Salaries</h1>
+                <h1 class="card-title text-success">Employee Payment List</h1>
             </div>
             <div class="table-responsive width-95-per mx-auto">
                 <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
@@ -70,27 +44,31 @@
                     <thead>
                         <tr>
                             <th>SL No</th>
-                            <th>Salary Name</th>
-                            <th>Generate Date</th>
-                            <th>Generate By</th>
+                            <th>Salary Month</th>
+                            <th>Employee Name</th>
+                            <th>Total Salary</th>
+                            <th>Working Hours</th>
+                            <th>Working Day</th>
+                            <th>Date</th>
+                            <th>Paid By</th>
                             <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-                        @isset($data)
-                        @foreach($data as $data)
                         <tr>
-                            <td>{{$data->id}}</td>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->checkin}}</td>
-                            <td>{{$data->checkout}}</td>
+                            <td>1</td>
+                            <td>March</td>
+                            <td>Paul</td>
                             <td></td>
+                            <td></td>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                             <td class="d-flex">
-                                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Delete</a>
+                                <a class="btn btn-success" href="/admin/paymentform">Pay Now??</a>
                             </td>
                         </tr>
-                        @endforeach
-                        @endisset
                     </tbody>
                 </table>
             </div>
