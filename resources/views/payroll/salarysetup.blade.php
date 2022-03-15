@@ -4,7 +4,7 @@
 <section id="basic-horizontal-layouts">
     <div class="row">
         <div class="col-md-12 col-12">
-            <div class="card">fffff
+            <div class="card">
                 <div class="card-header">
                     <?php
                     if (isset($users->id) && $users->id != 0) { ?>
