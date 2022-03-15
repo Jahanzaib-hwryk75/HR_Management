@@ -49,7 +49,8 @@ class PayrollController extends Controller
     }
     public function salarysetup()
     {
-        return view('payroll.salarysetup');
+        $salarysetup=employee::all();
+        return view('payroll.salarysetup',compact('salarysetup'));
     }
     public function savesalarybenfit(Request $request){
         $request->validate([
@@ -80,7 +81,7 @@ class PayrollController extends Controller
         $updatemanagesalarybenefits->salarybenfit=$request->salarybenfit;
         $updatemanagesalarybenefits->basicSelect=$request->basicSelect;
         $updatemanagesalarybenefits->update();
-        return redirect('admin/managesalarybenefits');
+        return redirect('/admin/managesalarybenefits');
     }
    
 }

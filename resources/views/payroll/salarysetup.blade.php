@@ -31,14 +31,14 @@
                                 <div class="mb-1 row">
                                 <div class="col-sm-8 offset-2 mt-1">
                                         <select class="form-select" id="basicSelect" name="employeename">
-                                           
+                                           @foreach($salarysetup as $salarysetup)
                                             <option value="null">Employee Name</option>
-                                            <option></option>
-                                           
+                                            <option>{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
+                                           @endforeach
                                         </select>
                                     </div>
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="salarytype" value="{{$users->username ?? ''}}" placeholder="Enter Salary Type" required />
+                                        <input type="text" class="form-control" name="salarytype" value="{{$salarysetup->rate ?? ''}}" placeholder="Enter Salary Type" required />
                                         @error('salarytype')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
