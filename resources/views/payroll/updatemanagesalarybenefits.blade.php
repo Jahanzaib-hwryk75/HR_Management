@@ -18,21 +18,22 @@
                 </div>
                 <div class="card-body">
                    
-                    <form class="form form-horizontal" action="{{url('/admin/savesalarybenfit')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{url('/admin/updatemanagesalarybenefits/'.$editmanagesalarybenefits->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2">
                                         <label for="">Salary Benefits</label>
-                                        <input type="text" class="form-control" name="salarybenfit" value="{{$users->fullname ?? ''}}" placeholder="Enter Fullname" required />
+                                        <input type="text" class="form-control" name="salarybenfit" value="{{$editmanagesalarybenefits->salarybenfit ?? ''}}" placeholder="Enter Fullname" required />
                                         @error('salarybenfit')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <select class="form-select" id="basicSelect" name="basicSelect">
-                                        <option value="null">Select Benefit Type</option>
+                                        <option>{{$editmanagesalarybenefits->basicSelect ?? ''}}</option>
+
                                             <option>Add</option>
                                             <option>Deduct</option>
                                           
@@ -42,7 +43,7 @@
                             </div>
                             <div class="col-sm-8 offset-sm-5">
                                
-                                    <button type="submit" class="btn btn-success me-1">Set</button>
+                                    <button type="update" class="btn btn-success me-1">Set</button>
                                     <button type="reset" class="btn btn-primary me-1">Reset</button>
                              
                             </div>

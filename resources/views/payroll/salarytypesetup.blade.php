@@ -56,33 +56,14 @@
             </tr>
           </thead>
           <tbody>
-         
+         @foreach($salarytypesetup as $salarytypesetup)
             <tr>
               <td class="count"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="" /> -->
-                  </div>
-                </div>
-              </td>
-              <td class="d-flex">
-                <div>
-                  <!-- <a class="dropdown-item" href="">
-                    <i data-feather="edit-2" class="me-50"></i>
-                  </a> -->
-                </div>
-                <div>
-                  <!-- <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button> -->
-                </div>
-              </td>
+              <td>{{$salarytypesetup->salarybenfit}}</td>
+              <td>{{$salarytypesetup->basicSelect}}</td>
+             
             </tr>
-          
+          @endforeach
           </tbody>
         </table>
       </div>

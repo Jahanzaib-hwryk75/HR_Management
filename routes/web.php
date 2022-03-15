@@ -93,6 +93,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/createsetup',[PayrollController::class,'createsetup']);
     Route::get('/managesalarysetup',[PayrollController::class,'managesalarysetup']);
     Route::get('/salarysetup',[PayrollController::class,'salarysetup']);
+    Route::post('/savesalarybenfit',[PayrollController::class,'savesalarybenfit']);
+    Route::get('/deletemanagesalarybenefits/{id}',[PayrollController::class,'deletemanagesalarybenefits']);
+    Route::get('/editmanagesalarybenefits/{id}',[PayrollController::class,'editmanagesalarybenefits']);
+    Route::post('/updatemanagesalarybenefits/{id}',[PayrollController::class,'updatemanagesalarybenefits']);
+
   
 
    

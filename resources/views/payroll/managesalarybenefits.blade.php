@@ -47,33 +47,18 @@
             </tr>
           </thead>
           <tbody>
-         
+         @foreach($managesalarybenefits as $managesalarybenefits)
             <tr>
-              <td class="count"></td>
-              <td> </td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="" /> -->
-                  </div>
-                </div>
-              </td>
-              <td class="d-flex">
-                <div>
-                  <!-- <a class="dropdown-item" href="">
-                    <i data-feather="edit-2" class="me-50"></i>
-                  </a> -->
-                </div>
-                <div>
-                  <!-- <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button> -->
-                </div>
-              </td>
+              <td>{{$managesalarybenefits->id}}</td>
+              <td>{{$managesalarybenefits->salarybenfit}} </td>
+              <td>{{$managesalarybenefits->basicSelect}}</td>
+              <td><a href="{{url('/admin/editmanagesalarybenefits',$managesalarybenefits->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
+          <a href="/admin/deletemanagesalarybenefits/{{$managesalarybenefits->id}}"><img src="\icon\images.png" alt="" width="5%"></a></td>
+             
+             
+               
             </tr>
-          
+          @endforeach
           </tbody>
         </table>
       </div>
