@@ -56,19 +56,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @isset($data)
+                    @foreach($data as $data)
                         <tr>
-                            <td>1</td>
-                            <td>March</td>
-                            <td>Paul</td>
-                            <td></td>
-                            <td></td>
-                            <th></th>
-                            <th></th>
+                            <td>{{$data->id}}</td>
+                            <td>{{$data->salarymonth}}</td>
+                            <td>{{$data->firstname}}</td>
+                            <td>{{$data->rate}}</td>
+                            <td>{{$data->totaltime}}</td>
+                            <th>{{$data->projectduration}}</th>
+                            <th>{{$data->projectname}}</th>
                             <th></th>
                             <td class="d-flex">
                                 <a class="btn btn-success" href="/admin/paymentform">Pay Now??</a>
                             </td>
                         </tr>
+                        @endforeach
+                        @endisset
                     </tbody>
                 </table>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\employee;
+use App\Models\Project;
 use App\Models\salarybenfits;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class PayrollController extends Controller
     }
     public function manageemployeesalery()
     {
-        return view('/payroll.manageemployeesalery');
+        
+        $data= Project::all();
+        return view('/payroll.manageemployeesalery', compact('data'));
     }
     public function paymentform()
     {

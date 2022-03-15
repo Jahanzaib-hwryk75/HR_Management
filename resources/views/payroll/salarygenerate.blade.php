@@ -42,7 +42,7 @@
                         <div class="col-12">
                             <div class="mb-1 row">
                                 <div class="col-sm-8 offset-2">
-                                    <input type="text" class="form-control" id="dutytime" name="dutytime" placeholder="Month" required />
+                                    <input type="month" class="form-control" id="dutytime" name="dutytime" placeholder="Month" required />
                                 </div>
                             </div>
                         </div>
