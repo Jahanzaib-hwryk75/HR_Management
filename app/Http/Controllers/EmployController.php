@@ -309,6 +309,6 @@ public function saveposition(Request $request){
     public function fileImport(Request $request) 
     {
         Excel::import(new employeesImport, $request->file('file')->store('temp'));
-        return back();
+        return redirect('employee.updateemployee');
     }    
 }

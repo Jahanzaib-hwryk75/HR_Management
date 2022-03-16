@@ -115,18 +115,17 @@
                                 <h4 class="modal-title" id="myModalLabel33">Inline Login Form</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="" method>
+                            <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                                 <div class="modal-body">
-                                    <label>Email: </label>
+                                    
                                     <div class="mb-1">
                                         <input type="file" placeholder="Upload File" class="form-control" />
                                     </div>
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
                                     
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Login</button>
-                                </div>
+                               
                             </form>
                         </div>
                     </div>
