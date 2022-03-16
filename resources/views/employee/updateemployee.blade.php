@@ -22,7 +22,7 @@
     table {
         counter-reset: section;
     }
-
+       
     .count:before {
         counter-increment: section;
         content: counter(section);
