@@ -43,6 +43,7 @@
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/mangeapplication'">
             <span>Mange Application</span>
           </button> 
+         
         </div>
         <table class="table datatable">
           <thead>

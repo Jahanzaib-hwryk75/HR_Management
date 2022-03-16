@@ -10,6 +10,9 @@ use App\Models\country;
 use App\Models\duty;
 use App\Models\position;
 use App\Models\employee;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\employeesExport;
+use App\Imports\employeesImport;
 
 class EmployController extends Controller
 {
@@ -27,6 +30,7 @@ class EmployController extends Controller
         
         return view('/leavemanagement.leave', compact('user'));
     }
+   
 
     public function requestleave()
     {
@@ -298,4 +302,13 @@ public function saveposition(Request $request){
        $deleteemployee->delete();
        return redirect()->back();
    }
+   public function fileExport() 
+    {
+        return Excel::download(new employeesExport, 'users-collection.xlsx');
+    }
+    public function fileImport(Request $request) 
+    {
+        Excel::import(new employeesImport, $request->file('file')->store('temp'));
+        return back();
+    }    
 }
