@@ -17,7 +17,12 @@ class Project extends Model
         'projectduration',
         'checkin',
         'checkout',
-        'totaltime'
+        'totaltime',
+        'employee_id'
         
     ];
+    public function getEmployee()
+    {
+        return $this->hasMany(employee::class, 'id', 'employee_id');
+    }
 }

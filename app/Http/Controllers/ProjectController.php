@@ -10,6 +10,7 @@ use App\Models\Client;
 use Carbon\Carbon;
 use App\Models\Time;
 use Illuminate\Support\Facades\DB;
+use App\Models\employee;
 
 class ProjectController extends Controller
 {
@@ -27,7 +28,9 @@ class ProjectController extends Controller
     public function assign()
     {
         $data = Client::all();
-        return view('/projects.assign', compact('data'));
+        $employeedata = employee::all();
+        return view('/projects.assign', compact('data' , 'employeedata'));
+        
     }
     public function store(Request $request)
     {
@@ -37,7 +40,8 @@ class ProjectController extends Controller
             'projectlead' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
-            'projectduration' => 'required'
+            'projectduration' => 'required',
+            'employee_id'
         ]);
         $user = new Project();
         $user->projectname = $request->projectname;

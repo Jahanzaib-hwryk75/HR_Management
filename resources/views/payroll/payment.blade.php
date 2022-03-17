@@ -16,7 +16,7 @@
                             <div class="mb-1 row">
                                 <div class="col-sm-8 offset-2">
                                     <label>Employee Name</label>
-                                    <input type="text" class="form-control" id="dutytime" name="employeename" placeholder="Employee Name" required />
+                                    <input type="text" class="form-control" id="dutytime" name="employeename" readonly placeholder="Employee Name" required />
                                 </div>
                             </div>
                             <div class="mb-1 row">

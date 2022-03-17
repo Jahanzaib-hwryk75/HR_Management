@@ -61,7 +61,7 @@
                         <tr>
                             <td>{{$data->id}}</td>
                             <td>{{$data->salarymonth}}</td>
-                            <td>{{$data->firstname}}</td>
+                            <td>{{$data->getEmployee->firstname}}</td>
                             <td>{{$data->rate}}</td>
                             <td>{{$data->totaltime}}</td>
                             <th>{{$data->projectduration}}</th>

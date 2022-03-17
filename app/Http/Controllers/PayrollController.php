@@ -16,8 +16,10 @@ class PayrollController extends Controller
     public function manageemployeesalery()
     {
         
-        $data= Project::all();
+        $data= Project::with('getEmployee')->get();
+        dd($data);
         return view('/payroll.manageemployeesalery', compact('data'));
+        
     }
     public function paymentform()
     {
