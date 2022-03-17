@@ -59,9 +59,10 @@
                     @isset($data)
                     @foreach($data as $data)
                         <tr>
+                             <!-- ->getEmployee->firstname -->
                             <td>{{$data->id}}</td>
                             <td>{{$data->salarymonth}}</td>
-                            <td>{{$data->getEmployee->firstname}}</td>
+                            <td>{{$data->name}}</td>
                             <td>{{$data->rate}}</td>
                             <td>{{$data->totaltime}}</td>
                             <th>{{$data->projectduration}}</th>
