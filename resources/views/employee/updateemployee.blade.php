@@ -120,7 +120,7 @@
                                 <div class="modal-body">
                                     
                                     <div class="mb-1">
-                                        <input type="file" placeholder="Upload File" class="form-control" />
+                                        <input type="file" name="file" id="file" placeholder="Upload File" class="form-control" />
                                     </div>
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
                                     
