@@ -38,15 +38,17 @@
                 </div>
                 <div class="table-responsive width-95-per mx-auto">
                     <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-                        <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addemployee'">
-                            <span>Add Employee</span>
-                        </button>
+                    <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button"  data-bs-toggle="modal" data-bs-target="#inlineForm">
+                            <span>import File</span>
+                        </button>    
                         <button class="dt-button add-new btn btn-danger" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/file-export'">
                             <span>Export File</span>
                         </button>
-                        <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button"  data-bs-toggle="modal" data-bs-target="#inlineForm">
-                            <span>import File</span>
+                    <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addemployee'">
+                            <span>Add Employee</span>
                         </button>
+                       
+                      
                     </div>
                     <table class="table datatable">
                         <thead>

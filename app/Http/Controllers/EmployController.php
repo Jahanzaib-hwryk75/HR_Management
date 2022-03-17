@@ -13,6 +13,7 @@ use App\Models\employee;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\employeesExport;
 use App\Imports\employeesImport;
+use PhpParser\NodeVisitor\FirstFindingVisitor;
 
 class EmployController extends Controller
 {
@@ -304,12 +305,12 @@ public function saveposition(Request $request){
    }
    public function fileExport() 
     {
-        return Excel::download(new employeesExport, 'users-collection.xlsx');
+        return Excel::download(new employeesExport, 'Employee-collection.xlsx');
     }
     public function fileImport(Request $request) 
     {
-     
         Excel::import(new employeesImport, $request->file('file')->store('temp'));
-        return redirect('/admin/updateemployee');
-    }    
+        return redirect('/admin/showemployee');
+    }   
+   
 }
