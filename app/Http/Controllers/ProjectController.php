@@ -40,8 +40,8 @@ class ProjectController extends Controller
             'projectlead' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
-            'projectduration' => 'required',
-            'employee_id'
+            'projectduration' => 'required'
+            
         ]);
         $user = new Project();
         $user->projectname = $request->projectname;
@@ -50,6 +50,7 @@ class ProjectController extends Controller
         $user->startdate = $request->startdate;
         $user->enddate = $request->enddate;
         $user->projectduration = $request->projectduration;
+        
         $user->save();
         return redirect()->back()->with('message', 'Project Assigned Successfully');
     }
