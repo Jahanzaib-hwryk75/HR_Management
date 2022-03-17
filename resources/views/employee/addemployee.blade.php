@@ -167,7 +167,11 @@
 		</div> -->
 		<div class="col-md-4 col-12">
 			<div role="group" class="form-group" id="__BVID__1890"><label for="ratetype" class="d-block" id="__BVID__1890__BV_label_">Rate Type</label>
-				<div><input id="ratetype" name="ratetype" type="text" class="form-control" required>
+				<div><select class="form-select" id="ratetype" name="ratetype" required>
+			    <option value="null">Select Rate Type</option>
+				<option>Hourly</option>
+                <option>Salary</option>
+                </select> 
 				</div>
 			</div>
 		</div>

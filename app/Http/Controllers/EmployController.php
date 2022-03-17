@@ -295,7 +295,7 @@ public function saveposition(Request $request){
     }
    public function showemployee(){
        $showemployee=employee::all();
-       return view('/employee.updateemployee',compact('showemployee'));
+       return view('employee.updateemployee',compact('showemployee'));
    }
    public function deleteemployee($id){
        $deleteemployee=employee::find($id);
@@ -308,6 +308,7 @@ public function saveposition(Request $request){
     }
     public function fileImport(Request $request) 
     {
+     
         Excel::import(new employeesImport, $request->file('file')->store('temp'));
         return redirect('employee.updateemployee');
     }    

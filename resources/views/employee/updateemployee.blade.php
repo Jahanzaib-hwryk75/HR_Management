@@ -115,7 +115,7 @@
                                 <h4 class="modal-title" id="myModalLabel33">Inline Login Form</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="{{ route('file-import') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/admin/file-import')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                                 <div class="modal-body">
                                     

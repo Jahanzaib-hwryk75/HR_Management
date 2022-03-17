@@ -98,7 +98,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/editmanagesalarybenefits/{id}',[PayrollController::class,'editmanagesalarybenefits']);
     Route::post('/updatemanagesalarybenefits/{id}',[PayrollController::class,'updatemanagesalarybenefits']);
     Route::get('file-import-export', [EmployController::class, 'fileImportExport']);
-Route::post('file-import', [EmployController::class, 'fileImport'])->name('file-import');
+Route::post('/file-import', [EmployController::class, 'fileImport']);
 Route::get('file-export', [EmployController::class, 'fileExport'])->name('file-export');
 
   
