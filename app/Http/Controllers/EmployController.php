@@ -305,7 +305,7 @@ public function saveposition(Request $request){
    }
    public function fileExport() 
     {
-        return Excel::download(new employeesExport, 'users-collection.xlsx');
+        return Excel::download(new employeesExport, 'Employee-collection.xlsx');
     }
     public function fileImport(Request $request) 
     {
