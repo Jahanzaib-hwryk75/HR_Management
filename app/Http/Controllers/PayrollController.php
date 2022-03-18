@@ -41,11 +41,12 @@ class PayrollController extends Controller
     {
         $createsetupsalary=employee::all();
         return view('payroll.createsetup',compact('createsetupsalary'));
-        return view('payroll.createsetup');
+      
     }
     public function managesalarysetup()
     {
-        return view('payroll.managesalarysetup');
+        $managesalarysetup=employee::all();
+        return view('payroll.managesalarysetup',compact('managesalarysetup') );
     }
     public function salarysetup()
     {

@@ -52,36 +52,20 @@
           </thead>
           <tbody>
          
+          @foreach($managesalarysetup as $managesalarysetup)
             <tr>
-              <td class="count"></td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-            
-                <div class="d-flex flex-column">
-                  <div class="form-check form-switch form-check-success">
-                    <!-- <input name="status" type="checkbox" class="form-check-input toggle-class" id="customSwitch1" data-id="" /> -->
-                  </div>
-                </div>
-              </td>
-              <td class="d-flex">
-                <div>
-                  <!-- <a class="dropdown-item" href="">
-                    <i data-feather="edit-2" class="me-50"></i>
-                  </a> -->
-                </div>
-                <div>
-                  <!-- <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button> -->
-                </div>
-              </td>
+              <td>{{$managesalarysetup->id}}</td>
+              <td>{{$managesalarysetup->firstname}} {{$managesalarysetup->lastname}}</td>
+              <td>{{$managesalarysetup->positionname}}</td>
+              <td>{{$managesalarysetup->division}}</td>
+              <td>{{$managesalarysetup->ratetype}}</td>
+              <td>{{$managesalarysetup->rate}}</td>
+              <td></td>
+              <td></td>
+              <td><a href=""><img src="\icon\images1.jpg" alt="" width="15%"></a>
+          <a href=""><img src="\icon\images.png" alt="" width="15%"></a></td></td>
             </tr>
+          @endforeach
           
           </tbody>
         </table>

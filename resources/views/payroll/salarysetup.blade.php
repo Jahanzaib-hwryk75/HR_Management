@@ -31,8 +31,8 @@
                                 <div class="mb-1 row">
                                 <div class="col-sm-8 offset-2 mt-1">
                                         <select class="form-select" id="basicSelect" name="employeename">
+                                        <option value="null">Employee Name</option>
                                            @foreach($salarysetup as $salarysetup)
-                                            <option value="null">Employee Name</option>
                                             <option>{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
                                            @endforeach
                                         </select>
@@ -99,16 +99,19 @@
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+
+                                    <div class="col-sm-8 offset-2 mt-1">
+                                        <input type="text" class="form-control" name="grosssalary" value="" placeholder="Enter Gross Salary" required />
+                                        @error('grosssalary')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-8 offset-sm-5">
-                                <?php
-                                if (isset($users->id) && $users->id != 0) {?>
-                                    <button type="submit" class="btn btn-primary me-1">Update</button>
-                              <?php  } else {?>
+                               
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
-                               <?php }
-                                ?>
+                             
                             </div>
                         </div>
                     </form>
