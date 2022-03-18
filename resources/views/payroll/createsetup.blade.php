@@ -66,9 +66,8 @@
               <td>{{$createsetupsalary->firstname}} {{$createsetupsalary->lastname}}</td>
               <td>{{$createsetupsalary->positionname}}</td>
               <td>{{$createsetupsalary->division}}</td>
-             
-             
-              
+              <td>{{$createsetupsalary->ratetype}}</td>
+              <td>{{$createsetupsalary->rate}}</td>
             </tr>
           @endforeach
           </tbody>

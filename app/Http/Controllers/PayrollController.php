@@ -28,8 +28,8 @@ class PayrollController extends Controller
         return redirect()->back()->with('message', 'Salary Generated Successfully');
     }
     public function deletemonth($id){
-        $deleteemployee=Salarymonth::find($id);
-        $deleteemployee->delete();
+        $deletemonth=Salarymonth::find($id);
+        $deletemonth->delete();
         return redirect()->back();
     }
     public function manageemployeesalery()
@@ -60,13 +60,20 @@ class PayrollController extends Controller
     }
     public function createsetup()
     {
+<<<<<<< HEAD
         $createsetupsalary = employee::all();
         return view('payroll.createsetup', compact('createsetupsalary'));
         return view('payroll.createsetup');
+=======
+        $createsetupsalary=employee::all();
+        return view('payroll.createsetup',compact('createsetupsalary'));
+      
+>>>>>>> fc72d102267c783a5cb4eab1ca073272ca872252
     }
     public function managesalarysetup()
     {
-        return view('payroll.managesalarysetup');
+        $managesalarysetup=employee::all();
+        return view('payroll.managesalarysetup',compact('managesalarysetup') );
     }
     public function salarysetup()
     {
