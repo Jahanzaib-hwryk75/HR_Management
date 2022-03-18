@@ -24,7 +24,9 @@ class CreateProjectsTable extends Migration
             $table->string('checkin')->nullable();
             $table->string('checkout')->nullable();
             $table->string('totaltime')->nullable();
+            $table->unsignedBigInteger('employee_id')->nullable();
             $table->timestamps();
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 

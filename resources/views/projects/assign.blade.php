@@ -58,10 +58,10 @@
                                                             </div> -->
                                                             <div class="col-sm-9 ">
                                                                 <select class="form-select" id="clientname" name="clientname">
-                                                                <option>Select Client</option>
+                                                                    <option>Select Client</option>
                                                                     @isset($data)
                                                                     @foreach($data as $data)
-                                                                    <option>{{$data->clientname}}</option>
+                                                                    <option value="{{$data->id}}">{{$data->clientname}}</option>
                                                                     @endforeach
                                                                     @endisset
                                                                 </select>
@@ -78,7 +78,14 @@
                                                     <label for="project_lead" class="col-sm-3 col-form-label">
                                                         Project Lead<i class="text-danger">*</i></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="projectlead" class="form-control" required="" placeholder="Project Lead" autocomplete="off">
+                                                        <select class="form-select" id="projectlead" name="projectlead">
+                                                            <option>Select Project Leader</option>
+                                                            @isset($employeedata)
+                                                            @foreach($employeedata as $employeedata)
+                                                            <option value="{{$employeedata->id}}">{{$employeedata->firstname}}</option>
+                                                            @endforeach
+                                                            @endisset
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="form-group row mt-2"> <label for="project_lead" class="col-sm-3 col-form-label">
@@ -112,6 +119,7 @@
                                                     <div class="col-sm-9"> <textarea class="form-control" required="" name="summary" id="summary" rows="4" placeholder="Summary" tabindex="10" autocomplete="off"></textarea>
                                                     </div>
                                                 </div> -->
+                                                <!-- <input type="hidden" name="'employee_id'"> -->
                                                 <div class="form-group mt-2">
                                                     <button type="reset" class="btn btn-danger me-1 ">Reset</button>
                                                     <button type="submit" class="btn btn-success me-1" name="">Submit</button>
