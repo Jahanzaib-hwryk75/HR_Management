@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\employee;
 use App\Models\Project;
+use App\Models\salary;
 use App\Models\salarybenfits;
 use Illuminate\Http\Request;
 
@@ -42,6 +43,7 @@ class PayrollController extends Controller
     public function createsetup()
     {
         $createsetupsalary=employee::all();
+      
         return view('payroll.createsetup',compact('createsetupsalary'));
       
     }
@@ -86,5 +88,32 @@ class PayrollController extends Controller
         $updatemanagesalarybenefits->update();
         return redirect('/admin/managesalarybenefits');
     }
-   
+    public function savesalary(Request $request){
+        $request->validate([
+            'employeename'=>'required',
+            'salarytype'=>'required',
+            'basic'=>'required',
+            'health'=>'required',
+            'houserent'=>'required',
+            'bonus'=>'required',
+            'newaddition'=>'required',
+            'pf'=>'required',
+            'newdeduction'=>'required',
+            'tax'=>'required',
+            'grosssalary'=>'required',
+        ]);
+        $savesalary=new salary();
+        $savesalary->employeename=$request->employeename;
+        $savesalary->salarytype=$request->salarytype;
+        $savesalary->basic=$request->basic;
+        $savesalary->health=$request->health;
+        $savesalary->houserent=$request->houserent;
+        $savesalary->bonus=$request->bonus;
+        $savesalary->newaddition=$request->newaddition;
+        $savesalary->pf=$request->pf;
+        $savesalary->newdeduction=$request->newdeduction;
+        $savesalary->tax=$request->tax;
+        $savesalary->grosssalary=$request->grosssalary;
+        dd($savesalary);
+    }
 }
