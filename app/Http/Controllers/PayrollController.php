@@ -28,8 +28,9 @@ class PayrollController extends Controller
         $user->save();
         return redirect()->back()->with('message', 'Salary Generated Successfully');
     }
-    public function deletemonth($id){
-        $deletemonth=Salarymonth::find($id);
+    public function deletemonth($id)
+    {
+        $deletemonth = Salarymonth::find($id);
         $deletemonth->delete();
         return redirect()->back();
     }
@@ -64,15 +65,14 @@ class PayrollController extends Controller
         $createsetupsalary = employee::all();
         return view('payroll.createsetup', compact('createsetupsalary'));
         return view('payroll.createsetup');
-        $createsetupsalary=employee::all();
-      
-        return view('payroll.createsetup',compact('createsetupsalary'));
-      
+        $createsetupsalary = employee::all();
+
+        return view('payroll.createsetup', compact('createsetupsalary'));
     }
     public function managesalarysetup()
     {
-        $managesalarysetup=employee::all();
-        return view('payroll.managesalarysetup',compact('managesalarysetup') );
+        $managesalarysetup = employee::all();
+        return view('payroll.managesalarysetup', compact('managesalarysetup'));
     }
     public function salarysetup()
     {
@@ -114,32 +114,38 @@ class PayrollController extends Controller
         $updatemanagesalarybenefits->update();
         return redirect('/admin/managesalarybenefits');
     }
-    public function savesalary(Request $request){
+    public function savesalary(Request $request)
+    {
         $request->validate([
-            'employeename'=>'required',
-            'salarytype'=>'required',
-            'basic'=>'required',
-            'health'=>'required',
-            'houserent'=>'required',
-            'bonus'=>'required',
-            'newaddition'=>'required',
-            'pf'=>'required',
-            'newdeduction'=>'required',
-            'tax'=>'required',
-            'grosssalary'=>'required',
+            'employeename' => 'required',
+            'salarytype' => 'required',
+            'basic' => 'required',
+            'health' => 'required',
+            'houserent' => 'required',
+            'bonus' => 'required',
+            'newaddition' => 'required',
+            'pf' => 'required',
+            'newdeduction' => 'required',
+            'tax' => 'required',
+            'grosssalary' => 'required',
         ]);
-        $savesalary=new salary();
-        $savesalary->employeename=$request->employeename;
-        $savesalary->salarytype=$request->salarytype;
-        $savesalary->basic=$request->basic;
-        $savesalary->health=$request->health;
-        $savesalary->houserent=$request->houserent;
-        $savesalary->bonus=$request->bonus;
-        $savesalary->newaddition=$request->newaddition;
-        $savesalary->pf=$request->pf;
-        $savesalary->newdeduction=$request->newdeduction;
-        $savesalary->tax=$request->tax;
-        $savesalary->grosssalary=$request->grosssalary;
-        dd($savesalary);
+        $savesalary = new salary();
+        $savesalary->employeename = $request->employeename;
+        $savesalary->salarytype = $request->salarytype;
+        $totalAdd = $request->health + $request->houserent + $request->bonus + $request->newaddition;
+        $totalDeduct =  $request->pf-$request->newdeduction-$request->tax;
+        $savesalary->basic = $request->basic+$totalAdd;
+        $savesalary->basic = $request->basic-$totalDeduct;
+        dd($savesalary->basic);
+        $savesalary->pf = $request->pf;
+        $savesalary->health = $request->health;
+        $savesalary->houserent = $request->houserent;
+        $savesalary->bonus = $request->bonus;
+        $savesalary->newaddition = $request->newaddition;
+        $savesalary->pf = $request->pf;
+        $savesalary->newdeduction = $request->newdeduction;
+        $savesalary->tax = $request->tax;
+        $savesalary->grosssalary = $savesalary->basic;
+      
     }
 }
