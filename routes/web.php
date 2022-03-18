@@ -87,11 +87,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/showemployee',[EmployController::class,'showemployee']);
     Route::get('/deleteemployee/{id}',[EmployController::class,'deleteemployee']);
 
+    //Payroll
     Route::get('/salarytypesetup',[PayrollController::class,'salarytypesetup']);
     Route::get('/addsalarybenfit',[PayrollController::class,'addsalarybenfit']);
     Route::get('/managesalarybenefits',[PayrollController::class,'managesalarybenefits']);
     Route::get('/createsetup',[PayrollController::class,'createsetup']);
     Route::get('/managesalarysetup',[PayrollController::class,'managesalarysetup']);
+    Route::get('/deletemonth/{id}',[PayrollController::class,'deletemonth']);
     Route::get('/salarysetup',[PayrollController::class,'salarysetup']);
     Route::post('/savesalarybenfit',[PayrollController::class,'savesalarybenfit']);
     Route::get('/deletemanagesalarybenefits/{id}',[PayrollController::class,'deletemanagesalarybenefits']);
@@ -119,6 +121,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/nametimesave', [ProjectController::class, 'nametimesave']);
 
     Route::get('/salarygenerate', [PayrollController::class, 'salarygenerate']);
+    Route::post('/salarygenerator', [PayrollController::class, 'salarygenerator']);
     Route::get('/manageemployeesalery', [PayrollController::class, 'manageemployeesalery']);
     Route::get('/paymentform', [PayrollController::class, 'paymentform']);
     
