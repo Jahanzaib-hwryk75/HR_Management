@@ -32,17 +32,22 @@
 <div class="row">
     <div class="col-md-12 col-12">
         <div class="card">
+           @if(session()->has('message'))
+           <div class="alert alert-success">
+              {{ session()->get('message') }}
+            </div>
+            @endif
             <div class="card-header">
                 <h4 class="card-title">Salary Month</h4>
             </div>
             <div class="card-body">
-                <form class="form form-horizontal" action="{{ url('/admin/savedutytype')}}" method="post" enctype="multipart/form-data">
+                <form class="form form-horizontal" action="{{ url('/admin/salarygenerator')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-12">
                             <div class="mb-1 row">
                                 <div class="col-sm-8 offset-2">
-                                    <input type="month" class="form-control" id="dutytime" name="dutytime" placeholder="Month" required />
+                                    <input type="month" class="form-control" id="dutytime" name="salarymonth" placeholder="Month" required />
                                 </div>
                             </div>
                         </div>
@@ -70,27 +75,27 @@
                     <thead>
                         <tr>
                             <th>SL No</th>
-                            <th>Salary Name</th>
+                            <th>Salary Month</th>
                             <th>Generate Date</th>
                             <th>Generate By</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @isset($data)
+                    <tbody>    
                         @foreach($data as $data)
+                        
                         <tr>
                             <td>{{$data->id}}</td>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->checkin}}</td>
-                            <td>{{$data->checkout}}</td>
+                            <td>{{date('F-Y', strtotime($data->salarymonth))}}</td>
+                            <td>{{date('d-F-Y', strtotime($data->created_at))}}</td>
                             <td></td>
                             <td class="d-flex">
-                                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Delete</a>
+
+                            <a href="{{url('/admin/deletemonth',$data->id)}}"><img src="\icon\images.png" alt="" width="15%"></a>
                             </td>
                         </tr>
                         @endforeach
-                        @endisset
+                         
                     </tbody>
                 </table>
             </div>

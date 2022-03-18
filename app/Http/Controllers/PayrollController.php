@@ -6,29 +6,48 @@ use App\Models\employee;
 use App\Models\Project;
 use App\Models\salarybenfits;
 use Illuminate\Http\Request;
+use App\Models\Salarymonth;
+use Illuminate\Support\Carbon;
 
 class PayrollController extends Controller
 {
     public function salarygenerate()
     {
-        return view('/payroll.salarygenerate');
+        $data = Salarymonth::all();
+
+        return view('/payroll.salarygenerate', compact('data'));
+    }
+    public function salarygenerator(Request $request)
+    {
+        $request->validate([
+            'salarymonth' => 'required'
+        ]);
+        $user = new Salarymonth();
+        $user->salarymonth = $request->salarymonth;
+        $user->save();
+        return redirect()->back()->with('message', 'Salary Generated Successfully');
+    }
+    public function deletemonth($id){
+        $deleteemployee=Salarymonth::find($id);
+        $deleteemployee->delete();
+        return redirect()->back();
     }
     public function manageemployeesalery()
     {
-        
-        $data= Project::with('getEmployee')->get();
+
+        $data = Project::with('getEmployee')->get();
         // dd($data);
         return view('/payroll.manageemployeesalery', compact('data'));
-        
     }
     public function paymentform()
     {
         return view('/payroll.payment');
     }
+
     public function salarytypesetup()
     {
-        $salarytypesetup=salarybenfits::all();
-        return view('payroll.salarytypesetup',compact('salarytypesetup'));
+        $salarytypesetup = salarybenfits::all();
+        return view('payroll.salarytypesetup', compact('salarytypesetup'));
     }
     public function addsalarybenfit()
     {
@@ -36,13 +55,13 @@ class PayrollController extends Controller
     }
     public function managesalarybenefits()
     {
-        $managesalarybenefits=salarybenfits::all();
-        return view('payroll.managesalarybenefits',compact('managesalarybenefits'));
+        $managesalarybenefits = salarybenfits::all();
+        return view('payroll.managesalarybenefits', compact('managesalarybenefits'));
     }
     public function createsetup()
     {
-        $createsetupsalary=employee::all();
-        return view('payroll.createsetup',compact('createsetupsalary'));
+        $createsetupsalary = employee::all();
+        return view('payroll.createsetup', compact('createsetupsalary'));
         return view('payroll.createsetup');
     }
     public function managesalarysetup()
@@ -51,39 +70,42 @@ class PayrollController extends Controller
     }
     public function salarysetup()
     {
-        $salarysetup=employee::all();
-        return view('payroll.salarysetup',compact('salarysetup'));
+        $salarysetup = employee::all();
+        return view('payroll.salarysetup', compact('salarysetup'));
     }
-    public function savesalarybenfit(Request $request){
+    public function savesalarybenfit(Request $request)
+    {
         $request->validate([
-            'salarybenfit'=>'required',
-            'basicSelect'=>'required',
+            'salarybenfit' => 'required',
+            'basicSelect' => 'required',
         ]);
-        $savesalarybenfit=new salarybenfits();
-        $savesalarybenfit->salarybenfit=$request->salarybenfit;
-        $savesalarybenfit->basicSelect=$request->basicSelect;
+        $savesalarybenfit = new salarybenfits();
+        $savesalarybenfit->salarybenfit = $request->salarybenfit;
+        $savesalarybenfit->basicSelect = $request->basicSelect;
         $savesalarybenfit->save();
         return redirect()->back();
     }
-    public function deletemanagesalarybenefits($id){
-        $deletemanagesalarybenefits=salarybenfits::find($id);
+    public function deletemanagesalarybenefits($id)
+    {
+        $deletemanagesalarybenefits = salarybenfits::find($id);
         $deletemanagesalarybenefits->delete();
         return redirect()->back();
     }
-    public function editmanagesalarybenefits($id){
-        $editmanagesalarybenefits=salarybenfits::find($id);
-        return view('/payroll.updatemanagesalarybenefits',compact('editmanagesalarybenefits'));
+    public function editmanagesalarybenefits($id)
+    {
+        $editmanagesalarybenefits = salarybenfits::find($id);
+        return view('/payroll.updatemanagesalarybenefits', compact('editmanagesalarybenefits'));
     }
-    public function updatemanagesalarybenefits(Request $request,$id){
+    public function updatemanagesalarybenefits(Request $request, $id)
+    {
         $request->validate([
-            'salarybenfit'=>'required',
-            'basicSelect'=>'required',
+            'salarybenfit' => 'required',
+            'basicSelect' => 'required',
         ]);
-       $updatemanagesalarybenefits=salarybenfits::find($id);
-        $updatemanagesalarybenefits->salarybenfit=$request->salarybenfit;
-        $updatemanagesalarybenefits->basicSelect=$request->basicSelect;
+        $updatemanagesalarybenefits = salarybenfits::find($id);
+        $updatemanagesalarybenefits->salarybenfit = $request->salarybenfit;
+        $updatemanagesalarybenefits->basicSelect = $request->basicSelect;
         $updatemanagesalarybenefits->update();
         return redirect('/admin/managesalarybenefits');
     }
-   
 }
