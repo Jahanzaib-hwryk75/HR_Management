@@ -17,94 +17,52 @@
 
                 </div>
                 <div class="card-body">
-                    <form class="form form-horizontal" action="{{url('/admin/savesalary')}}" method="post" enctype="multipart/form-data">
+                    <?php
+                    if (isset($users->id) && $users->id != 0) {
+                        $url = url('/admin/user/add/' . $users->id);
+                    } else {
+                        $url = url('/admin/user/add');
+                    }
+                    ?>
+                    <form class="form form-horizontal" action="{{ url($url)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
-                                <div class="col-sm-8 offset-2 mt-1">
-                                        <select class="form-select" id="basicSelect" name="employeename">
-                                        <option value="null">Employee Name</option>
-                                           @foreach($salarysetup as $salarysetup)
-                                            <option>{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
-                                           @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="salarytype" value="" placeholder="Enter Salary Type" required />
-                                        @error('salarytype')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="basic" value="" placeholder="Enter Basic" required />
                                         @error('basic')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="health" value="" placeholder="Enter Health" required />
                                         @error('health')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="houserent" value="" placeholder="Enter House Rent" required />
                                         @error('houserent')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="bonus" value="" placeholder="Enter bonus" required />
                                         @error('bonus')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="newaddition" value="" placeholder="Enter new addition" required />
                                         @error('newaddition')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="pf" value="" placeholder="Enter PF" required />
-                                        @error('pf')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="newdeduction" value="" placeholder="Enter new deduction" required />
-                                        @error('newdeduction')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="tax" value="" placeholder="Enter Tax" required />
-                                        @error('tax')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="grosssalary" value="" placeholder="Enter Gross Salary" required />
-                                        @error('grosssalary')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-8 offset-sm-5">
-                               
-                                    <button type="submit" class="btn btn-primary me-1">Submit</button>
-                             
+                             <button type="submit" class="btn btn-primary me-1">Calculate</button>
                             </div>
                         </div>
                     </form>
