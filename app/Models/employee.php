@@ -50,4 +50,8 @@ class employee extends Model
         'emails',
         'password'
     ];
+    public function getEmployee()
+    {
+        return $this->hasMany(employee::class, 'id', 'employee_id');
+    }
 }
