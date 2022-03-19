@@ -22,19 +22,28 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
-                                <div class="col-sm-8 offset-2 mt-1">
+                                    <div class="col-sm-8 offset-2 mt-1">
                                         <select class="form-select" id="basicSelect" name="employeename">
-                                        <option value="null">Employee Name</option>
-                                           @foreach($salarysetup as $salarysetup)
+                                            <option value="null">Employee Name</option>
+                                            @foreach($salarysetup as $salarysetup)
                                             <option>{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
-                                           @endforeach
+                                            @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-sm-8 offset-2 mt-1">
+                                    <!-- <div class="col-sm-8 offset-2 mt-1">
                                         <input type="text" class="form-control" name="salarytype" value="" placeholder="Enter Salary Type" required />
                                         @error('salarytype')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
+                                    </div> -->
+                                    <div class="col-sm-8 offset-2 mt-1">
+                                       
+                                        <select class="form-select" id="salarytype" name="salarytype">
+                                            <option value="null">Select Salary Type</option>
+                                            <option>Salary</option>
+                                            <option>Hourly</option>
+                                            
+                                        </select>
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
@@ -93,18 +102,13 @@
                                         @enderror
                                     </div>
 
-                                    <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="grosssalary" value="" placeholder="Enter Gross Salary" required />
-                                        @error('grosssalary')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <div class="col-sm-8 offset-sm-5">
-                               
-                                    <button type="submit" class="btn btn-primary me-1">Submit</button>
-                             
+
+                                <button type="submit" class="btn btn-primary me-1">Submit</button>
+
                             </div>
                         </div>
                     </form>

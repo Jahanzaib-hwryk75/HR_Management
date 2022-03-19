@@ -102,6 +102,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('file-import-export', [EmployController::class, 'fileImportExport']);
     Route::post('/file-import', [EmployController::class, 'fileImport']);
     Route::get('file-export', [EmployController::class, 'fileExport'])->name('file-export');
+   
     Route::post('/savesalary',[PayrollController::class,'savesalary']);
    
 

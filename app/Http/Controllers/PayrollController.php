@@ -127,25 +127,29 @@ class PayrollController extends Controller
             'pf' => 'required',
             'newdeduction' => 'required',
             'tax' => 'required',
-            'grosssalary' => 'required',
+           
         ]);
         $savesalary = new salary();
         $savesalary->employeename = $request->employeename;
         $savesalary->salarytype = $request->salarytype;
+
         $totalAdd = $request->health + $request->houserent + $request->bonus + $request->newaddition;
+        
         $totalDeduct =  $request->pf-$request->newdeduction-$request->tax;
+
         $savesalary->basic = $request->basic+$totalAdd;
         $savesalary->basic = $request->basic-$totalDeduct;
-        dd($savesalary->basic);
+       
         $savesalary->pf = $request->pf;
         $savesalary->health = $request->health;
         $savesalary->houserent = $request->houserent;
         $savesalary->bonus = $request->bonus;
         $savesalary->newaddition = $request->newaddition;
-        $savesalary->pf = $request->pf;
         $savesalary->newdeduction = $request->newdeduction;
         $savesalary->tax = $request->tax;
         $savesalary->grosssalary = $savesalary->basic;
+        $savesalary->save();
+        return redirect()->back();
       
     }
 }
