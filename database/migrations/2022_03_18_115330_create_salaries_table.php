@@ -15,7 +15,7 @@ class CreateSalariesTable extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-            $table->string('employeename')->nullable();
+            $table->unsignedBigInteger('employee_id');
             $table->string('salarytype')->nullable();
             $table->string('basic')->nullable();
             $table->string('health')->nullable();
@@ -27,6 +27,7 @@ class CreateSalariesTable extends Migration
             $table->string('tax')->nullable();
             $table->string('grosssalary')->nullable();
             $table->timestamps();
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 

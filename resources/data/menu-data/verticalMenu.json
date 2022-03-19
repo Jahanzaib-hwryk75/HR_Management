@@ -4,7 +4,7 @@
       "name": "Dashboard",
       "badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1",
       "url": "admin/dashboard",
-      "icon": "home",
+      "icon": "fa-solid fa-house-chimney",
       "slug": "dashboard-ecommerce"
     },
     {
@@ -14,31 +14,31 @@
     {
       "url": "admin/user/list",
       "name": "User",
-      "icon": "user",
+      "icon": "fa-solid fa-user",
       "slug": "app-user-list"
     },
     {
       "url": "admin/roles/list",
       "name": "Roles",
-      "icon": "user",
+      "icon": "fa-solid fa-address-book",
       "slug": "roles"
     },
     {
       "url": "#",
       "name": "Project Management",
-      "icon": "user",
+      "icon": "fa-brands fa-product-hunt",
       "slug": "projectassign",
       "submenu":[
         {
         "url": "admin/projectassign",
         "name": "Projects",
-        "icon": "",
+        "icon": "fa-solid fa-pager",
         "slug": "projectassign"
       },
       {
         "url": "admin/clients",
         "name": "Clients",
-        "icon": "",
+        "icon": "fa-solid fa-person-shelter",
         "slug": "clients"
       }
         
@@ -47,31 +47,31 @@
     {
       "url": "#",
       "name": "Payroll",
-      "icon": "user",
+      "icon": "fa-solid fa-money-check-dollar",
       "slug": "payroll",
       "submenu":[
         {
         "url": "admin/salarytypesetup",
         "name": "Salary Type Setup",
-        "icon": "",
+        "icon": "fa-solid fa-dollar-sign",
         "slug": "salarytypesetup"
       },
       {
         "url": "admin/createsetup",
         "name": "Salary Setup",
-        "icon": "",
+        "icon": "fa-solid fa-dollar-sign",
         "slug": "salarysetup"
       },
       {
         "url": "admin/salarygenerate",
         "name": "Salary Generate",
-        "icon": "",
+        "icon": "fa-solid fa-dollar-sign",
         "slug": "salarygenerate"
       },
       {
         "url": "admin/manageemployeesalery",
         "name": "Manage Employee Salary",
-        "icon": "",
+        "icon": "fa-solid fa-person-digging",
         "slug": "manageemployeesalery"
       }
         
@@ -81,78 +81,42 @@
     {
       "url": "admin/leave",
       "name": "Apply for Leave",
-      "icon": "user",
+      "icon": "fa-solid fa-file",
       "slug": "leave"
     },
     {
       "url": "admin/showemployee",
       "name": "Add Employee",
-      "icon": "user",
+      "icon": "fa-solid fa-person",
       "slug": "leave"
     },
   
-    {
-      "url": "#",
-      "name": "Attendce",
-      "icon": "user",
-      "slug": "#",
-      "role": "admin",
-      "submenu":[
-        {
-          "url": "rewr",
-          "name": "Attendce Form",
-          "icon": "user",
-          "slug": "wer",
-          "role": "werwe"
-        },
-        {
-          "url": "rewr",
-          "name": "Mnthly Attendce",
-          "icon": "ewrewr",
-          "slug": "wer",
-          "role": "werwe"
-        },
-        {
-          "url": "rewr",
-          "name": "Mnthly Attendce",
-          "icon": "ewrewr",
-          "slug": "wer",
-          "role": "werwe"
-        },
-        {
-          "url": "rewr",
-          "name": "Mnthly Attendce",
-          "icon": "ewrewr",
-          "slug": "wer",
-          "role": "werwe"
-        }
-      ]
-    },
+    
     {
       "url": "#",
       "name": "General Setting",
-      "icon": "user",
+      "icon": "fa-solid fa-gear",
       "slug": "#",
       "role": "admin",
       "submenu":[
         {
           "url": "admin/addposition",
           "name": "Add Position",
-          "icon": "user",
+          "icon": "fa-solid fa-circle-plus",
           "slug": "leave",
           "role": ""
         },
         {
           "url": "admin/adddutytype",
           "name": "Add Duty Type",
-          "icon": "user",
+          "icon": "fa-solid fa-circle-plus",
           "slug": "leave",
           "role": ""
         },
         {
           "url": "admin/addcountry",
           "name": "Add Country Name",
-          "icon": "user",
+          "icon": "fa-solid fa-circle-plus",
           "slug": "leave",
           "role": ""
         },

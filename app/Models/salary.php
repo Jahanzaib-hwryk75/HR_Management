@@ -9,7 +9,7 @@ class salary extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'employeename',
+        'employee_id',
         'salarytype',
         'basic',
         'health',
@@ -21,4 +21,8 @@ class salary extends Model
         'tax',
         'grosssalary'
     ];
+    public function getEmployee()
+    {
+        return $this->belongsTo(employee::class, 'employee_id', 'id');
+    }
 }

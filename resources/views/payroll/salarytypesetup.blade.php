@@ -49,21 +49,21 @@
         <table class="table datatable">
           <thead>
             <tr>
-            <th>Sl No</th>
+              <th>Sl No</th>
               <th>Salary Benefits</th>
               <th>Benefit Type</th>
-             
+
             </tr>
           </thead>
           <tbody>
-         @foreach($salarytypesetup as $salarytypesetup)
+            @foreach($salarytypesetup as $salarytypesetup)
             <tr>
               <td class="count"></td>
               <td>{{$salarytypesetup->salarybenfit}}</td>
               <td>{{$salarytypesetup->basicSelect}}</td>
-             
+
             </tr>
-          @endforeach
+            @endforeach
           </tbody>
         </table>
       </div>

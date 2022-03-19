@@ -23,10 +23,10 @@
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <select class="form-select" id="basicSelect" name="employeename">
+                                        <select class="form-select" id="basicSelect" name="employee_id">
                                             <option value="null">Employee Name</option>
                                             @foreach($salarysetup as $salarysetup)
-                                            <option>{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
+                                            <option value="{{$salarysetup->id}}">{{$salarysetup->lastname}}</option>
                                             @endforeach
                                         </select>
                                     </div>

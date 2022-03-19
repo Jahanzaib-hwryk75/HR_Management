@@ -62,11 +62,7 @@ class PayrollController extends Controller
     }
     public function createsetup()
     {
-        $createsetupsalary = employee::all();
-        return view('payroll.createsetup', compact('createsetupsalary'));
-        return view('payroll.createsetup');
-        $createsetupsalary = employee::all();
-
+        $createsetupsalary = salary::with('getEmployee')->get();
         return view('payroll.createsetup', compact('createsetupsalary'));
     }
     public function managesalarysetup()
@@ -117,7 +113,7 @@ class PayrollController extends Controller
     public function savesalary(Request $request)
     {
         $request->validate([
-            'employeename' => 'required',
+            'employee_id' => 'required',
             'salarytype' => 'required',
             'basic' => 'required',
             'health' => 'required',
@@ -127,19 +123,19 @@ class PayrollController extends Controller
             'pf' => 'required',
             'newdeduction' => 'required',
             'tax' => 'required',
-           
+
         ]);
         $savesalary = new salary();
-        $savesalary->employeename = $request->employeename;
+        $savesalary->employee_id = $request->employee_id;
         $savesalary->salarytype = $request->salarytype;
 
         $totalAdd = $request->health + $request->houserent + $request->bonus + $request->newaddition;
-        
-        $totalDeduct =  $request->pf-$request->newdeduction-$request->tax;
 
-        $savesalary->basic = $request->basic+$totalAdd;
-        $savesalary->basic = $request->basic-$totalDeduct;
-       
+        $totalDeduct =  $request->pf - $request->newdeduction - $request->tax;
+
+        $savesalary->basic = $request->basic + $totalAdd;
+        $savesalary->basic = $request->basic - $totalDeduct;
+
         $savesalary->pf = $request->pf;
         $savesalary->health = $request->health;
         $savesalary->houserent = $request->houserent;
@@ -150,6 +146,5 @@ class PayrollController extends Controller
         $savesalary->grosssalary = $savesalary->basic;
         $savesalary->save();
         return redirect()->back();
-      
     }
 }

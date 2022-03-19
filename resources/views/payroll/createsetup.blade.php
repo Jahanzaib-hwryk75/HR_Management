@@ -56,18 +56,18 @@
               <th>Salary Type</th>
               <th>Basic</th>
               <th>Gross Salary</th>
-              <th>Date</th>
             </tr>
           </thead>
           <tbody>
          @foreach($createsetupsalary as $createsetupsalary)
             <tr>
-              <td>{{$createsetupsalary->id}}</td>
-              <td>{{$createsetupsalary->firstname}} {{$createsetupsalary->lastname}}</td>
-              <td>{{$createsetupsalary->positionname}}</td>
-              <td>{{$createsetupsalary->division}}</td>
-              <td>{{$createsetupsalary->ratetype}}</td>
-              <td>{{$createsetupsalary->rate}}</td>
+              <td>{{$createsetupsalary->getEmployee->id}}</td>
+              <td>{{$createsetupsalary->getEmployee->firstname}}</td>
+              <td>{{$createsetupsalary->getEmployee->positionname}}</td>
+              <td>{{$createsetupsalary->getEmployee->division}}</td>
+              <td>{{$createsetupsalary->getEmployee->ratetype}}</td>
+              <td>{{$createsetupsalary->getEmployee->rate}}</td>
+              <td>{{$createsetupsalary->grosssalary}}</td>
             </tr>
           @endforeach
           </tbody>

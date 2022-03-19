@@ -13,6 +13,7 @@ use App\Models\employee;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\employeesExport;
 use App\Imports\employeesImport;
+use App\Models\salary;
 use PhpParser\NodeVisitor\FirstFindingVisitor;
 
 class EmployController extends Controller
@@ -205,49 +206,6 @@ public function saveposition(Request $request){
        return redirect('/admin/addposition');
     }
     public function saveemployee(Request $request){
-     
-        // $request->validate([
-        // 'firstname'=>'required',
-        // 'lastname'=>'required',
-        // 'email'=>'required|email|unique:employees',
-        // 'phonenumber'=>'required',
-        // 'alternativephone'=>'required',
-        // 'selectcountry'=>'required',
-        // 'city'=>'required',
-        // 'zipcode'=>'required',
-        // 'division'=>'required',
-        // 'positionname'=>'required',
-        // 'dutytype'=>'required',
-        // 'hiredate'=>'required',
-        // 'rehiredate'=>'required',
-        // 'terminationdate'=>'required',
-        // 'terminationreason'=>'required',
-        // 'voluntarytermination'=>'required',
-        // 'ratetype'=>'required',
-        // 'rate'=>'required',
-        // 'payfrequency'=>'required',
-        // 'payfrequencytext'=>'required',
-        // 'homedepartment'=>'required',
-        // 'homedepartmenttext'=>'required',
-        // 'dateofbirth'=>'required',
-        // 'gender'=>'required',
-        // 'maritalstatus'=>'required',
-        // 'workinstate'=>'required',
-        // 'lineinstate'=>'required',
-        // 'citizenship'=>'required',
-        // 'pictureupload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        // 'homeemail'=>'required|email|unique:employees',
-        // 'homephone'=>'required',
-        // 'businessphone'=>'required',
-        // 'cellphone'=>'required',
-        // 'emergencycontact'=>'required',
-        // 'emergencyhome'=>'required',
-        // 'emergencycontactrelation'=>'required',
-        // 'alteremergencycontact'=>'required',
-        // 'alteremergencyphone'=>'required',
-        // 'emails'=>'required|email|unique:employees',
-        // 'password'=>'required|min:4'
-        // ]);
         $ImageName =time().'.'.$request->pictureupload->extension();
         $saveemployee=new employee();
         $saveemployee->firstname=$request->firstname;

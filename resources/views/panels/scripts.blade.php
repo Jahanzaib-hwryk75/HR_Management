@@ -19,3 +19,4 @@
 <!-- BEGIN: Page JS-->
 @yield('page-script')
 <!-- END: Page JS-->
+<script src="{{URL::asset('js/fontawesome.min.js')}}"></script>
