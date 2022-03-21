@@ -47,23 +47,28 @@
               <th>Basic</th>
               <th>Gross Salary</th>
               <th>Date</th>
-              <th>Action</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
          
           @foreach($managesalarysetup as $managesalarysetup)
             <tr>
-              <td>{{$managesalarysetup->id}}</td>
-              <td>{{$managesalarysetup->firstname}} {{$managesalarysetup->lastname}}</td>
-              <td>{{$managesalarysetup->positionname}}</td>
-              <td>{{$managesalarysetup->division}}</td>
-              <td>{{$managesalarysetup->ratetype}}</td>
-              <td>{{$managesalarysetup->rate}}</td>
+            <td class="count"></td>
+              <td>{{$managesalarysetup->getEmployee->firstname}}{{$managesalarysetup->getEmployee->lastname}}</td>
+              <td>{{$managesalarysetup->getEmployee->positionname}}</td>
+              <td>{{$managesalarysetup->getEmployee->division}}</td>
+              <td>{{$managesalarysetup->getEmployee->ratetype}}</td>
+              <td>{{$managesalarysetup->getEmployee->rate}}</td>
+              <td>{{$managesalarysetup->grosssalary}}</td>
               <td></td>
-              <td></td>
-              <td><a href=""><img src="\icon\images1.jpg" alt="" width="15%"></a>
-          <a href=""><img src="\icon\images.png" alt="" width="15%"></a></td></td>
+              <td><a class="dropdown-item" href="{{url('/admin/editmanagesalary',$managesalarysetup->id)}}">
+                    <i data-feather="edit-2" class="me-50"></i>
+                  </a></td>
+         <td> <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="" onclick="">
+                    <i data-feather="trash" class="me-50"></i>
+                  </button></td>
             </tr>
           @endforeach
           

@@ -154,7 +154,11 @@ class EmployController extends Controller
    public function deletecountry($id){
        $deletecountry=country::find($id);
        $deletecountry->delete();
-       return redirect('/admin/addcountry');
+       if ($deletecountry) {
+        return response()->json(['status' => true]);
+    } else {
+        return response()->json(['status' => false]);
+    }
    }
    public function savedutytype(Request $request){
        $request->validate([
@@ -169,7 +173,11 @@ class EmployController extends Controller
     public function deletedutytime($id){
         $deletedutytime=duty::find($id);
         $deletedutytime->delete();
-        return redirect('/admin/adddutytype');
+        if ($deletedutytime) {
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
     public function editdutytime($id){
         $editdutytime=duty::find($id);
@@ -193,7 +201,11 @@ public function saveposition(Request $request){
     public function deleteposition($id){
         $delposition=position::find($id);
         $delposition->delete();
-        return redirect()->back()->with('message','Data Deleted');
+        if ($delposition) {
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
     public function editposition($id){
         $editposition=position::find($id);
@@ -259,7 +271,19 @@ public function saveposition(Request $request){
    public function deleteemployee($id){
        $deleteemployee=employee::find($id);
        $deleteemployee->delete();
-       return redirect()->back();
+       if ($deleteemployee) {
+        return response()->json(['status' => true]);
+    } else {
+        return response()->json(['status' => false]);
+    }
+   }
+   public function editemployee($id){
+       $editemployee=employee::find($id);
+       return view('employee.employeeupdate',compact('editemployee'));
+   }
+   public function employeeupdate(Request $request,$id){
+       $employeeupdate=employee::find($id);
+       
    }
    public function fileExport() 
     {

@@ -22,7 +22,7 @@
     table {
         counter-reset: section;
     }
-       
+
     .count:before {
         counter-increment: section;
         content: counter(section);
@@ -38,17 +38,17 @@
                 </div>
                 <div class="table-responsive width-95-per mx-auto">
                     <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
-                    <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button"  data-bs-toggle="modal" data-bs-target="#inlineForm">
+                        <button class="dt-button add-new btn btn-success" tabindex="0" aria-controls="DataTables_Table_0" type="button" data-bs-toggle="modal" data-bs-target="#inlineForm">
                             <span>import File</span>
-                        </button>    
+                        </button>
                         <button class="dt-button add-new btn btn-danger" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/file-export'">
                             <span>Export File</span>
                         </button>
-                    <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addemployee'">
+                        <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addemployee'">
                             <span>Add Employee</span>
                         </button>
-                       
-                      
+
+
                     </div>
                     <table class="table datatable">
                         <thead>
@@ -58,20 +58,25 @@
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Email</th>
-                                <th>Action</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
 
                             </tr>
                         </thead>
                         @foreach($showemployee as $showemployee)
                         <tbody>
                             <tr>
-                                <td>{{$showemployee->id}}</td>
+                            <td class="count"></td>
                                 <td> <img class="rounded-circle" src="{{ asset('picture/'.$showemployee->pictureupload) }}" alt="No image" height="30" width="30" style="margin-right:10px"></td>
                                 <td>{{$showemployee->firstname}}</td>
                                 <td>{{$showemployee->lastname}}</td>
                                 <td>{{$showemployee->email}}</td>
-                                <td><a href="{{url('/admin/',$showemployee->id)}}"><img src="\icon\images1.jpg" alt="" width="10%"></a>
-                                    <a href="/admin/deleteemployee/{{$showemployee->id}}"><img src="\icon\images.png" alt="" width="10%"></a>
+                                <td><a class="dropdown-item" href="{{url('/admin/editemployee',$showemployee->id)}}">
+                                        <i data-feather="edit-2" class="me-50"></i>
+                                    </a></td>
+                                <td> <button class="btn btn-flat btn-sm remove-user" data-id="{{ $showemployee->id}}" data-action="{{ url('/admin/deleteemployee/',$showemployee->id) }}" onclick="deleteConfirmation({{$showemployee->id}})">
+                                        <i data-feather="trash" class="me-50"></i>
+                                    </button>
                                 </td>
 
                             </tr>
@@ -118,16 +123,16 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{ url('/admin/file-import')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                                @csrf
                                 <div class="modal-body">
-                                    
+
                                     <div class="mb-1">
                                         <input type="file" name="file" id="file" placeholder="Upload File" class="form-control" />
                                     </div>
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
-                                    
+
                                 </div>
-                               
+
                             </form>
                         </div>
                     </div>
@@ -188,8 +193,8 @@
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
                 $.ajax({
-                    type: 'POST',
-                    url: "{{url('admin/user/delete')}}/" + id,
+                    type: 'GET',
+                    url: "{{url('admin/deleteemployee')}}/" + id,
                     data: {
                         _token: CSRF_TOKEN
                     },

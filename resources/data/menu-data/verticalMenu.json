@@ -119,13 +119,6 @@
           "icon": "fa-solid fa-circle-plus",
           "slug": "leave",
           "role": ""
-        },
-        {
-          "url": "admin/showemployee",
-          "name": "Update Employee",
-          "icon": "user",
-          "slug": "leave",
-          "role": ""
         }
         
       ]

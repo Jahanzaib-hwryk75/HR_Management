@@ -61,8 +61,8 @@
           <tbody>
          @foreach($createsetupsalary as $createsetupsalary)
             <tr>
-              <td>{{$createsetupsalary->getEmployee->id}}</td>
-              <td>{{$createsetupsalary->getEmployee->firstname}}</td>
+            <td class="count"></td>
+              <td>{{$createsetupsalary->getEmployee->firstname}}{{$createsetupsalary->getEmployee->lastname}}</td>
               <td>{{$createsetupsalary->getEmployee->positionname}}</td>
               <td>{{$createsetupsalary->getEmployee->division}}</td>
               <td>{{$createsetupsalary->getEmployee->ratetype}}</td>

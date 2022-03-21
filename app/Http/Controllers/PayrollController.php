@@ -69,8 +69,21 @@ class PayrollController extends Controller
     }
     public function managesalarysetup()
     {
-        $managesalarysetup = employee::all();
+        $managesalarysetup = salary::with('getEmployee')->get();
+        // $managesalarysetup = employee::all();
         return view('payroll.managesalarysetup', compact('managesalarysetup'));
+    }
+    public function editmanagesalary($id){
+        $editsalary=salary::find($id);
+        $employeesget=employee::all();
+        return view('payroll.editmanagesalarysetup',compact('editsalary','employeesget'));
+    }
+    
+
+    public function updatemanagesalary(Request $request,$id){
+        $updatemanagesalary = salary::find($id);
+        $updatemanagesalary=
+
     }
     public function salarysetup()
     {
@@ -93,7 +106,11 @@ class PayrollController extends Controller
     {
         $deletemanagesalarybenefits = salarybenfits::find($id);
         $deletemanagesalarybenefits->delete();
-        return redirect()->back();
+        if ($deletemanagesalarybenefits) {
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
     public function editmanagesalarybenefits($id)
     {

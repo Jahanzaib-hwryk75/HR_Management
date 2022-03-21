@@ -86,6 +86,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/deletecountry/{id}',[EmployController::class,'deletecountry']);
     Route::get('/showemployee',[EmployController::class,'showemployee']);
     Route::get('/deleteemployee/{id}',[EmployController::class,'deleteemployee']);
+    Route::get('/editemployee/{id}',[EmployController::class,'editemployee']);
+    Route::post('/employeeupdate/{id}',[EmployController::class,'employeeupdate']);
+    Route::get('/editmanagesalary/{id}',[PayrollController::class,'editmanagesalary']);
+    Route::post('/updatemanagesalary/{id}',[PayrollController::class,'updatemanagesalary']);
+    
 
     //Payroll
     Route::get('/salarytypesetup',[PayrollController::class,'salarytypesetup']);
