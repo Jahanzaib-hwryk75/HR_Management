@@ -23,6 +23,8 @@ class PayrollController extends Controller
         $request->validate([
             'salarymonth' => 'required'
         ]);
+        // $userId = Auth::user()->id;
+        //$data = Salarymonth::where('user', $userId)->get();
         $user = new Salarymonth();
         $user->salarymonth = $request->salarymonth;
         $user->save();

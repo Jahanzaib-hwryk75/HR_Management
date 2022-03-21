@@ -9,6 +9,8 @@ class Salarymonth extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'salarymonth'
+        'salarymonth',
+        'admin'
     ];
+    
 }
