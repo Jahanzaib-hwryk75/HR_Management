@@ -80,8 +80,27 @@ class PayrollController extends Controller
 
     public function updatemanagesalary(Request $request,$id){
         $updatemanagesalary = salary::find($id);
-        $updatemanagesalary=
+       
+        $updatemanagesalary->salarytype = $request->salarytype;
 
+        $totalAdd = $request->health + $request->houserent + $request->bonus + $request->newaddition;
+
+        $totalDeduct =  $request->pf - $request->newdeduction - $request->tax;
+
+        $updatemanagesalary->basic = $request->basic + $totalAdd;
+        $updatemanagesalary->basic = $request->basic - $totalDeduct;
+
+        $updatemanagesalary->pf = $request->pf;
+        $updatemanagesalary->health = $request->health;
+        $updatemanagesalary->houserent = $request->houserent;
+        $updatemanagesalary->bonus = $request->bonus;
+        $updatemanagesalary->newaddition = $request->newaddition;
+        $updatemanagesalary->newdeduction = $request->newdeduction;
+        $updatemanagesalary->tax = $request->tax;
+    
+        $updatemanagesalary->grosssalary = $updatemanagesalary->basic;
+        $updatemanagesalary->update();
+        return redirect('/admin/managesalarysetup');
     }
     public function salarysetup()
     {

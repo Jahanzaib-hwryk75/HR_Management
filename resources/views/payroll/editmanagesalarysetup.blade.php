@@ -17,13 +17,13 @@
 
                 </div>
                 <div class="card-body">
-                    <form class="form form-horizontal" action="{{url('/admin/savesalary')}}" method="post" enctype="multipart/form-data">
+                    <form class="form form-horizontal" action="{{url('/admin/updatemanagesalary/'. $editsalary->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <select class="form-select" id="basicSelect" name="employee_id">
+                                        <select class="form-select" id="basicSelect" name="basicSelect">
                                             @foreach($employeesget as  $employeesget)
                                             <option>{{$employeesget->firstname}}{{$employeesget->lastname}}</option>
                                             @endforeach
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col-sm-8 offset-sm-5">
 
-                                <button type="submit" class="btn btn-primary me-1">Submit</button>
+                                <button type="update" class="btn btn-primary me-1">Submit</button>
 
                             </div>
                         </div>
