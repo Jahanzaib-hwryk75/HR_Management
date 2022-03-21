@@ -29,34 +29,43 @@ class ProjectController extends Controller
     {
         $data = Client::all();
         $employeedata = employee::all();
+        // $getemployeeid = Project::with('getEmployee')->get();
         return view('/projects.assign', compact('data' , 'employeedata'));
         
     }
     public function store(Request $request)
     {
+        
         $request->validate([
+            'employee_id' =>'required',
             'projectname' => 'required',
             'clientname' => 'required',
-            'projectlead' => 'required',
+            // 'projectlead' => 'required',
             'startdate' => 'required',
             'enddate' => 'required',
-            'projectduration' => 'required'
+            'projectduration' => 'required',
+            
             
         ]);
+        
         $user = new Project();
+       
+        $user->employee_id = $request->employee_id;
         $user->projectname = $request->projectname;
         $user->clientname = $request->clientname;
-        $user->projectlead = $request->projectlead;
+        // $user->projectlead = $request->projectlead;
         $user->startdate = $request->startdate;
         $user->enddate = $request->enddate;
         $user->projectduration = $request->projectduration;
+      
         
         $user->save();
         return redirect()->back()->with('message', 'Project Assigned Successfully');
     }
     public function projectstable()
     {
-        $data = Project::orderby('id','DESC')->get();
+        // $data = Project::orderby('id','DESC')->get();
+        $data = Project::with('getEmployee')->get();
         return view('projects.projectassign', compact('data'));
     } 
      public function checkin(Request $request, $id)
