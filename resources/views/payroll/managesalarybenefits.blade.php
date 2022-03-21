@@ -42,18 +42,23 @@
               <th>Sl No</th>
               <th>Salary Benefits</th>
               <th>Benefit Type</th>
-              <th>Action</th>
+              <th>Edit</th>
+              <th>Delete</th>
               
             </tr>
           </thead>
           <tbody>
          @foreach($managesalarybenefits as $managesalarybenefits)
             <tr>
-              <td>{{$managesalarybenefits->id}}</td>
+            <td class="count"></td>
               <td>{{$managesalarybenefits->salarybenfit}} </td>
               <td>{{$managesalarybenefits->basicSelect}}</td>
-              <td><a href="{{url('/admin/editmanagesalarybenefits',$managesalarybenefits->id)}}"><img src="\icon\images1.jpg" alt="" width="5%"></a>
-          <a href="/admin/deletemanagesalarybenefits/{{$managesalarybenefits->id}}"><img src="\icon\images.png" alt="" width="5%"></a></td>
+              <td><a class="dropdown-item" href="{{url('/admin/editmanagesalarybenefits',$managesalarybenefits->id)}}">
+                    <i data-feather="edit-2" class="me-50"></i>
+                  </a></td>
+          <td> <button class="btn btn-flat btn-sm remove-user" data-id="{{ $managesalarybenefits->id}}" data-action="{{ url('/admin/deletemanagesalarybenefits/',$managesalarybenefits->id) }}" onclick="deleteConfirmation({{$managesalarybenefits->id}})">
+                    <i data-feather="trash" class="me-50"></i>
+                  </button></td>
              
              
                
@@ -116,8 +121,8 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
         $.ajax({
-          type: 'POST',
-          url: "{{url('admin/user/delete')}}/" + id,
+          type: 'GET',
+          url: "{{url('admin/deletemanagesalarybenefits')}}/" + id,
           data: {
             _token: CSRF_TOKEN
           },

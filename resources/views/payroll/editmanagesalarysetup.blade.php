@@ -24,10 +24,11 @@
                                 <div class="mb-1 row">
                                     <div class="col-sm-8 offset-2 mt-1">
                                         <select class="form-select" id="basicSelect" name="employee_id">
-                                            <option value="null">Employee Name</option>
-                                            @foreach($salarysetup as $salarysetup)
-                                            <option value="{{$salarysetup->id}}">{{$salarysetup->firstname}}{{$salarysetup->lastname}}</option>
+                                            @foreach($employeesget as  $employeesget)
+                                            <option>{{$employeesget->firstname}}{{$employeesget->lastname}}</option>
                                             @endforeach
+                                           
+                                           
                                         </select>
                                     </div>
                                     <!-- <div class="col-sm-8 offset-2 mt-1">
@@ -39,7 +40,7 @@
                                     <div class="col-sm-8 offset-2 mt-1">
                                        
                                         <select class="form-select" id="salarytype" name="salarytype">
-                                            <option value="null">Select Salary Type</option>
+                                            <option >{{$editsalary->salarytype ?? ''}}</option>
                                             <option>Salary</option>
                                             <option>Hourly</option>
                                             
@@ -47,56 +48,56 @@
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="basic" value="" placeholder="Enter Basic" required />
+                                        <input type="text" class="form-control" name="basic" readonly autocomplete="off" value="{{$editsalary->basic ?? ''}}" placeholder="Enter Basic" required />
                                         @error('basic')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="health" value="" placeholder="Enter Health" required />
+                                        <input type="text" class="form-control" name="health" value="{{$editsalary->health ?? ''}}" placeholder="Enter Health" required />
                                         @error('health')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="houserent" value="" placeholder="Enter House Rent" required />
+                                        <input type="text" class="form-control" name="houserent" value="{{$editsalary->houserent ?? ''}}" placeholder="Enter House Rent" required />
                                         @error('houserent')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="bonus" value="" placeholder="Enter bonus" required />
+                                        <input type="text" class="form-control" name="bonus" value="{{$editsalary->bonus ?? ''}}" placeholder="Enter bonus" required />
                                         @error('bonus')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="newaddition" value="" placeholder="Enter new addition" required />
+                                        <input type="text" class="form-control" name="newaddition" value="{{$editsalary->newaddition ?? ''}}" placeholder="Enter new addition" required />
                                         @error('newaddition')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="pf" value="" placeholder="Enter PF" required />
+                                        <input type="text" class="form-control" name="pf" value="{{$editsalary->pf ?? ''}}" placeholder="Enter PF" required />
                                         @error('pf')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="newdeduction" value="" placeholder="Enter new deduction" required />
+                                        <input type="text" class="form-control" name="newdeduction" value="{{$editsalary->newdeduction ?? ''}}" placeholder="Enter new deduction" required />
                                         @error('newdeduction')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
 
                                     <div class="col-sm-8 offset-2 mt-1">
-                                        <input type="text" class="form-control" name="tax" value="" placeholder="Enter Tax" required />
+                                        <input type="text" class="form-control" name="tax" value="{{$editsalary->tax ?? ''}}" placeholder="Enter Tax" required />
                                         @error('tax')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror

@@ -55,7 +55,8 @@
               <th>Approve Start Date</th>
               <th>Approve End Date</th>
               <th>Status</th>
-              <th>Action</th>
+              <th>Edit</th>
+              <th>Delete</th>
               <!-- <th>Delete</th> -->
               
              
@@ -81,8 +82,13 @@
            <td>{{Str::limit($user->desc, 10)}} -->
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
-          <td> <a href="/admin/editapplication/{{$user->id}}"><img src="\icon\images1.jpg" alt="" width="30%"></a>
-          <a data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})"><img src="\icon\images.png" alt="" width="30%"></a></td>
+          <td>  <a class="dropdown-item" href="/admin/editapplication/{{$user->id}}">
+                    <i data-feather="edit-2" class="me-50"></i>
+                  </a></td>
+         <td> <button class="btn btn-flat btn-sm remove-user" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">
+                    <i data-feather="trash" class="me-50"></i>
+                  </button>
+                  </td>
            <!-- <td><a class="btn btn-success" style="height: 45px;" href="/admin/editapplication/{{$user->id}}">Accept</a></td> -->
            <!-- <td><a class="btn btn-success" style="height: 45px;" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">Delete</a></td> -->
            
