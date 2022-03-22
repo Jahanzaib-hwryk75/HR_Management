@@ -90,8 +90,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/employeeupdate/{id}',[EmployController::class,'employeeupdate']);
     Route::get('/editmanagesalary/{id}',[PayrollController::class,'editmanagesalary']);
     Route::post('/updatemanagesalary/{id}',[PayrollController::class,'updatemanagesalary']);
+    Route::get('/sendmail/{token}',[EmployController::class,'sendmail']);
     
-
     //Payroll
     Route::get('/salarytypesetup',[PayrollController::class,'salarytypesetup']);
     Route::get('/addsalarybenfit',[PayrollController::class,'addsalarybenfit']);

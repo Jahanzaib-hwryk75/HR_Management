@@ -90,7 +90,7 @@ class PayrollController extends Controller
         $totalDeduct =  $request->pf - $request->newdeduction - $request->tax;
 
         $updatemanagesalary->basic = $request->basic + $totalAdd;
-        $updatemanagesalary->basic = $request->basic - $totalDeduct;
+        $updatemanagesalary->basic =$updatemanagesalary->basic - $totalDeduct;
 
         $updatemanagesalary->pf = $request->pf;
         $updatemanagesalary->health = $request->health;

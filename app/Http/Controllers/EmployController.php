@@ -15,6 +15,10 @@ use App\Exports\employeesExport;
 use App\Imports\employeesImport;
 use App\Models\salary;
 use PhpParser\NodeVisitor\FirstFindingVisitor;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class EmployController extends Controller
 {
@@ -260,8 +264,14 @@ public function saveposition(Request $request){
         $saveemployee->alteremergencyphone=$request->alteremergencyphone;
         $saveemployee->emails=$request->emails;
         $saveemployee->password=$request->password;
+        $token = Str::random(64);
+          Mail::send('employee.email.sendemail', ['email','password' => $token], function($message) use($request){
+            $message->to($request->email);
+            $message->subject('Send Mail');
+        });
         $saveemployee->save();
         $request->pictureupload->move(public_path('picture'), $ImageName);
+
         return redirect()->back();
     }
    public function showemployee(){
@@ -294,5 +304,12 @@ public function saveposition(Request $request){
         Excel::import(new employeesImport, $request->file('file')->store('temp'));
         return redirect('/admin/showemployee');
     }   
-   
+
+
+
+
+   public function sendmail(){
+       $sendmail=employee::all();
+       return view('employee.email.sendemail',compact('sendmail'));
+   }
 }
