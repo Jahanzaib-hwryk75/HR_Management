@@ -266,7 +266,7 @@ public function saveposition(Request $request){
         $saveemployee->emails=$request->emails;
         $saveemployee->password=Hash::make($request->password);
         $token = Str::random(64);
-          Mail::send('employee.email.sendemail', ['email'=> $saveemployee->emails , 'password' => $saveemployee->password], function($message) use($request){
+          Mail::send('employee.email.sendemail', ['email'=> $saveemployee->emails , 'password' => $request->password], function($message) use($request){
             $message->to($request->email);
             $message->subject('Send Mail');
         });

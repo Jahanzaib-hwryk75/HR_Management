@@ -65,7 +65,7 @@
                         Design Patterns….??? I think you have heard this name 
                       before in programming… Yes, you might have heard 
                       this name before in programming if you are…
-                    Your Email:{{$email}}
+                    Your Email:{{$email}}<br>
                     Your Password:{{$password}}
                     </p>
                    
