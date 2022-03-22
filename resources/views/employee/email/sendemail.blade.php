@@ -54,7 +54,7 @@
                      
                     <h2 style="text-align: left;
                                align-items: center;">
-                        Design Patterns : A Must Skill to 
+                        
                       have for Software Developers in 2019
                    </h2>
                     <p class="data"
@@ -65,6 +65,8 @@
                         Design Patterns….??? I think you have heard this name 
                       before in programming… Yes, you might have heard 
                       this name before in programming if you are…
+                    Your Email:{{$email}}
+                    Your Password:{{$password}}
                     </p>
                    
                 </td>

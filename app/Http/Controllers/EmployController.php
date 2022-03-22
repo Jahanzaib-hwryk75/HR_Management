@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 
 class EmployController extends Controller
 {
@@ -263,9 +264,9 @@ public function saveposition(Request $request){
         $saveemployee->alteremergencycontact=$request->alteremergencycontact;
         $saveemployee->alteremergencyphone=$request->alteremergencyphone;
         $saveemployee->emails=$request->emails;
-        $saveemployee->password=$request->password;
+        $saveemployee->password=Hash::make($request->password);
         $token = Str::random(64);
-          Mail::send('employee.email.sendemail', ['email','password' => $token], function($message) use($request){
+          Mail::send('employee.email.sendemail', ['email'=> $saveemployee->emails , 'password' => $saveemployee->password], function($message) use($request){
             $message->to($request->email);
             $message->subject('Send Mail');
         });

@@ -46,9 +46,7 @@
               <th>Salary Type</th>
               <th>Basic</th>
               <th>Gross Salary</th>
-              <th>Date</th>
               <th>Edit</th>
-              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -62,16 +60,11 @@
               <td>{{$managesalarysetup->getEmployee->ratetype}}</td>
               <td>{{$managesalarysetup->getEmployee->rate}}</td>
               <td>{{$managesalarysetup->grosssalary}}</td>
-              <td></td>
               <td><a class="dropdown-item" href="{{url('/admin/editmanagesalary',$managesalarysetup->id)}}">
                     <i data-feather="edit-2" class="me-50"></i>
                   </a></td>
-         <td> <button class="btn btn-flat btn-sm remove-user" data-id="" data-action="" onclick="">
-                    <i data-feather="trash" class="me-50"></i>
-                  </button></td>
             </tr>
           @endforeach
-          
           </tbody>
         </table>
       </div>
