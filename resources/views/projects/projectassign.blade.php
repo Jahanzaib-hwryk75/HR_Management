@@ -55,7 +55,7 @@
               <th>Id</th>
               <th>Project Name</th>
               <th>Client Name</th>
-              <th>Project Lead</th>
+              <th>Project Lead ID</th>
               <th>Start Date</th>
               <th>End Date</th>
               <th>Project Duration</th>
@@ -72,7 +72,7 @@
             <td>{{$data->id}}</td>
               <td>{{$data->projectname}}</td>
               <td>{{$data->clientname}}</td>
-              <td>{{$data->projectlead}}</td>
+              <td>{{$data->getEmployee->firstname}}</td>
               <td>{{$data->startdate}}</td>
               <td>{{$data->enddate}}</td>
               <td>{{$data->projectduration}}</td>
