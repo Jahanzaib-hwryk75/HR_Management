@@ -33,7 +33,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Manage Salary</h4>
       </div>
     
         <table class="table datatable">

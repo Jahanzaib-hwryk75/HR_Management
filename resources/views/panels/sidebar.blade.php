@@ -31,15 +31,7 @@ $configData = Helper::applClasses();
               </g>
             </svg>
           </span>
-          @role('Writer')
-          <h2 class="brand-text">Vuexy</h2>
-          @endrole
-          @hasexactroles('Admin')
-          <h2 class="brand-text">Vuexy2</h2>
-          @endhasexactroles
-          @hasrole('Editor')
-          <h2 class="brand-text">Vuexy3</h2>
-          @endhasrole
+          <h2 class="brand-text">HR Management</h2>
         </a>
       </li>
     </ul>

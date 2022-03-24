@@ -33,7 +33,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Leave Management</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
@@ -82,6 +82,7 @@
            <td>{{Str::limit($user->desc, 10)}} -->
              <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
            </td>
+           
           <td>  <a class="dropdown-item" href="/admin/editapplication/{{$user->id}}">
                     <i data-feather="edit-2" class="me-50"></i>
                   </a></td>

@@ -33,7 +33,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Salary Benefits</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px; margin-bottom: 10px;">
@@ -52,6 +52,8 @@
               <th>Sl No</th>
               <th>Salary Benefits</th>
               <th>Benefit Type</th>
+              <th>Edit</th>
+              <th>Delete</th>
 
             </tr>
           </thead>
@@ -61,7 +63,7 @@
               <td class="count"></td>
               <td>{{$salarytypesetup->salarybenfit}}</td>
               <td>{{$salarytypesetup->basicSelect}}</td>
-
+                
             </tr>
             @endforeach
           </tbody>

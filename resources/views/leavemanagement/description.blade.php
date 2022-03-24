@@ -33,7 +33,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Details</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
@@ -41,16 +41,31 @@
             <span>Request Leave</span>
           </button>
         </div> -->
+        <h4>ID:{{$data->id}}</h4><br>
+        <h4>Name:{{$data->name}}</h4><br>
+        <h4>Leave Type:{{$data->type}}</h4><br>
+        <h4>Date Start:{{$data->datestart}}</h4><br>
+        <h4>Date End:{{$data->dateend}}</h4><br>
+        <h4>Approved Start Date:{{$data->approvedstartdate}}</h4><br>
+        <h4>Approved End Date:{{$data->approvedenddate}}</h4><br>
+        <h4>Status: {{$data->status}}</h4><br>
+        <h4>Rank: {{$data->rank}}</h4><br>
+       <h4>Description: {{$data->desc, 10}}</h4>
         <table class="table datatable">
-          <thead>
-            <tr>
-              <th>{{$data->name}}</th>
-              <!-- <th>Desc</th> -->
-            </tr>
-          </thead>
+         
           <tbody>
             <tr>
-           <td>{{$data->desc}}</td>
+          
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
            </tr>
           </tbody>
         </table>

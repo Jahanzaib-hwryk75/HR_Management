@@ -33,7 +33,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Leave</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
@@ -51,12 +51,12 @@
               <th>Id</th>
               <th>name</th>
               <th>type</th>
-              <th>Date Start</th>
+              <!-- <th>Date Start</th>
               <th>Date End</th>
               <th>Approve Start Date</th>
-              <th>Approve End Date</th>
+              <th>Approve End Date</th> -->
               <th>Status</th>
-              <th>Rank</th>
+              <!-- <th>Rank</th> -->
               <th>Desc</th>
             </tr>
           </thead>
@@ -66,13 +66,14 @@
            <td>{{$user->id}}</td>
            <td>{{$user->name}}</td>
            <td>{{$user->type}}</td>
-           <td>{{$user->datestart}}</td>
+           <!-- <td>{{$user->datestart}}</td>
            <td>{{$user->dateend}}</td>
            <td>{{$user->approvedstartdate}}</td>
-           <td>{{$user->approvedenddate}}</td>
+           <td>{{$user->approvedenddate}}</td> -->
            <td>{{$user->status}}</td>
-           <td>{{$user->rank}}</td>
-           <td>{{Str::limit($user->desc, 10)}}</td>
+           <!-- <td>{{$user->rank}}</td> -->
+           <td>{{Str::limit($user->desc, 10)}}
+             <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p>
            </tr>
            @endforeach
           </tbody>
