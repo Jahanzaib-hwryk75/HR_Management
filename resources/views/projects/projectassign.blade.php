@@ -80,8 +80,9 @@
               <td>{{$data->checkout}}</td>
               <td>{{$data->totaltime}}</td>
               <td class="d-flex">
-                <a class="btn btn-success col-sm-6" href="{{url('/admin/checkin/'.$data->id)}}">Clock In</a>
-                <a class="btn btn-danger col-sm-6" href="{{url('/admin/checkout',$data->id)}}">Clock Out</a>
+                <a href="{{url('/admin/checkin/'.$data->id)}}"><img src="\icon\clockin.png" alt="" width="50%" title="Clock In"></a>
+                <!-- <a ><img src="\icon\break.png" alt="" width="100%" title="Take a Break"></a> -->
+                <a href="{{url('/admin/checkout',$data->id)}}"><img src="\icon\clockout.png" alt="" width="50%" title="Clock Out"></a>
               </td>
             </tr>
             @endforeach
