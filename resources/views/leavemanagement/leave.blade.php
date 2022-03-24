@@ -59,7 +59,7 @@
           @foreach($user as $user)
           <tbody>
             <tr>
-           <td>{{$user->id}}</td>
+           <td class="count"></td>
            <td>{{$user->name}}</td>
            <td>{{$user->type}}</td>
            <td>{{$user->status}}</td>
