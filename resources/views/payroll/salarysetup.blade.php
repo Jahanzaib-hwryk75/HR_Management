@@ -11,7 +11,7 @@
                         <h4 class="card-title">Update {{$users->username ?? ''}} details</h4>
 
                     <?php } else { ?>
-                        <h4 class="card-title">Salary SetUp</h4>
+                        <h4 class="card-title">Add Salary SetUp</h4>
                     <?php }
                     ?>
 
