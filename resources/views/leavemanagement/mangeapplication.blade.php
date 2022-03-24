@@ -50,16 +50,14 @@
               <th>Id</th>
               <th>name</th>
               <th>type</th>
-              <th>Date Start</th>
+              <!-- <th>Date Start</th>
               <th>Date End</th>
               <th>Approve Start Date</th>
-              <th>Approve End Date</th>
+              <th>Approve End Date</th> -->
               <th>Status</th>
               <th>Edit</th>
-              <th>Delete</th>
-              <!-- <th>Delete</th> -->
-              
-             
+              <th>Delete</th>   
+              <th>Preview</th>
             </tr>
           </thead>
           @foreach($user as $user)
@@ -68,20 +66,12 @@
            <td>{{$user->id}}</td>
            <td>{{$user->name}}</td>
            <td>{{$user->type}}</td>
-           <td>{{$user->datestart}}</td>
+           <!-- <td>{{$user->datestart}}</td>
            <td>{{$user->dateend}}</td>
           <td>{{$user->approvedstartdate}}</td>
-          <td>{{$user->approvedenddate}}</td>
+          <td>{{$user->approvedenddate}}</td> -->
           <td>{{$user->status}}</td>
-        
-         
-         
-           <!-- <td>{{$user->rank}}</td>
-           
-         
-           <td>{{Str::limit($user->desc, 10)}} -->
-             <!-- <p><a href="{{url('admin/description', $user->id)}}">Read More</a></p> -->
-           </td>
+          
            
           <td>  <a class="dropdown-item" href="/admin/editapplication/{{$user->id}}">
                     <i data-feather="edit-2" class="me-50"></i>
@@ -90,9 +80,7 @@
                     <i data-feather="trash" class="me-50"></i>
                   </button>
                   </td>
-           <!-- <td><a class="btn btn-success" style="height: 45px;" href="/admin/editapplication/{{$user->id}}">Accept</a></td> -->
-           <!-- <td><a class="btn btn-success" style="height: 45px;" data-id="{{ $user->id }}" data-action="{{ url('/admin/deleteapplication',$user->id) }}" onclick="deleteConfirmation({{$user->id}})">Delete</a></td> -->
-           
+             <td><a href="{{url('admin/description', $user->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
            </tr>
            @endforeach
           </tbody>

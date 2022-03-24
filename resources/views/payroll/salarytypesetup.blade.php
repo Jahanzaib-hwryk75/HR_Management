@@ -36,11 +36,11 @@
         <h4 class="card-title">Salary Benefits</h4>
       </div>
       <div class="table-responsive width-95-per mx-auto">
-        <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px; margin-bottom: 10px;">
+        <!-- <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px; margin-bottom: 10px;">
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/managesalarybenefits'">
             <span>Manage Salary Benefits</span>
           </button>
-        </div>
+        </div> -->
         <div class="dt-buttons float-end" style="margin-left: 20px; margin-top: 14px;">
           <button class="dt-button add-new btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button" onclick="window.location.href='/admin/addsalarybenfit'">
             <span>Add Salary Benefits</span>
@@ -63,7 +63,12 @@
               <td class="count"></td>
               <td>{{$salarytypesetup->salarybenfit}}</td>
               <td>{{$salarytypesetup->basicSelect}}</td>
-                
+              <td><a class="dropdown-item" href="{{url('/admin/editmanagesalarybenefits',$salarytypesetup->id)}}">
+                    <i data-feather="edit-2" class="me-50"></i>
+                  </a></td>
+          <td> <button class="btn btn-flat btn-sm remove-user" data-id="{{ $salarytypesetup->id}}" data-action="{{ url('/admin/deletemanagesalarybenefits/',$salarytypesetup->id) }}" onclick="deleteConfirmation({{$salarytypesetup->id}})">
+                    <i data-feather="trash" class="me-50"></i>
+                  </button></td>
             </tr>
             @endforeach
           </tbody>
@@ -123,8 +128,8 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
         $.ajax({
-          type: 'POST',
-          url: "{{url('admin/user/delete')}}/" + id,
+          type: 'GET',
+          url: "{{url('admin/deletemanagesalarybenefits')}}/" + id,
           data: {
             _token: CSRF_TOKEN
           },
